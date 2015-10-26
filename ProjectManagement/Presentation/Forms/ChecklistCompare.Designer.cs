@@ -1,6 +1,6 @@
-﻿namespace Presentation
+﻿namespace Presentation.Forms
 {
-    partial class MainForm
+    partial class ChecklistCompare
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(63, 99);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(155, 20);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "This is Main Form";
-            // 
-            // MainForm
+            // ChecklistCompare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.textBox1);
-            this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.ClientSize = new System.Drawing.Size(653, 396);
+            this.Name = "ChecklistCompare";
+            this.Text = "Checklist Compare";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
     }
 }

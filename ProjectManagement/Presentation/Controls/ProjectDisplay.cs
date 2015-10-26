@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Presentation
+namespace Presentation.Controlers
 {
-    public partial class MainForm : Form
+    public partial class ProjectDisplay : UserControl
     {
-        public MainForm()
+        public ProjectDisplay()
         {
             InitializeComponent();
+            m_splitContainerProgressBar.SplitterDistance = 5;
         }
     }
 }

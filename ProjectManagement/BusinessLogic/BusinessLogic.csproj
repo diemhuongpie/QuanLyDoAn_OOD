@@ -38,10 +38,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{4916b016-7982-4e85-83e4-2041f4cfa7b5}</Project>
-      <Name>DataAccess</Name>
-    </ProjectReference>
+    <Compile Include="MainFormBusiness.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
