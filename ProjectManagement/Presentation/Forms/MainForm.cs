@@ -10,40 +10,18 @@ using System.Windows.Forms;
 using System.IO;
 
 using BusinessLogic;
-using Presentation.Controlers;
-using Presentation.Forms;
+using Presentation.Controls;
 
 namespace Presentation
 {
     public partial class MainForm : Form
     {
         private MainFormBusiness m_business;
-
+                
         public MainForm()
         {
             m_business = new MainFormBusiness();
             InitializeComponent();
-            m_projectList.Controls.Add(new ProjectDisplay());
-            m_projectList.Controls.Add(new ProjectDisplay());
-            m_projectList.Controls.Add(new ProjectDisplay());
-            m_projectList.Controls.Add(new ProjectDisplay());
-            m_projectList.Controls.Add(new ProjectDisplay());
-            m_projectList.Controls.Add(new ProjectDisplay());
-            m_projectList.Controls.Add(new ProjectDisplay());
-            m_projectList.Controls.Add(new ProjectDisplay());
-            m_projectList.Controls.Add(new ProjectDisplay());
-            m_projectList.Controls.Add(new ProjectDisplay());
-            m_projectList.Controls.Add(new ProjectDisplay());
-            m_projectList.Controls.Add(new ProjectDisplay());
-            m_projectList.Controls.Add(new ProjectDisplay());
-            m_projectList.Controls.Add(new ProjectDisplay());
-            m_projectList.Controls.Add(new ProjectDisplay());
-            m_projectList.Controls.Add(new ProjectDisplay());
-            m_projectList.Controls.Add(new ProjectDisplay());
-            m_projectList.Controls.Add(new ProjectDisplay());
-            m_projectList.Controls.Add(new ProjectDisplay());
-            m_projectList.Controls.Add(new ProjectDisplay());
-            m_projectList.Controls.Add(new ProjectDisplay());
             foreach (ProjectDisplay prds in m_projectList.Controls)
             {
                 prds.Dock = DockStyle.Top;
@@ -83,6 +61,17 @@ namespace Presentation
         {
             NewProject newPrjDialog = new NewProject();
             newPrjDialog.ShowDialog();
+
+            if (newPrjDialog.m_createdObject != null)
+            {
+                m_projectList.Controls.Add(newPrjDialog.m_createdObject);
+            }
+        }
+
+        private void compareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChecklistCompare cmpCheckListDialog = new ChecklistCompare();
+            cmpCheckListDialog.ShowDialog();
         }
     }
 }

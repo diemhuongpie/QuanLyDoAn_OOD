@@ -38,6 +38,9 @@
             this.directoryTreeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.previewPaneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checklistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.compareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_statusBar = new System.Windows.Forms.StatusStrip();
             this.m_numOfProjects = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_numOfSelectedProprojects = new System.Windows.Forms.ToolStripStatusLabel();
@@ -48,11 +51,8 @@
             this.m_iconList = new System.Windows.Forms.ImageList(this.components);
             this.m_textboxSearchBox = new System.Windows.Forms.TextBox();
             this.m_spliterContainerPreviewPane = new System.Windows.Forms.SplitContainer();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.m_projectList = new System.Windows.Forms.TableLayoutPanel();
-            this.checklistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.compareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.m_menuBar.SuspendLayout();
             this.m_statusBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_splitContainerDirectoryTree)).BeginInit();
@@ -75,9 +75,9 @@
             this.projectsToolStripMenuItem,
             this.viewToolStripMenuItem,
             this.checklistToolStripMenuItem});
-            this.m_menuBar.Location = new System.Drawing.Point(0, 0);
+            this.m_menuBar.Location = new System.Drawing.Point(3, 3);
             this.m_menuBar.Name = "m_menuBar";
-            this.m_menuBar.Size = new System.Drawing.Size(774, 24);
+            this.m_menuBar.Size = new System.Drawing.Size(768, 24);
             this.m_menuBar.TabIndex = 0;
             // 
             // projectsToolStripMenuItem
@@ -92,7 +92,7 @@
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.AddNewProject);
             // 
@@ -130,14 +130,36 @@
             this.previewPaneToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.previewPaneToolStripMenuItem.Text = "Preview Pane";
             // 
+            // checklistToolStripMenuItem
+            // 
+            this.checklistToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportToolStripMenuItem,
+            this.compareToolStripMenuItem});
+            this.checklistToolStripMenuItem.Name = "checklistToolStripMenuItem";
+            this.checklistToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.checklistToolStripMenuItem.Text = "Checklist";
+            // 
+            // exportToolStripMenuItem
+            // 
+            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.exportToolStripMenuItem.Text = "Export";
+            // 
+            // compareToolStripMenuItem
+            // 
+            this.compareToolStripMenuItem.Name = "compareToolStripMenuItem";
+            this.compareToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.compareToolStripMenuItem.Text = "Compare";
+            this.compareToolStripMenuItem.Click += new System.EventHandler(this.compareToolStripMenuItem_Click);
+            // 
             // m_statusBar
             // 
             this.m_statusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m_numOfProjects,
             this.m_numOfSelectedProprojects});
-            this.m_statusBar.Location = new System.Drawing.Point(0, 468);
+            this.m_statusBar.Location = new System.Drawing.Point(3, 465);
             this.m_statusBar.Name = "m_statusBar";
-            this.m_statusBar.Size = new System.Drawing.Size(774, 22);
+            this.m_statusBar.Size = new System.Drawing.Size(768, 22);
             this.m_statusBar.TabIndex = 1;
             // 
             // m_numOfProjects
@@ -156,7 +178,7 @@
             // 
             this.m_splitContainerDirectoryTree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_splitContainerDirectoryTree.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.m_splitContainerDirectoryTree.Location = new System.Drawing.Point(0, 24);
+            this.m_splitContainerDirectoryTree.Location = new System.Drawing.Point(3, 27);
             this.m_splitContainerDirectoryTree.Name = "m_splitContainerDirectoryTree";
             // 
             // m_splitContainerDirectoryTree.Panel1
@@ -166,7 +188,7 @@
             // m_splitContainerDirectoryTree.Panel2
             // 
             this.m_splitContainerDirectoryTree.Panel2.Controls.Add(this.m_spliterContainerSeachBox);
-            this.m_splitContainerDirectoryTree.Size = new System.Drawing.Size(774, 444);
+            this.m_splitContainerDirectoryTree.Size = new System.Drawing.Size(768, 438);
             this.m_splitContainerDirectoryTree.SplitterDistance = 181;
             this.m_splitContainerDirectoryTree.TabIndex = 2;
             // 
@@ -175,7 +197,7 @@
             this.m_directoryTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_directoryTreeView.Location = new System.Drawing.Point(0, 0);
             this.m_directoryTreeView.Name = "m_directoryTreeView";
-            this.m_directoryTreeView.Size = new System.Drawing.Size(181, 444);
+            this.m_directoryTreeView.Size = new System.Drawing.Size(181, 438);
             this.m_directoryTreeView.TabIndex = 0;
             this.m_directoryTreeView.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.ExpandTreeNode);
             // 
@@ -196,15 +218,16 @@
             // m_spliterContainerSeachBox.Panel2
             // 
             this.m_spliterContainerSeachBox.Panel2.Controls.Add(this.m_spliterContainerPreviewPane);
-            this.m_spliterContainerSeachBox.Size = new System.Drawing.Size(589, 444);
+            this.m_spliterContainerSeachBox.Size = new System.Drawing.Size(583, 438);
             this.m_spliterContainerSeachBox.SplitterDistance = 28;
             this.m_spliterContainerSeachBox.TabIndex = 0;
             // 
             // m_btnSearch
             // 
+            this.m_btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.m_btnSearch.ImageIndex = 215;
             this.m_btnSearch.ImageList = this.m_iconList;
-            this.m_btnSearch.Location = new System.Drawing.Point(564, 4);
+            this.m_btnSearch.Location = new System.Drawing.Point(558, 4);
             this.m_btnSearch.Name = "m_btnSearch";
             this.m_btnSearch.Size = new System.Drawing.Size(20, 20);
             this.m_btnSearch.TabIndex = 1;
@@ -442,9 +465,11 @@
             // 
             // m_textboxSearchBox
             // 
+            this.m_textboxSearchBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.m_textboxSearchBox.Location = new System.Drawing.Point(3, 4);
             this.m_textboxSearchBox.Name = "m_textboxSearchBox";
-            this.m_textboxSearchBox.Size = new System.Drawing.Size(555, 20);
+            this.m_textboxSearchBox.Size = new System.Drawing.Size(549, 20);
             this.m_textboxSearchBox.TabIndex = 0;
             // 
             // m_spliterContainerPreviewPane
@@ -461,9 +486,24 @@
             // m_spliterContainerPreviewPane.Panel2
             // 
             this.m_spliterContainerPreviewPane.Panel2.Controls.Add(this.richTextBox1);
-            this.m_spliterContainerPreviewPane.Size = new System.Drawing.Size(589, 412);
-            this.m_spliterContainerPreviewPane.SplitterDistance = 380;
+            this.m_spliterContainerPreviewPane.Size = new System.Drawing.Size(583, 406);
+            this.m_spliterContainerPreviewPane.SplitterDistance = 374;
             this.m_spliterContainerPreviewPane.TabIndex = 1;
+            // 
+            // m_projectList
+            // 
+            this.m_projectList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_projectList.AutoScroll = true;
+            this.m_projectList.AutoSize = true;
+            this.m_projectList.ColumnCount = 1;
+            this.m_projectList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.m_projectList.Location = new System.Drawing.Point(0, 0);
+            this.m_projectList.Name = "m_projectList";
+            this.m_projectList.RowCount = 1;
+            this.m_projectList.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.m_projectList.Size = new System.Drawing.Size(372, 412);
+            this.m_projectList.TabIndex = 3;
             // 
             // richTextBox1
             // 
@@ -471,46 +511,11 @@
             this.richTextBox1.Location = new System.Drawing.Point(0, 0);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(205, 412);
+            this.richTextBox1.Size = new System.Drawing.Size(205, 406);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "Group 7:\n - Lê Minh Trung\n - Nguyễn Hoàng Thái\n - .............\n\nProject Overview" +
     "\n - Hotel Managerment Software for 3-star-awarded-hotel Tan Son Nhat.\n\nNote(s):\n" +
     " - Note 1\n - Note 2\n - Note 3";
-            // 
-            // m_projectList
-            // 
-            this.m_projectList.AutoScroll = true;
-            this.m_projectList.AutoSize = true;
-            this.m_projectList.ColumnCount = 1;
-            this.m_projectList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.m_projectList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_projectList.Location = new System.Drawing.Point(0, 0);
-            this.m_projectList.Name = "m_projectList";
-            this.m_projectList.RowCount = 1;
-            this.m_projectList.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.m_projectList.Size = new System.Drawing.Size(380, 412);
-            this.m_projectList.TabIndex = 3;
-            // 
-            // checklistToolStripMenuItem
-            // 
-            this.checklistToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exportToolStripMenuItem,
-            this.compareToolStripMenuItem});
-            this.checklistToolStripMenuItem.Name = "checklistToolStripMenuItem";
-            this.checklistToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.checklistToolStripMenuItem.Text = "Checklist";
-            // 
-            // exportToolStripMenuItem
-            // 
-            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exportToolStripMenuItem.Text = "Export";
-            // 
-            // compareToolStripMenuItem
-            // 
-            this.compareToolStripMenuItem.Name = "compareToolStripMenuItem";
-            this.compareToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.compareToolStripMenuItem.Text = "Compare";
             // 
             // MainForm
             // 
@@ -522,6 +527,7 @@
             this.Controls.Add(this.m_menuBar);
             this.MainMenuStrip = this.m_menuBar;
             this.Name = "MainForm";
+            this.Padding = new System.Windows.Forms.Padding(3);
             this.Text = "Course Projects Manager";
             this.Load += new System.EventHandler(this.LoadingContent);
             this.m_menuBar.ResumeLayout(false);

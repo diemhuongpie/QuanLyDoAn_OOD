@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Presentation.Forms
+namespace Presentation.Controls
 {
     public partial class ChecklistCompare : Form
     {

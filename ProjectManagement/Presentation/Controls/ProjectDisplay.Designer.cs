@@ -1,4 +1,4 @@
-﻿namespace Presentation.Controlers
+﻿namespace Presentation.Controls
 {
     partial class ProjectDisplay
     {
@@ -26,19 +26,19 @@
         /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+       private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectDisplay));
             this.m_splitContainerProgressBar = new System.Windows.Forms.SplitContainer();
             this.m_progressBar = new System.Windows.Forms.ProgressBar();
-            this.button1 = new System.Windows.Forms.Button();
+            this.m_btnNote = new System.Windows.Forms.Button();
             this.m_smallIcons = new System.Windows.Forms.ImageList(this.components);
-            this.button2 = new System.Windows.Forms.Button();
-            this.m_authors = new System.Windows.Forms.Button();
-            this.m_lastUpdate = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.m_btnSetting = new System.Windows.Forms.Button();
+            this.m_btnDelete = new System.Windows.Forms.Button();
+            this.m_lblLastUpdate = new System.Windows.Forms.Label();
+            this.m_lblGroupName = new System.Windows.Forms.Label();
+            this.m_lblProjectName = new System.Windows.Forms.Label();
             this.m_contexMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.seeMoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,15 +67,15 @@
             // 
             // m_splitContainerProgressBar.Panel2
             // 
-            this.m_splitContainerProgressBar.Panel2.Controls.Add(this.button1);
-            this.m_splitContainerProgressBar.Panel2.Controls.Add(this.button2);
-            this.m_splitContainerProgressBar.Panel2.Controls.Add(this.m_authors);
-            this.m_splitContainerProgressBar.Panel2.Controls.Add(this.m_lastUpdate);
-            this.m_splitContainerProgressBar.Panel2.Controls.Add(this.label2);
-            this.m_splitContainerProgressBar.Panel2.Controls.Add(this.label1);
+            this.m_splitContainerProgressBar.Panel2.Controls.Add(this.m_btnNote);
+            this.m_splitContainerProgressBar.Panel2.Controls.Add(this.m_btnSetting);
+            this.m_splitContainerProgressBar.Panel2.Controls.Add(this.m_btnDelete);
+            this.m_splitContainerProgressBar.Panel2.Controls.Add(this.m_lblLastUpdate);
+            this.m_splitContainerProgressBar.Panel2.Controls.Add(this.m_lblGroupName);
+            this.m_splitContainerProgressBar.Panel2.Controls.Add(this.m_lblProjectName);
             this.m_splitContainerProgressBar.Panel2MinSize = 5;
-            this.m_splitContainerProgressBar.Size = new System.Drawing.Size(299, 52);
-            this.m_splitContainerProgressBar.SplitterDistance = 24;
+            this.m_splitContainerProgressBar.Size = new System.Drawing.Size(299, 54);
+            this.m_splitContainerProgressBar.SplitterDistance = 25;
             this.m_splitContainerProgressBar.SplitterWidth = 1;
             this.m_splitContainerProgressBar.TabIndex = 0;
             // 
@@ -85,25 +85,25 @@
             this.m_progressBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_progressBar.Location = new System.Drawing.Point(0, 0);
             this.m_progressBar.Name = "m_progressBar";
-            this.m_progressBar.Size = new System.Drawing.Size(297, 22);
+            this.m_progressBar.Size = new System.Drawing.Size(297, 23);
             this.m_progressBar.Step = 1;
             this.m_progressBar.TabIndex = 1;
             this.m_progressBar.Value = 72;
             // 
-            // button1
+            // m_btnNote
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.ImageIndex = 142;
-            this.button1.ImageList = this.m_smallIcons;
-            this.button1.Location = new System.Drawing.Point(200, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(26, 23);
-            this.button1.TabIndex = 6;
-            this.button1.UseVisualStyleBackColor = false;
+            this.m_btnNote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_btnNote.BackColor = System.Drawing.Color.Transparent;
+            this.m_btnNote.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.m_btnNote.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.m_btnNote.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.m_btnNote.ImageIndex = 142;
+            this.m_btnNote.ImageList = this.m_smallIcons;
+            this.m_btnNote.Location = new System.Drawing.Point(200, 18);
+            this.m_btnNote.Name = "m_btnNote";
+            this.m_btnNote.Size = new System.Drawing.Size(26, 23);
+            this.m_btnNote.TabIndex = 6;
+            this.m_btnNote.UseVisualStyleBackColor = false;
             // 
             // m_smallIcons
             // 
@@ -335,68 +335,69 @@
             this.m_smallIcons.Images.SetKeyName(223, "Yes.ico");
             this.m_smallIcons.Images.SetKeyName(224, "Zoom.ico");
             // 
-            // button2
+            // m_btnSetting
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.ImageIndex = 219;
-            this.button2.ImageList = this.m_smallIcons;
-            this.button2.Location = new System.Drawing.Point(232, 18);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(26, 23);
-            this.button2.TabIndex = 5;
-            this.button2.UseVisualStyleBackColor = false;
+            this.m_btnSetting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_btnSetting.BackColor = System.Drawing.Color.Transparent;
+            this.m_btnSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.m_btnSetting.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.m_btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.m_btnSetting.ImageIndex = 219;
+            this.m_btnSetting.ImageList = this.m_smallIcons;
+            this.m_btnSetting.Location = new System.Drawing.Point(232, 18);
+            this.m_btnSetting.Name = "m_btnSetting";
+            this.m_btnSetting.Size = new System.Drawing.Size(26, 23);
+            this.m_btnSetting.TabIndex = 5;
+            this.m_btnSetting.UseVisualStyleBackColor = false;
             // 
-            // m_authors
+            // m_btnDelete
             // 
-            this.m_authors.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_authors.BackColor = System.Drawing.Color.Transparent;
-            this.m_authors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.m_authors.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.m_authors.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.m_authors.ImageIndex = 50;
-            this.m_authors.ImageList = this.m_smallIcons;
-            this.m_authors.Location = new System.Drawing.Point(264, 18);
-            this.m_authors.Name = "m_authors";
-            this.m_authors.Size = new System.Drawing.Size(26, 23);
-            this.m_authors.TabIndex = 3;
-            this.m_authors.UseVisualStyleBackColor = false;
+            this.m_btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.m_btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.m_btnDelete.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.m_btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.m_btnDelete.ImageIndex = 50;
+            this.m_btnDelete.ImageList = this.m_smallIcons;
+            this.m_btnDelete.Location = new System.Drawing.Point(264, 18);
+            this.m_btnDelete.Name = "m_btnDelete";
+            this.m_btnDelete.Size = new System.Drawing.Size(26, 23);
+            this.m_btnDelete.TabIndex = 3;
+            this.m_btnDelete.UseVisualStyleBackColor = false;
+            this.m_btnDelete.Click += new System.EventHandler(this.m_btnDelete_Click);
             // 
-            // m_lastUpdate
+            // m_lblLastUpdate
             // 
-            this.m_lastUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_lastUpdate.AutoSize = true;
-            this.m_lastUpdate.BackColor = System.Drawing.Color.Transparent;
-            this.m_lastUpdate.Location = new System.Drawing.Point(173, 2);
-            this.m_lastUpdate.Name = "m_lastUpdate";
-            this.m_lastUpdate.Size = new System.Drawing.Size(121, 13);
-            this.m_lastUpdate.TabIndex = 2;
-            this.m_lastUpdate.Text = "Last update: 5/10/2015";
+            this.m_lblLastUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_lblLastUpdate.AutoSize = true;
+            this.m_lblLastUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.m_lblLastUpdate.Location = new System.Drawing.Point(173, 2);
+            this.m_lblLastUpdate.Name = "m_lblLastUpdate";
+            this.m_lblLastUpdate.Size = new System.Drawing.Size(121, 13);
+            this.m_lblLastUpdate.TabIndex = 2;
+            this.m_lblLastUpdate.Text = "Last update: 5/10/2015";
             // 
-            // label2
+            // m_lblGroupName
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(4, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Group 7";
+            this.m_lblGroupName.AutoSize = true;
+            this.m_lblGroupName.BackColor = System.Drawing.Color.Transparent;
+            this.m_lblGroupName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lblGroupName.Location = new System.Drawing.Point(4, 24);
+            this.m_lblGroupName.Name = "m_lblGroupName";
+            this.m_lblGroupName.Size = new System.Drawing.Size(89, 17);
+            this.m_lblGroupName.TabIndex = 1;
+            this.m_lblGroupName.Text = "Group Name";
             // 
-            // label1
+            // m_lblProjectName
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.label1.Location = new System.Drawing.Point(4, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Hotel Management";
+            this.m_lblProjectName.AutoSize = true;
+            this.m_lblProjectName.BackColor = System.Drawing.Color.Transparent;
+            this.m_lblProjectName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.m_lblProjectName.Location = new System.Drawing.Point(4, 4);
+            this.m_lblProjectName.Name = "m_lblProjectName";
+            this.m_lblProjectName.Size = new System.Drawing.Size(116, 20);
+            this.m_lblProjectName.TabIndex = 0;
+            this.m_lblProjectName.Text = "Project Name";
             // 
             // m_contexMenu
             // 
@@ -434,7 +435,8 @@
             this.Controls.Add(this.m_splitContainerProgressBar);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "ProjectDisplay";
-            this.Size = new System.Drawing.Size(299, 52);
+            this.Size = new System.Drawing.Size(299, 54);
+            this.Click += new System.EventHandler(this.loadInfo);
             this.m_splitContainerProgressBar.Panel1.ResumeLayout(false);
             this.m_splitContainerProgressBar.Panel2.ResumeLayout(false);
             this.m_splitContainerProgressBar.Panel2.PerformLayout();
@@ -449,19 +451,17 @@
 
         private System.Windows.Forms.SplitContainer m_splitContainerProgressBar;
         private System.Windows.Forms.ProgressBar m_progressBar;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label m_lastUpdate;
-        private System.Windows.Forms.Button m_authors;
+        private System.Windows.Forms.Label m_lblProjectName;
+        private System.Windows.Forms.Label m_lblGroupName;
+        private System.Windows.Forms.Label m_lblLastUpdate;
+        private System.Windows.Forms.Button m_btnDelete;
         private System.Windows.Forms.ImageList m_smallIcons;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button m_btnSetting;
+        private System.Windows.Forms.Button m_btnNote;
         private System.Windows.Forms.ContextMenuStrip m_contexMenu;
         private System.Windows.Forms.ToolStripMenuItem seeMoreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNoteToolStripMenuItem;
-
-
 
     }
 }
