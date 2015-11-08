@@ -56,6 +56,8 @@
             // 
             // m_sourceList
             // 
+            this.m_sourceList.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
+            this.m_sourceList.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.m_sourceList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_sourceList.Location = new System.Drawing.Point(0, 0);
             this.m_sourceList.Name = "m_sourceList";
@@ -64,7 +66,10 @@
             // 
             // m_newList
             // 
+            this.m_newList.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
+            this.m_newList.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.m_newList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_newList.Enabled = false;
             this.m_newList.Location = new System.Drawing.Point(0, 0);
             this.m_newList.Name = "m_newList";
             this.m_newList.Size = new System.Drawing.Size(349, 396);

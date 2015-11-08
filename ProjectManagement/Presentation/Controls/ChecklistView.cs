@@ -24,15 +24,29 @@ namespace Presentation.Controls
         public ChecklistView()
         {
             InitializeComponent();
-
-            TreeNode node = new TreeNode();
-            node.Text = "test";
-            node.ContextMenuStrip = m_rightClickMenu;
-            m_requestTree.Nodes.Add(node);
         }
 
         private void m_remove_Click(object sender, EventArgs e)
         {
+            if (m_requestTree.SelectedNode == m_root)
+                return;
+
+            m_requestTree.SelectedNode.Remove();
+        }
+
+        private void m_newSubRequest_Click(object sender, EventArgs e)
+        {
+            TreeNode node = new TreeNode();
+            node.Text = "New request";
+            node.ContextMenuStrip = m_rightClickMenu;
+            m_requestTree.SelectedNode.Nodes.Add(node);
+            m_requestTree.SelectedNode.Expand();
+            node.BeginEdit();
+        }
+
+        private void renameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            m_requestTree.SelectedNode.BeginEdit();
         }
     }
 }
