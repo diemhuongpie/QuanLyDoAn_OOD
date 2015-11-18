@@ -51,7 +51,7 @@
             // 
             this.m_splitContainerLists.Panel2.Controls.Add(this.m_newList);
             this.m_splitContainerLists.Size = new System.Drawing.Size(653, 396);
-            this.m_splitContainerLists.SplitterDistance = 300;
+            this.m_splitContainerLists.SplitterDistance = 319;
             this.m_splitContainerLists.TabIndex = 0;
             // 
             // m_sourceList
@@ -61,7 +61,7 @@
             this.m_sourceList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_sourceList.Location = new System.Drawing.Point(0, 0);
             this.m_sourceList.Name = "m_sourceList";
-            this.m_sourceList.Size = new System.Drawing.Size(300, 396);
+            this.m_sourceList.Size = new System.Drawing.Size(319, 396);
             this.m_sourceList.TabIndex = 0;
             // 
             // m_newList
@@ -72,7 +72,7 @@
             this.m_newList.Enabled = false;
             this.m_newList.Location = new System.Drawing.Point(0, 0);
             this.m_newList.Name = "m_newList";
-            this.m_newList.Size = new System.Drawing.Size(349, 396);
+            this.m_newList.Size = new System.Drawing.Size(330, 396);
             this.m_newList.TabIndex = 1;
             // 
             // ChecklistCompare

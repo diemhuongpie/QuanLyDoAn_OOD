@@ -28,8 +28,12 @@ namespace Presentation.Controls
 
         private void m_remove_Click(object sender, EventArgs e)
         {
-            if (m_requestTree.SelectedNode == m_root)
+            ToolStripMenuItem item = (ToolStripMenuItem)sender;
+
+            if (m_requestTree.SelectedNode == null)
+            {
                 return;
+            }
 
             m_requestTree.SelectedNode.Remove();
         }
@@ -38,9 +42,17 @@ namespace Presentation.Controls
         {
             TreeNode node = new TreeNode();
             node.Text = "New request";
-            node.ContextMenuStrip = m_rightClickMenu;
-            m_requestTree.SelectedNode.Nodes.Add(node);
-            m_requestTree.SelectedNode.Expand();
+
+            if (m_requestTree.SelectedNode != null)
+            {
+                m_requestTree.SelectedNode.Nodes.Add(node);
+                m_requestTree.SelectedNode.Expand();
+            }
+            else
+            {
+                m_requestTree.Nodes.Add(node);
+            }
+
             node.BeginEdit();
         }
 
@@ -48,5 +60,10 @@ namespace Presentation.Controls
         {
             m_requestTree.SelectedNode.BeginEdit();
         }
-    }
+
+        private void deselecting(object sender, EventArgs e)
+        {
+            m_requestTree.SelectedNode = null;
+        }
+      }
 }

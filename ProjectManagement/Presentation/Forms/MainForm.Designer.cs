@@ -51,8 +51,8 @@
             this.m_iconList = new System.Windows.Forms.ImageList(this.components);
             this.m_textboxSearchBox = new System.Windows.Forms.TextBox();
             this.m_spliterContainerPreviewPane = new System.Windows.Forms.SplitContainer();
-            this.m_projectList = new System.Windows.Forms.TableLayoutPanel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.m_projectExplorer = new Presentation.Controls.ProjectExplorer();
             this.m_menuBar.SuspendLayout();
             this.m_statusBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_splitContainerDirectoryTree)).BeginInit();
@@ -481,7 +481,7 @@
             // 
             // m_spliterContainerPreviewPane.Panel1
             // 
-            this.m_spliterContainerPreviewPane.Panel1.Controls.Add(this.m_projectList);
+            this.m_spliterContainerPreviewPane.Panel1.Controls.Add(this.m_projectExplorer);
             // 
             // m_spliterContainerPreviewPane.Panel2
             // 
@@ -489,21 +489,6 @@
             this.m_spliterContainerPreviewPane.Size = new System.Drawing.Size(583, 406);
             this.m_spliterContainerPreviewPane.SplitterDistance = 374;
             this.m_spliterContainerPreviewPane.TabIndex = 1;
-            // 
-            // m_projectList
-            // 
-            this.m_projectList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_projectList.AutoScroll = true;
-            this.m_projectList.AutoSize = true;
-            this.m_projectList.ColumnCount = 1;
-            this.m_projectList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.m_projectList.Location = new System.Drawing.Point(0, 0);
-            this.m_projectList.Name = "m_projectList";
-            this.m_projectList.RowCount = 1;
-            this.m_projectList.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.m_projectList.Size = new System.Drawing.Size(372, 412);
-            this.m_projectList.TabIndex = 3;
             // 
             // richTextBox1
             // 
@@ -516,6 +501,16 @@
             this.richTextBox1.Text = "Group 7:\n - Lê Minh Trung\n - Nguyễn Hoàng Thái\n - .............\n\nProject Overview" +
     "\n - Hotel Managerment Software for 3-star-awarded-hotel Tan Son Nhat.\n\nNote(s):\n" +
     " - Note 1\n - Note 2\n - Note 3";
+            // 
+            // m_projectExplorer
+            // 
+            this.m_projectExplorer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_projectExplorer.Location = new System.Drawing.Point(3, 3);
+            this.m_projectExplorer.Name = "m_projectExplorer";
+            this.m_projectExplorer.Size = new System.Drawing.Size(369, 400);
+            this.m_projectExplorer.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -544,7 +539,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_spliterContainerSeachBox)).EndInit();
             this.m_spliterContainerSeachBox.ResumeLayout(false);
             this.m_spliterContainerPreviewPane.Panel1.ResumeLayout(false);
-            this.m_spliterContainerPreviewPane.Panel1.PerformLayout();
             this.m_spliterContainerPreviewPane.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_spliterContainerPreviewPane)).EndInit();
             this.m_spliterContainerPreviewPane.ResumeLayout(false);
@@ -574,10 +568,10 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button m_btnSearch;
         private System.Windows.Forms.ImageList m_iconList;
-        private System.Windows.Forms.TableLayoutPanel m_projectList;
         private System.Windows.Forms.ToolStripMenuItem checklistToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem compareToolStripMenuItem;
+        private Controls.ProjectExplorer m_projectExplorer;
 
     }
 }

@@ -54,18 +54,31 @@ namespace Presentation.Controls
             this.Parent.Controls.Remove(this);
         }
 
-        private void loadInfo(object sender, EventArgs e)
+        public void deselect(object sender, EventArgs e)
         {
-            m_overview = "";
-            m_overview += m_lblGroupName.Text;
-            m_overview += "\n";
-            m_overview += " - \n";
-            m_overview += " - \n";
-            m_overview += " - \n";
-            m_overview += " - \n";
-            m_overview += "\nProject Overview:\n";
-            m_overview += "Description\n";
-            m_overview += "\nNote:\n";
+            m_backgroundPanel.BackColor = Color.White;
+        }
+
+        public void select ()
+        {
+            m_backgroundPanel.BackColor = Color.Red;
+        }
+
+        public bool isSelected ()
+        {
+            return (m_backgroundPanel.BackColor == Color.Red);
+        }
+
+        private void changeSelectStatus(object sender, EventArgs e)
+        {
+            if (isSelected())
+            {
+                deselect(null, EventArgs.Empty);
+            }
+            else
+            {
+                select();
+            }
         }
     }
 }

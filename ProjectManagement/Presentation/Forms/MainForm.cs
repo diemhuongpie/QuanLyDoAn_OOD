@@ -22,10 +22,29 @@ namespace Presentation
         {
             m_business = new MainFormBusiness();
             InitializeComponent();
-            foreach (ProjectDisplay prds in m_projectList.Controls)
-            {
-                prds.Dock = DockStyle.Top;
-            }
+            m_projectExplorer.AddProject(new ProjectDisplay());
+            m_projectExplorer.AddProject(new ProjectDisplay());
+            m_projectExplorer.AddProject(new ProjectDisplay());
+            m_projectExplorer.AddProject(new ProjectDisplay());
+            m_projectExplorer.AddProject(new ProjectDisplay());
+            m_projectExplorer.AddProject(new ProjectDisplay());
+            m_projectExplorer.AddProject(new ProjectDisplay());
+            m_projectExplorer.AddProject(new ProjectDisplay());
+            m_projectExplorer.AddProject(new ProjectDisplay());
+            m_projectExplorer.AddProject(new ProjectDisplay());
+            m_projectExplorer.AddProject(new ProjectDisplay());
+            m_projectExplorer.AddProject(new ProjectDisplay());
+            m_projectExplorer.AddProject(new ProjectDisplay());
+            m_projectExplorer.AddProject(new ProjectDisplay());
+            m_projectExplorer.AddProject(new ProjectDisplay());
+            m_projectExplorer.AddProject(new ProjectDisplay());
+            m_projectExplorer.AddProject(new ProjectDisplay());
+            m_projectExplorer.AddProject(new ProjectDisplay());
+            m_projectExplorer.AddProject(new ProjectDisplay());
+            m_projectExplorer.AddProject(new ProjectDisplay());
+            m_projectExplorer.AddProject(new ProjectDisplay());
+            m_projectExplorer.AddProject(new ProjectDisplay());
+            m_projectExplorer.AddProject(new ProjectDisplay());
         }
 
         private void FillChildNodes (TreeNode node)
@@ -64,7 +83,7 @@ namespace Presentation
 
             if (newPrjDialog.m_createdObject != null)
             {
-                m_projectList.Controls.Add(newPrjDialog.m_createdObject);
+                m_projectExplorer.AddProject(newPrjDialog.m_createdObject);
             }
         }
 

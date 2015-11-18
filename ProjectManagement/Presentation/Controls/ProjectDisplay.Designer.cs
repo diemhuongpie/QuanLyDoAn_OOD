@@ -30,80 +30,33 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectDisplay));
-            this.m_splitContainerProgressBar = new System.Windows.Forms.SplitContainer();
-            this.m_progressBar = new System.Windows.Forms.ProgressBar();
-            this.m_btnNote = new System.Windows.Forms.Button();
             this.m_smallIcons = new System.Windows.Forms.ImageList(this.components);
-            this.m_btnSetting = new System.Windows.Forms.Button();
-            this.m_btnDelete = new System.Windows.Forms.Button();
-            this.m_lblLastUpdate = new System.Windows.Forms.Label();
-            this.m_lblGroupName = new System.Windows.Forms.Label();
-            this.m_lblProjectName = new System.Windows.Forms.Label();
             this.m_contexMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.seeMoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_backgroundPanel = new System.Windows.Forms.Panel();
+            this.m_container = new System.Windows.Forms.Panel();
+            this.m_displayer = new System.Windows.Forms.Panel();
+            this.m_splitContainerProgressBar = new System.Windows.Forms.SplitContainer();
+            this.m_progressBar = new System.Windows.Forms.ProgressBar();
+            this.m_projectInfoContainer = new System.Windows.Forms.Panel();
+            this.m_lblProjectName = new System.Windows.Forms.Label();
+            this.m_lblGroupName = new System.Windows.Forms.Label();
+            this.m_lblLastUpdate = new System.Windows.Forms.Label();
+            this.m_btnDelete = new System.Windows.Forms.Button();
+            this.m_btnSetting = new System.Windows.Forms.Button();
+            this.m_btnNote = new System.Windows.Forms.Button();
+            this.m_contexMenu.SuspendLayout();
+            this.m_backgroundPanel.SuspendLayout();
+            this.m_container.SuspendLayout();
+            this.m_displayer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_splitContainerProgressBar)).BeginInit();
             this.m_splitContainerProgressBar.Panel1.SuspendLayout();
             this.m_splitContainerProgressBar.Panel2.SuspendLayout();
             this.m_splitContainerProgressBar.SuspendLayout();
-            this.m_contexMenu.SuspendLayout();
+            this.m_projectInfoContainer.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // m_splitContainerProgressBar
-            // 
-            this.m_splitContainerProgressBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_splitContainerProgressBar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_splitContainerProgressBar.IsSplitterFixed = true;
-            this.m_splitContainerProgressBar.Location = new System.Drawing.Point(0, 0);
-            this.m_splitContainerProgressBar.Margin = new System.Windows.Forms.Padding(0);
-            this.m_splitContainerProgressBar.Name = "m_splitContainerProgressBar";
-            this.m_splitContainerProgressBar.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // m_splitContainerProgressBar.Panel1
-            // 
-            this.m_splitContainerProgressBar.Panel1.Controls.Add(this.m_progressBar);
-            this.m_splitContainerProgressBar.Panel1MinSize = 5;
-            // 
-            // m_splitContainerProgressBar.Panel2
-            // 
-            this.m_splitContainerProgressBar.Panel2.Controls.Add(this.m_btnNote);
-            this.m_splitContainerProgressBar.Panel2.Controls.Add(this.m_btnSetting);
-            this.m_splitContainerProgressBar.Panel2.Controls.Add(this.m_btnDelete);
-            this.m_splitContainerProgressBar.Panel2.Controls.Add(this.m_lblLastUpdate);
-            this.m_splitContainerProgressBar.Panel2.Controls.Add(this.m_lblGroupName);
-            this.m_splitContainerProgressBar.Panel2.Controls.Add(this.m_lblProjectName);
-            this.m_splitContainerProgressBar.Panel2MinSize = 5;
-            this.m_splitContainerProgressBar.Size = new System.Drawing.Size(299, 54);
-            this.m_splitContainerProgressBar.SplitterDistance = 25;
-            this.m_splitContainerProgressBar.SplitterWidth = 1;
-            this.m_splitContainerProgressBar.TabIndex = 0;
-            // 
-            // m_progressBar
-            // 
-            this.m_progressBar.BackColor = System.Drawing.Color.White;
-            this.m_progressBar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_progressBar.Location = new System.Drawing.Point(0, 0);
-            this.m_progressBar.Name = "m_progressBar";
-            this.m_progressBar.Size = new System.Drawing.Size(297, 23);
-            this.m_progressBar.Step = 1;
-            this.m_progressBar.TabIndex = 1;
-            this.m_progressBar.Value = 72;
-            // 
-            // m_btnNote
-            // 
-            this.m_btnNote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_btnNote.BackColor = System.Drawing.Color.Transparent;
-            this.m_btnNote.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.m_btnNote.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.m_btnNote.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.m_btnNote.ImageIndex = 142;
-            this.m_btnNote.ImageList = this.m_smallIcons;
-            this.m_btnNote.Location = new System.Drawing.Point(200, 18);
-            this.m_btnNote.Name = "m_btnNote";
-            this.m_btnNote.Size = new System.Drawing.Size(26, 23);
-            this.m_btnNote.TabIndex = 6;
-            this.m_btnNote.UseVisualStyleBackColor = false;
             // 
             // m_smallIcons
             // 
@@ -335,70 +288,6 @@
             this.m_smallIcons.Images.SetKeyName(223, "Yes.ico");
             this.m_smallIcons.Images.SetKeyName(224, "Zoom.ico");
             // 
-            // m_btnSetting
-            // 
-            this.m_btnSetting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_btnSetting.BackColor = System.Drawing.Color.Transparent;
-            this.m_btnSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.m_btnSetting.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.m_btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.m_btnSetting.ImageIndex = 219;
-            this.m_btnSetting.ImageList = this.m_smallIcons;
-            this.m_btnSetting.Location = new System.Drawing.Point(232, 18);
-            this.m_btnSetting.Name = "m_btnSetting";
-            this.m_btnSetting.Size = new System.Drawing.Size(26, 23);
-            this.m_btnSetting.TabIndex = 5;
-            this.m_btnSetting.UseVisualStyleBackColor = false;
-            // 
-            // m_btnDelete
-            // 
-            this.m_btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_btnDelete.BackColor = System.Drawing.Color.Transparent;
-            this.m_btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.m_btnDelete.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.m_btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.m_btnDelete.ImageIndex = 50;
-            this.m_btnDelete.ImageList = this.m_smallIcons;
-            this.m_btnDelete.Location = new System.Drawing.Point(264, 18);
-            this.m_btnDelete.Name = "m_btnDelete";
-            this.m_btnDelete.Size = new System.Drawing.Size(26, 23);
-            this.m_btnDelete.TabIndex = 3;
-            this.m_btnDelete.UseVisualStyleBackColor = false;
-            this.m_btnDelete.Click += new System.EventHandler(this.m_btnDelete_Click);
-            // 
-            // m_lblLastUpdate
-            // 
-            this.m_lblLastUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_lblLastUpdate.AutoSize = true;
-            this.m_lblLastUpdate.BackColor = System.Drawing.Color.Transparent;
-            this.m_lblLastUpdate.Location = new System.Drawing.Point(173, 2);
-            this.m_lblLastUpdate.Name = "m_lblLastUpdate";
-            this.m_lblLastUpdate.Size = new System.Drawing.Size(121, 13);
-            this.m_lblLastUpdate.TabIndex = 2;
-            this.m_lblLastUpdate.Text = "Last update: 5/10/2015";
-            // 
-            // m_lblGroupName
-            // 
-            this.m_lblGroupName.AutoSize = true;
-            this.m_lblGroupName.BackColor = System.Drawing.Color.Transparent;
-            this.m_lblGroupName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lblGroupName.Location = new System.Drawing.Point(4, 24);
-            this.m_lblGroupName.Name = "m_lblGroupName";
-            this.m_lblGroupName.Size = new System.Drawing.Size(89, 17);
-            this.m_lblGroupName.TabIndex = 1;
-            this.m_lblGroupName.Text = "Group Name";
-            // 
-            // m_lblProjectName
-            // 
-            this.m_lblProjectName.AutoSize = true;
-            this.m_lblProjectName.BackColor = System.Drawing.Color.Transparent;
-            this.m_lblProjectName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.m_lblProjectName.Location = new System.Drawing.Point(4, 4);
-            this.m_lblProjectName.Name = "m_lblProjectName";
-            this.m_lblProjectName.Size = new System.Drawing.Size(116, 20);
-            this.m_lblProjectName.TabIndex = 0;
-            this.m_lblProjectName.Text = "Project Name";
-            // 
             // m_contexMenu
             // 
             this.m_contexMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -426,42 +315,227 @@
             this.addNoteToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.addNoteToolStripMenuItem.Text = "Add note";
             // 
+            // m_backgroundPanel
+            // 
+            this.m_backgroundPanel.BackColor = System.Drawing.Color.White;
+            this.m_backgroundPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_backgroundPanel.Controls.Add(this.m_container);
+            this.m_backgroundPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_backgroundPanel.ForeColor = System.Drawing.Color.Black;
+            this.m_backgroundPanel.Location = new System.Drawing.Point(0, 0);
+            this.m_backgroundPanel.Name = "m_backgroundPanel";
+            this.m_backgroundPanel.Size = new System.Drawing.Size(304, 64);
+            this.m_backgroundPanel.TabIndex = 3;
+            this.m_backgroundPanel.Click += new System.EventHandler(this.changeSelectStatus);
+            // 
+            // m_container
+            // 
+            this.m_container.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_container.BackColor = System.Drawing.Color.White;
+            this.m_container.Controls.Add(this.m_displayer);
+            this.m_container.Location = new System.Drawing.Point(2, 2);
+            this.m_container.Name = "m_container";
+            this.m_container.Size = new System.Drawing.Size(298, 58);
+            this.m_container.TabIndex = 0;
+            this.m_container.Click += new System.EventHandler(this.changeSelectStatus);
+            // 
+            // m_displayer
+            // 
+            this.m_displayer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_displayer.BackColor = System.Drawing.Color.White;
+            this.m_displayer.Controls.Add(this.m_splitContainerProgressBar);
+            this.m_displayer.Location = new System.Drawing.Point(2, 2);
+            this.m_displayer.Margin = new System.Windows.Forms.Padding(0);
+            this.m_displayer.Name = "m_displayer";
+            this.m_displayer.Size = new System.Drawing.Size(294, 54);
+            this.m_displayer.TabIndex = 2;
+            this.m_displayer.Click += new System.EventHandler(this.changeSelectStatus);
+            // 
+            // m_splitContainerProgressBar
+            // 
+            this.m_splitContainerProgressBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_splitContainerProgressBar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_splitContainerProgressBar.IsSplitterFixed = true;
+            this.m_splitContainerProgressBar.Location = new System.Drawing.Point(0, 0);
+            this.m_splitContainerProgressBar.Name = "m_splitContainerProgressBar";
+            this.m_splitContainerProgressBar.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // m_splitContainerProgressBar.Panel1
+            // 
+            this.m_splitContainerProgressBar.Panel1.Controls.Add(this.m_progressBar);
+            this.m_splitContainerProgressBar.Panel1.Click += new System.EventHandler(this.changeSelectStatus);
+            this.m_splitContainerProgressBar.Panel1MinSize = 5;
+            // 
+            // m_splitContainerProgressBar.Panel2
+            // 
+            this.m_splitContainerProgressBar.Panel2.Controls.Add(this.m_projectInfoContainer);
+            this.m_splitContainerProgressBar.Panel2.Click += new System.EventHandler(this.changeSelectStatus);
+            this.m_splitContainerProgressBar.Panel2MinSize = 5;
+            this.m_splitContainerProgressBar.Size = new System.Drawing.Size(294, 54);
+            this.m_splitContainerProgressBar.SplitterDistance = 25;
+            this.m_splitContainerProgressBar.SplitterWidth = 1;
+            this.m_splitContainerProgressBar.TabIndex = 2;
+            this.m_splitContainerProgressBar.Click += new System.EventHandler(this.changeSelectStatus);
+            // 
+            // m_progressBar
+            // 
+            this.m_progressBar.BackColor = System.Drawing.Color.White;
+            this.m_progressBar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_progressBar.Location = new System.Drawing.Point(0, 0);
+            this.m_progressBar.Name = "m_progressBar";
+            this.m_progressBar.Size = new System.Drawing.Size(292, 23);
+            this.m_progressBar.Step = 1;
+            this.m_progressBar.TabIndex = 1;
+            this.m_progressBar.Value = 72;
+            this.m_progressBar.Click += new System.EventHandler(this.changeSelectStatus);
+            // 
+            // m_projectInfoContainer
+            // 
+            this.m_projectInfoContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_projectInfoContainer.Controls.Add(this.m_lblProjectName);
+            this.m_projectInfoContainer.Controls.Add(this.m_lblGroupName);
+            this.m_projectInfoContainer.Controls.Add(this.m_lblLastUpdate);
+            this.m_projectInfoContainer.Controls.Add(this.m_btnDelete);
+            this.m_projectInfoContainer.Controls.Add(this.m_btnSetting);
+            this.m_projectInfoContainer.Controls.Add(this.m_btnNote);
+            this.m_projectInfoContainer.Location = new System.Drawing.Point(1, 1);
+            this.m_projectInfoContainer.Name = "m_projectInfoContainer";
+            this.m_projectInfoContainer.Size = new System.Drawing.Size(287, 29);
+            this.m_projectInfoContainer.TabIndex = 7;
+            this.m_projectInfoContainer.Click += new System.EventHandler(this.changeSelectStatus);
+            this.m_projectInfoContainer.Leave += new System.EventHandler(this.deselect);
+            // 
+            // m_lblProjectName
+            // 
+            this.m_lblProjectName.AutoSize = true;
+            this.m_lblProjectName.BackColor = System.Drawing.Color.Transparent;
+            this.m_lblProjectName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.m_lblProjectName.Location = new System.Drawing.Point(4, 4);
+            this.m_lblProjectName.Name = "m_lblProjectName";
+            this.m_lblProjectName.Size = new System.Drawing.Size(116, 20);
+            this.m_lblProjectName.TabIndex = 0;
+            this.m_lblProjectName.Text = "Project Name";
+            // 
+            // m_lblGroupName
+            // 
+            this.m_lblGroupName.AutoSize = true;
+            this.m_lblGroupName.BackColor = System.Drawing.Color.Transparent;
+            this.m_lblGroupName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lblGroupName.Location = new System.Drawing.Point(4, 24);
+            this.m_lblGroupName.Name = "m_lblGroupName";
+            this.m_lblGroupName.Size = new System.Drawing.Size(89, 17);
+            this.m_lblGroupName.TabIndex = 1;
+            this.m_lblGroupName.Text = "Group Name";
+            // 
+            // m_lblLastUpdate
+            // 
+            this.m_lblLastUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_lblLastUpdate.AutoSize = true;
+            this.m_lblLastUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.m_lblLastUpdate.Location = new System.Drawing.Point(166, 2);
+            this.m_lblLastUpdate.Name = "m_lblLastUpdate";
+            this.m_lblLastUpdate.Size = new System.Drawing.Size(121, 13);
+            this.m_lblLastUpdate.TabIndex = 2;
+            this.m_lblLastUpdate.Text = "Last update: 5/10/2015";
+            // 
+            // m_btnDelete
+            // 
+            this.m_btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.m_btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.m_btnDelete.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.m_btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.m_btnDelete.ImageIndex = 50;
+            this.m_btnDelete.ImageList = this.m_smallIcons;
+            this.m_btnDelete.Location = new System.Drawing.Point(257, 18);
+            this.m_btnDelete.Name = "m_btnDelete";
+            this.m_btnDelete.Size = new System.Drawing.Size(26, 23);
+            this.m_btnDelete.TabIndex = 3;
+            this.m_btnDelete.UseVisualStyleBackColor = false;
+            this.m_btnDelete.Click += new System.EventHandler(this.m_btnDelete_Click);
+            // 
+            // m_btnSetting
+            // 
+            this.m_btnSetting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_btnSetting.BackColor = System.Drawing.Color.Transparent;
+            this.m_btnSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.m_btnSetting.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.m_btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.m_btnSetting.ImageIndex = 219;
+            this.m_btnSetting.ImageList = this.m_smallIcons;
+            this.m_btnSetting.Location = new System.Drawing.Point(225, 18);
+            this.m_btnSetting.Name = "m_btnSetting";
+            this.m_btnSetting.Size = new System.Drawing.Size(26, 23);
+            this.m_btnSetting.TabIndex = 5;
+            this.m_btnSetting.UseVisualStyleBackColor = false;
+            // 
+            // m_btnNote
+            // 
+            this.m_btnNote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_btnNote.BackColor = System.Drawing.Color.Transparent;
+            this.m_btnNote.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.m_btnNote.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.m_btnNote.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.m_btnNote.ImageIndex = 142;
+            this.m_btnNote.ImageList = this.m_smallIcons;
+            this.m_btnNote.Location = new System.Drawing.Point(193, 18);
+            this.m_btnNote.Name = "m_btnNote";
+            this.m_btnNote.Size = new System.Drawing.Size(26, 23);
+            this.m_btnNote.TabIndex = 6;
+            this.m_btnNote.UseVisualStyleBackColor = false;
+            // 
             // ProjectDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.m_splitContainerProgressBar);
+            this.Controls.Add(this.m_backgroundPanel);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ProjectDisplay";
-            this.Size = new System.Drawing.Size(299, 54);
-            this.Click += new System.EventHandler(this.loadInfo);
+            this.Size = new System.Drawing.Size(304, 64);
+            this.Click += new System.EventHandler(this.changeSelectStatus);
+            this.m_contexMenu.ResumeLayout(false);
+            this.m_backgroundPanel.ResumeLayout(false);
+            this.m_container.ResumeLayout(false);
+            this.m_displayer.ResumeLayout(false);
             this.m_splitContainerProgressBar.Panel1.ResumeLayout(false);
             this.m_splitContainerProgressBar.Panel2.ResumeLayout(false);
-            this.m_splitContainerProgressBar.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_splitContainerProgressBar)).EndInit();
             this.m_splitContainerProgressBar.ResumeLayout(false);
-            this.m_contexMenu.ResumeLayout(false);
+            this.m_projectInfoContainer.ResumeLayout(false);
+            this.m_projectInfoContainer.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.SplitContainer m_splitContainerProgressBar;
-        private System.Windows.Forms.ProgressBar m_progressBar;
-        private System.Windows.Forms.Label m_lblProjectName;
-        private System.Windows.Forms.Label m_lblGroupName;
-        private System.Windows.Forms.Label m_lblLastUpdate;
-        private System.Windows.Forms.Button m_btnDelete;
-        private System.Windows.Forms.ImageList m_smallIcons;
-        private System.Windows.Forms.Button m_btnSetting;
-        private System.Windows.Forms.Button m_btnNote;
-        private System.Windows.Forms.ContextMenuStrip m_contexMenu;
-        private System.Windows.Forms.ToolStripMenuItem seeMoreToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addNoteToolStripMenuItem;
+       private System.Windows.Forms.ImageList m_smallIcons;
+       private System.Windows.Forms.ContextMenuStrip m_contexMenu;
+       private System.Windows.Forms.ToolStripMenuItem seeMoreToolStripMenuItem;
+       private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+       private System.Windows.Forms.ToolStripMenuItem addNoteToolStripMenuItem;
+       private System.Windows.Forms.Panel m_backgroundPanel;
+       private System.Windows.Forms.Panel m_container;
+       private System.Windows.Forms.Panel m_displayer;
+       private System.Windows.Forms.SplitContainer m_splitContainerProgressBar;
+       private System.Windows.Forms.ProgressBar m_progressBar;
+       private System.Windows.Forms.Panel m_projectInfoContainer;
+       private System.Windows.Forms.Label m_lblProjectName;
+       private System.Windows.Forms.Label m_lblGroupName;
+       private System.Windows.Forms.Label m_lblLastUpdate;
+       private System.Windows.Forms.Button m_btnDelete;
+       private System.Windows.Forms.Button m_btnSetting;
+       private System.Windows.Forms.Button m_btnNote;
+
 
     }
 }
