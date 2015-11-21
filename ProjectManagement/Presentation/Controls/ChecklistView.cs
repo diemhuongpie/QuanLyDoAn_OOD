@@ -30,12 +30,10 @@ namespace Presentation.Controls
         {
             ToolStripMenuItem item = (ToolStripMenuItem)sender;
 
-            if (m_requestTree.SelectedNode == null)
+            if (m_requestTree.SelectedNode != null)
             {
-                return;
+                m_requestTree.SelectedNode.Remove();                
             }
-
-            m_requestTree.SelectedNode.Remove();
         }
 
         private void m_newSubRequest_Click(object sender, EventArgs e)
@@ -58,12 +56,21 @@ namespace Presentation.Controls
 
         private void renameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            m_requestTree.SelectedNode.BeginEdit();
+            if (m_requestTree.SelectedNode != null)
+            {
+                m_requestTree.SelectedNode.BeginEdit();
+            }
         }
 
         private void deselecting(object sender, EventArgs e)
         {
             m_requestTree.SelectedNode = null;
+        }
+
+        public void deactivate()
+        {
+            this.Enabled = false;
+            this.m_menuBar.Visible = false;
         }
       }
 }

@@ -32,11 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChecklistView));
             this.m_requestTree = new System.Windows.Forms.TreeView();
             this.m_icons = new System.Windows.Forms.ImageList(this.components);
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.m_menuBar = new System.Windows.Forms.MenuStrip();
             this.newSubRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.deselect = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_menuBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_requestTree
@@ -49,7 +50,7 @@
             this.m_requestTree.Location = new System.Drawing.Point(0, 24);
             this.m_requestTree.Name = "m_requestTree";
             this.m_requestTree.SelectedImageIndex = 0;
-            this.m_requestTree.Size = new System.Drawing.Size(366, 457);
+            this.m_requestTree.Size = new System.Drawing.Size(481, 457);
             this.m_requestTree.TabIndex = 0;
             this.m_requestTree.Click += new System.EventHandler(this.deselecting);
             // 
@@ -63,17 +64,17 @@
             this.m_icons.Images.SetKeyName(3, "Yes.ico");
             this.m_icons.Images.SetKeyName(4, "Red mark.ico");
             // 
-            // menuStrip1
+            // m_menuBar
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newSubRequestToolStripMenuItem,
             this.deleteToolStripMenuItem,
-            this.renameToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(366, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "m_menuBar";
+            this.renameToolStripMenuItem,
+            this.deselect});
+            this.m_menuBar.Location = new System.Drawing.Point(0, 0);
+            this.m_menuBar.Name = "m_menuBar";
+            this.m_menuBar.Size = new System.Drawing.Size(481, 24);
+            this.m_menuBar.TabIndex = 1;
             // 
             // newSubRequestToolStripMenuItem
             // 
@@ -105,16 +106,25 @@
             this.renameToolStripMenuItem.ToolTipText = "F2";
             this.renameToolStripMenuItem.Click += new System.EventHandler(this.renameToolStripMenuItem_Click);
             // 
+            // deselect
+            // 
+            this.deselect.Name = "deselect";
+            this.deselect.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
+            this.deselect.Size = new System.Drawing.Size(115, 20);
+            this.deselect.Text = "Deselect (Ctrl + D)";
+            this.deselect.Visible = false;
+            this.deselect.Click += new System.EventHandler(this.deselecting);
+            // 
             // ChecklistView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.m_requestTree);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.m_menuBar);
             this.Name = "ChecklistView";
-            this.Size = new System.Drawing.Size(366, 481);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.Size = new System.Drawing.Size(481, 481);
+            this.m_menuBar.ResumeLayout(false);
+            this.m_menuBar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,9 +134,10 @@
 
         private System.Windows.Forms.ImageList m_icons;
         private System.Windows.Forms.TreeView m_requestTree;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip m_menuBar;
         private System.Windows.Forms.ToolStripMenuItem newSubRequestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem renameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deselect;
     }
 }

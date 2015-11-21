@@ -39,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainFormBusiness.cs" />
+    <Compile Include="TreeviewExplorerBusiness.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

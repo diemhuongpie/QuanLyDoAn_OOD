@@ -33,26 +33,30 @@
             this.m_menuBar = new System.Windows.Forms.MenuStrip();
             this.projectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.directoryTreeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.previewPaneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seachPaneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checklistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newChecklistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.compareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_statusBar = new System.Windows.Forms.StatusStrip();
             this.m_numOfProjects = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_numOfSelectedProprojects = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_splitContainerDirectoryTree = new System.Windows.Forms.SplitContainer();
-            this.m_directoryTreeView = new System.Windows.Forms.TreeView();
+            this.m_directoryTreeView = new Presentation.Controls.TreeviewExplorer();
             this.m_spliterContainerSeachBox = new System.Windows.Forms.SplitContainer();
+            this.m_grpFilters = new System.Windows.Forms.GroupBox();
+            this.m_filterContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.m_btnAddFilter = new System.Windows.Forms.Button();
+            this.m_cboSeachType = new System.Windows.Forms.ComboBox();
             this.m_btnSearch = new System.Windows.Forms.Button();
             this.m_iconList = new System.Windows.Forms.ImageList(this.components);
             this.m_textboxSearchBox = new System.Windows.Forms.TextBox();
             this.m_spliterContainerPreviewPane = new System.Windows.Forms.SplitContainer();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.m_projectExplorer = new Presentation.Controls.ProjectExplorer();
+            this.m_previewPane = new System.Windows.Forms.RichTextBox();
             this.m_menuBar.SuspendLayout();
             this.m_statusBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_splitContainerDirectoryTree)).BeginInit();
@@ -63,6 +67,8 @@
             this.m_spliterContainerSeachBox.Panel1.SuspendLayout();
             this.m_spliterContainerSeachBox.Panel2.SuspendLayout();
             this.m_spliterContainerSeachBox.SuspendLayout();
+            this.m_grpFilters.SuspendLayout();
+            this.m_filterContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_spliterContainerPreviewPane)).BeginInit();
             this.m_spliterContainerPreviewPane.Panel1.SuspendLayout();
             this.m_spliterContainerPreviewPane.Panel2.SuspendLayout();
@@ -83,8 +89,7 @@
             // projectsToolStripMenuItem
             // 
             this.projectsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addToolStripMenuItem,
-            this.removeToolStripMenuItem});
+            this.addToolStripMenuItem});
             this.projectsToolStripMenuItem.Name = "projectsToolStripMenuItem";
             this.projectsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.projectsToolStripMenuItem.Text = "Projects";
@@ -92,63 +97,80 @@
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.addToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.AddNewProject);
-            // 
-            // removeToolStripMenuItem
-            // 
-            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.removeToolStripMenuItem.Text = "Remove";
             // 
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.directoryTreeToolStripMenuItem,
             this.statusBarToolStripMenuItem,
-            this.previewPaneToolStripMenuItem});
+            this.previewPaneToolStripMenuItem,
+            this.seachPaneToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // directoryTreeToolStripMenuItem
             // 
+            this.directoryTreeToolStripMenuItem.Checked = true;
+            this.directoryTreeToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.directoryTreeToolStripMenuItem.Name = "directoryTreeToolStripMenuItem";
             this.directoryTreeToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.directoryTreeToolStripMenuItem.Text = "Directory Tree";
+            this.directoryTreeToolStripMenuItem.Click += new System.EventHandler(this.showHideDirectoryTree);
             // 
             // statusBarToolStripMenuItem
             // 
+            this.statusBarToolStripMenuItem.Checked = true;
+            this.statusBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.statusBarToolStripMenuItem.Name = "statusBarToolStripMenuItem";
             this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.statusBarToolStripMenuItem.Text = "Status Bar";
+            this.statusBarToolStripMenuItem.Click += new System.EventHandler(this.showHideStatusBar);
             // 
             // previewPaneToolStripMenuItem
             // 
+            this.previewPaneToolStripMenuItem.Checked = true;
+            this.previewPaneToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.previewPaneToolStripMenuItem.Name = "previewPaneToolStripMenuItem";
             this.previewPaneToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.previewPaneToolStripMenuItem.Text = "Preview Pane";
+            this.previewPaneToolStripMenuItem.Click += new System.EventHandler(this.showHidePreviewPane);
+            // 
+            // seachPaneToolStripMenuItem
+            // 
+            this.seachPaneToolStripMenuItem.Checked = true;
+            this.seachPaneToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.seachPaneToolStripMenuItem.Name = "seachPaneToolStripMenuItem";
+            this.seachPaneToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.seachPaneToolStripMenuItem.Text = "Seach Pane";
+            this.seachPaneToolStripMenuItem.Click += new System.EventHandler(this.showHideSeachPane);
             // 
             // checklistToolStripMenuItem
             // 
             this.checklistToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exportToolStripMenuItem,
+            this.newChecklistToolStripMenuItem,
             this.compareToolStripMenuItem});
             this.checklistToolStripMenuItem.Name = "checklistToolStripMenuItem";
             this.checklistToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.checklistToolStripMenuItem.Text = "Checklist";
             // 
-            // exportToolStripMenuItem
+            // newChecklistToolStripMenuItem
             // 
-            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.exportToolStripMenuItem.Text = "Export";
+            this.newChecklistToolStripMenuItem.Name = "newChecklistToolStripMenuItem";
+            this.newChecklistToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.N)));
+            this.newChecklistToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.newChecklistToolStripMenuItem.Text = "New";
+            this.newChecklistToolStripMenuItem.Click += new System.EventHandler(this.createChecklist);
             // 
             // compareToolStripMenuItem
             // 
             this.compareToolStripMenuItem.Name = "compareToolStripMenuItem";
-            this.compareToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.compareToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.compareToolStripMenuItem.Text = "Compare";
             this.compareToolStripMenuItem.Click += new System.EventHandler(this.compareToolStripMenuItem_Click);
             // 
@@ -199,7 +221,6 @@
             this.m_directoryTreeView.Name = "m_directoryTreeView";
             this.m_directoryTreeView.Size = new System.Drawing.Size(181, 438);
             this.m_directoryTreeView.TabIndex = 0;
-            this.m_directoryTreeView.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.ExpandTreeNode);
             // 
             // m_spliterContainerSeachBox
             // 
@@ -211,6 +232,8 @@
             // 
             // m_spliterContainerSeachBox.Panel1
             // 
+            this.m_spliterContainerSeachBox.Panel1.Controls.Add(this.m_grpFilters);
+            this.m_spliterContainerSeachBox.Panel1.Controls.Add(this.m_cboSeachType);
             this.m_spliterContainerSeachBox.Panel1.Controls.Add(this.m_btnSearch);
             this.m_spliterContainerSeachBox.Panel1.Controls.Add(this.m_textboxSearchBox);
             this.m_spliterContainerSeachBox.Panel1MinSize = 1;
@@ -219,8 +242,54 @@
             // 
             this.m_spliterContainerSeachBox.Panel2.Controls.Add(this.m_spliterContainerPreviewPane);
             this.m_spliterContainerSeachBox.Size = new System.Drawing.Size(583, 438);
-            this.m_spliterContainerSeachBox.SplitterDistance = 28;
+            this.m_spliterContainerSeachBox.SplitterDistance = 75;
             this.m_spliterContainerSeachBox.TabIndex = 0;
+            // 
+            // m_grpFilters
+            // 
+            this.m_grpFilters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_grpFilters.Controls.Add(this.m_filterContainer);
+            this.m_grpFilters.Location = new System.Drawing.Point(3, 30);
+            this.m_grpFilters.Name = "m_grpFilters";
+            this.m_grpFilters.Size = new System.Drawing.Size(575, 46);
+            this.m_grpFilters.TabIndex = 3;
+            this.m_grpFilters.TabStop = false;
+            this.m_grpFilters.Text = "Tag Filter";
+            // 
+            // m_filterContainer
+            // 
+            this.m_filterContainer.AutoScroll = true;
+            this.m_filterContainer.Controls.Add(this.m_btnAddFilter);
+            this.m_filterContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_filterContainer.Location = new System.Drawing.Point(3, 16);
+            this.m_filterContainer.Name = "m_filterContainer";
+            this.m_filterContainer.Size = new System.Drawing.Size(569, 27);
+            this.m_filterContainer.TabIndex = 0;
+            // 
+            // m_btnAddFilter
+            // 
+            this.m_btnAddFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_btnAddFilter.Location = new System.Drawing.Point(3, 3);
+            this.m_btnAddFilter.Name = "m_btnAddFilter";
+            this.m_btnAddFilter.Size = new System.Drawing.Size(30, 20);
+            this.m_btnAddFilter.TabIndex = 0;
+            this.m_btnAddFilter.Text = "+";
+            this.m_btnAddFilter.UseVisualStyleBackColor = true;
+            this.m_btnAddFilter.Click += new System.EventHandler(this.m_btnAddFilter_Click);
+            // 
+            // m_cboSeachType
+            // 
+            this.m_cboSeachType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_cboSeachType.Items.AddRange(new object[] {
+            "Project Name",
+            "Group Name",
+            "Last Update Time"});
+            this.m_cboSeachType.Location = new System.Drawing.Point(436, 3);
+            this.m_cboSeachType.Name = "m_cboSeachType";
+            this.m_cboSeachType.Size = new System.Drawing.Size(116, 21);
+            this.m_cboSeachType.TabIndex = 2;
+            this.m_cboSeachType.Text = "Project Name";
             // 
             // m_btnSearch
             // 
@@ -469,13 +538,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.m_textboxSearchBox.Location = new System.Drawing.Point(3, 4);
             this.m_textboxSearchBox.Name = "m_textboxSearchBox";
-            this.m_textboxSearchBox.Size = new System.Drawing.Size(549, 20);
+            this.m_textboxSearchBox.Size = new System.Drawing.Size(427, 20);
             this.m_textboxSearchBox.TabIndex = 0;
             // 
             // m_spliterContainerPreviewPane
             // 
             this.m_spliterContainerPreviewPane.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_spliterContainerPreviewPane.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.m_spliterContainerPreviewPane.Location = new System.Drawing.Point(0, 0);
             this.m_spliterContainerPreviewPane.Name = "m_spliterContainerPreviewPane";
             // 
@@ -485,32 +553,37 @@
             // 
             // m_spliterContainerPreviewPane.Panel2
             // 
-            this.m_spliterContainerPreviewPane.Panel2.Controls.Add(this.richTextBox1);
-            this.m_spliterContainerPreviewPane.Size = new System.Drawing.Size(583, 406);
+            this.m_spliterContainerPreviewPane.Panel2.Controls.Add(this.m_previewPane);
+            this.m_spliterContainerPreviewPane.Size = new System.Drawing.Size(583, 359);
             this.m_spliterContainerPreviewPane.SplitterDistance = 374;
             this.m_spliterContainerPreviewPane.TabIndex = 1;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(205, 406);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "Group 7:\n - Lê Minh Trung\n - Nguyễn Hoàng Thái\n - .............\n\nProject Overview" +
-    "\n - Hotel Managerment Software for 3-star-awarded-hotel Tan Son Nhat.\n\nNote(s):\n" +
-    " - Note 1\n - Note 2\n - Note 3";
             // 
             // m_projectExplorer
             // 
             this.m_projectExplorer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_projectExplorer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_projectExplorer.Location = new System.Drawing.Point(3, 3);
             this.m_projectExplorer.Name = "m_projectExplorer";
-            this.m_projectExplorer.Size = new System.Drawing.Size(369, 400);
+            this.m_projectExplorer.Size = new System.Drawing.Size(369, 353);
             this.m_projectExplorer.TabIndex = 0;
+            // 
+            // m_previewPane
+            // 
+            this.m_previewPane.BackColor = System.Drawing.Color.White;
+            this.m_previewPane.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_previewPane.CausesValidation = false;
+            this.m_previewPane.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_previewPane.Location = new System.Drawing.Point(0, 0);
+            this.m_previewPane.Name = "m_previewPane";
+            this.m_previewPane.ReadOnly = true;
+            this.m_previewPane.Size = new System.Drawing.Size(205, 359);
+            this.m_previewPane.TabIndex = 0;
+            this.m_previewPane.TabStop = false;
+            this.m_previewPane.Text = "Group 7:\n - Lê Minh Trung\n - Nguyễn Hoàng Thái\n - .............\n\nProject Overview" +
+    "\n - Hotel Managerment Software for 3-star-awarded-hotel Tan Son Nhat.\n\nNote(s):\n" +
+    " - Note 1\n - Note 2\n - Note 3";
             // 
             // MainForm
             // 
@@ -524,7 +597,6 @@
             this.Name = "MainForm";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.Text = "Course Projects Manager";
-            this.Load += new System.EventHandler(this.LoadingContent);
             this.m_menuBar.ResumeLayout(false);
             this.m_menuBar.PerformLayout();
             this.m_statusBar.ResumeLayout(false);
@@ -538,6 +610,8 @@
             this.m_spliterContainerSeachBox.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_spliterContainerSeachBox)).EndInit();
             this.m_spliterContainerSeachBox.ResumeLayout(false);
+            this.m_grpFilters.ResumeLayout(false);
+            this.m_filterContainer.ResumeLayout(false);
             this.m_spliterContainerPreviewPane.Panel1.ResumeLayout(false);
             this.m_spliterContainerPreviewPane.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_spliterContainerPreviewPane)).EndInit();
@@ -552,10 +626,8 @@
         private System.Windows.Forms.MenuStrip m_menuBar;
         private System.Windows.Forms.StatusStrip m_statusBar;
         private System.Windows.Forms.SplitContainer m_splitContainerDirectoryTree;
-        private System.Windows.Forms.TreeView m_directoryTreeView;
         private System.Windows.Forms.ToolStripMenuItem projectsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem directoryTreeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem statusBarToolStripMenuItem;
@@ -565,13 +637,19 @@
         private System.Windows.Forms.SplitContainer m_spliterContainerSeachBox;
         private System.Windows.Forms.TextBox m_textboxSearchBox;
         private System.Windows.Forms.SplitContainer m_spliterContainerPreviewPane;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox m_previewPane;
         private System.Windows.Forms.Button m_btnSearch;
         private System.Windows.Forms.ImageList m_iconList;
         private System.Windows.Forms.ToolStripMenuItem checklistToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newChecklistToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem compareToolStripMenuItem;
         private Controls.ProjectExplorer m_projectExplorer;
+        private System.Windows.Forms.ToolStripMenuItem seachPaneToolStripMenuItem;
+        private System.Windows.Forms.ComboBox m_cboSeachType;
+        private System.Windows.Forms.GroupBox m_grpFilters;
+        private System.Windows.Forms.FlowLayoutPanel m_filterContainer;
+        private System.Windows.Forms.Button m_btnAddFilter;
+        private Controls.TreeviewExplorer m_directoryTreeView;
 
     }
 }

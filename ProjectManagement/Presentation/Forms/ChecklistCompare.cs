@@ -15,6 +15,8 @@ namespace Presentation.Controls
         public ChecklistCompare()
         {
             InitializeComponent();
+            m_sourceList.deactivate();
+            m_newList.deactivate();
         }
     }
 }

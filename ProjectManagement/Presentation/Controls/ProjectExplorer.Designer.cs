@@ -60,6 +60,7 @@
             // 
             this.m_spliterToolBar_ProjectList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_spliterToolBar_ProjectList.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.m_spliterToolBar_ProjectList.IsSplitterFixed = true;
             this.m_spliterToolBar_ProjectList.Location = new System.Drawing.Point(0, 0);
             this.m_spliterToolBar_ProjectList.Name = "m_spliterToolBar_ProjectList";
             this.m_spliterToolBar_ProjectList.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -91,8 +92,8 @@
             // 
             this.m_delete.Name = "m_delete";
             this.m_delete.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.m_delete.Size = new System.Drawing.Size(52, 20);
-            this.m_delete.Text = "Delete";
+            this.m_delete.Size = new System.Drawing.Size(80, 20);
+            this.m_delete.Text = "Delete (Del)";
             this.m_delete.ToolTipText = "Del";
             this.m_delete.Click += new System.EventHandler(this.deleteSelectedProjects);
             // 
@@ -100,8 +101,8 @@
             // 
             this.m_deselect.Name = "m_deselect";
             this.m_deselect.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.m_deselect.Size = new System.Drawing.Size(63, 20);
-            this.m_deselect.Text = "Deselect";
+            this.m_deselect.Size = new System.Drawing.Size(115, 20);
+            this.m_deselect.Text = "Deselect (Ctrl + D)";
             this.m_deselect.ToolTipText = "Ctrl + D";
             this.m_deselect.Click += new System.EventHandler(this.deselectProjects);
             // 
