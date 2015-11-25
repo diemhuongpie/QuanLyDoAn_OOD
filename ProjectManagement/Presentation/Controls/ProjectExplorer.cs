@@ -9,11 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Presentation.Controls;
+using BusinessLogic;
+using DataAccess;
 
 namespace Presentation.Controls
 {
     public partial class ProjectExplorer : UserControl
     {
+        private ProjectExplorerBusiness m_business = new ProjectExplorerBusiness();
+
         public ProjectExplorer()
         {
             InitializeComponent();
@@ -23,6 +27,21 @@ namespace Presentation.Controls
         {
             m_projectList.Controls.Add(prjdp);
             prjdp.Dock = DockStyle.Top;
+        }
+
+        public void SeachForProjects (string name)
+        {
+            m_projectList.Controls.Clear();
+
+            DataAccess.DataSet.sp_SearchProjectByNameDataTable projectInfo = m_business.GetProjectByName(name);
+            foreach (DataAccess.DataSet.sp_SearchProjectByNameRow row in projectInfo.Rows)
+            {
+                ProjectDisplay prj = new ProjectDisplay();
+                prj.SetProjectName(row.ProjectName);
+                // seach for other info and set it here.
+
+                m_projectList.Controls.Add(prj);
+            }
         }
 
         private void deselectProjects(object sender, EventArgs e)

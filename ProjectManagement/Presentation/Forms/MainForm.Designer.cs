@@ -301,6 +301,7 @@
             this.m_btnSearch.Size = new System.Drawing.Size(20, 20);
             this.m_btnSearch.TabIndex = 1;
             this.m_btnSearch.UseVisualStyleBackColor = true;
+            this.m_btnSearch.Click += new System.EventHandler(this.seachForProjects);
             // 
             // m_iconList
             // 

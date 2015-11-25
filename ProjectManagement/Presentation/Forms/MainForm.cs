@@ -114,5 +114,30 @@ namespace Presentation
             tag.setTagName("Die Trying");
             m_filterContainer.Controls.Add(tag);
         }
+
+        private void seachForProjects(object sender, EventArgs e)
+        {
+            switch (m_cboSeachType.Text)
+            {
+                case "Project Name":
+                    {
+                        m_projectExplorer.SeachForProjects(m_textboxSearchBox.Text);
+                        break;
+                    }
+
+                case "Group Name":
+                    {
+                        break;
+                    }
+
+                case "Last Update Time":
+                    {
+                        break;
+                    }
+
+                default:
+                    break;
+            }
+        }
     }
 }

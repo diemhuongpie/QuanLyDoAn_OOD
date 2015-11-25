@@ -125,7 +125,7 @@ namespace Presentation.Controls
             AddChildDirectories(dirs, null);
         }
 
-        private void deselect(object sender, MouseEventArgs e)
+        private void deselectNode(object sender, EventArgs e)
         {
             m_directoryTreeView.SelectedNode = null;
         }

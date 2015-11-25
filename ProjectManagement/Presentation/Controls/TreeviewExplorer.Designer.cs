@@ -32,6 +32,7 @@
             this.m_directoryTreeView = new System.Windows.Forms.TreeView();
             this.m_ctxmenuBackground = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.reloadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.newFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_ctxmenuDirectoryTree = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.folderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,7 +42,6 @@
             this.m_cbbxViewMode = new System.Windows.Forms.ComboBox();
             this.m_grpbxView = new System.Windows.Forms.GroupBox();
             this.m_isCountFolders = new System.Windows.Forms.CheckBox();
-            this.newFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_ctxmenuBackground.SuspendLayout();
             this.m_ctxmenuDirectoryTree.SuspendLayout();
             this.m_grpbxView.SuspendLayout();
@@ -59,7 +59,6 @@
             this.m_directoryTreeView.TabIndex = 1;
             this.m_directoryTreeView.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.ExpandTreeNode);
             this.m_directoryTreeView.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.selectClickedNode);
-            this.m_directoryTreeView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.deselect);
             // 
             // m_ctxmenuBackground
             // 
@@ -68,6 +67,7 @@
             this.newFolderToolStripMenuItem});
             this.m_ctxmenuBackground.Name = "m_ctxmenuBackground";
             this.m_ctxmenuBackground.Size = new System.Drawing.Size(153, 70);
+            this.m_ctxmenuBackground.Opened += new System.EventHandler(this.deselectNode);
             // 
             // reloadToolStripMenuItem1
             // 
@@ -75,6 +75,12 @@
             this.reloadToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.reloadToolStripMenuItem1.Text = "Reload";
             this.reloadToolStripMenuItem1.Click += new System.EventHandler(this.loadFolders);
+            // 
+            // newFolderToolStripMenuItem
+            // 
+            this.newFolderToolStripMenuItem.Name = "newFolderToolStripMenuItem";
+            this.newFolderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newFolderToolStripMenuItem.Text = "New Folder";
             // 
             // m_ctxmenuDirectoryTree
             // 
@@ -159,12 +165,6 @@
             this.m_isCountFolders.Text = "Group Inside Preview";
             this.m_isCountFolders.UseVisualStyleBackColor = true;
             this.m_isCountFolders.CheckedChanged += new System.EventHandler(this.loadFolders);
-            // 
-            // newFolderToolStripMenuItem
-            // 
-            this.newFolderToolStripMenuItem.Name = "newFolderToolStripMenuItem";
-            this.newFolderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.newFolderToolStripMenuItem.Text = "New Folder";
             // 
             // TreeviewExplorer
             // 

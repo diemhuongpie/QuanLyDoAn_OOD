@@ -8,10 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using BusinessLogic;
+
 namespace Presentation.Forms
 {
     public partial class NewChecklist : Form
     {
+        private NewChecklistBusiness m_business;
         public NewChecklist()
         {
             InitializeComponent();
@@ -30,6 +33,11 @@ namespace Presentation.Forms
             if (m_txtboxExportLink.Text == "")
             {
                 searchForExportDirectory();
+            }
+
+            if (m_txtboxFileName.Text == "")
+            {
+                MessageBox.Show("Please import file name.\nTip: Use Macro(s) for auto-naming files.", "Missing file name", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

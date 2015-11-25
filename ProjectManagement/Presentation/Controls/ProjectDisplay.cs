@@ -13,6 +13,7 @@ namespace Presentation.Controls
     public partial class ProjectDisplay : UserControl
     {
         public string m_overview { get; set; }
+
         public ProjectDisplay()
         {
             InitializeComponent();
