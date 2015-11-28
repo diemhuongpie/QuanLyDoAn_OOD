@@ -89,6 +89,12 @@
     <Compile Include="Forms\ChecklistCompare.Designer.cs">
       <DependentUpon>ChecklistCompare.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ChecklistWorkbench.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChecklistWorkbench.Designer.cs">
+      <DependentUpon>ChecklistWorkbench.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     <EmbeddedResource Include="Forms\ChecklistCompare.resx">
       <DependentUpon>ChecklistCompare.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChecklistWorkbench.resx">
+      <DependentUpon>ChecklistWorkbench.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,9 +171,9 @@
       <Project>{d28b291c-1add-4d94-b677-befb2d80b6bd}</Project>
       <Name>BusinessLogic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{4916b016-7982-4e85-83e4-2041f4cfa7b5}</Project>
-      <Name>DataAccess</Name>
+    <ProjectReference Include="..\DataTransfer\DataTransfer.csproj">
+      <Project>{e6f7a61b-f9f2-4e58-9c37-d7fe3913c277}</Project>
+      <Name>DataTransfer</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

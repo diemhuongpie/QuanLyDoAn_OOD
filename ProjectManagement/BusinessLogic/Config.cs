@@ -10,6 +10,7 @@ namespace BusinessLogic
     public class Config
     {
         public const string FILE_EXTENSION_CHECKLIST = ".req";
+        public const string FILE_DIALOG_FILTER_CHECKLIST = "Requirement File|*.req";
 
         public const string FILE_NAME_TIME_FORMAT    = "hh-mm-ss";
         public const string FILE_NAME_DATE_FORMAT    = "dd-mm-yyyy";

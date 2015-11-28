@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using DataAccess;
+using DataTransfer;
 
 namespace BusinessLogic
 {
@@ -14,11 +15,20 @@ namespace BusinessLogic
 
         public ProjectExplorerBusiness() { }
 
-        public DataSet.sp_SearchProjectByNameDataTable GetProjectByName(string projectName)
+        public List<DTO_Project> GetProjectByName(string projectName)
         {
             DataAccess.DataSetTableAdapters.sp_SearchProjectByNameTableAdapter adapter = new DataAccess.DataSetTableAdapters.sp_SearchProjectByNameTableAdapter();
+            DataAccess.DataSet.sp_SearchProjectByNameDataTable table = adapter.GetData(projectName);
 
-            return adapter.GetData(projectName);
+            List<DTO_Project> result = new List<DTO_Project>();
+
+            foreach (DataAccess.DataSet.sp_SearchProjectByNameRow row in table.Rows)
+            {
+                result.Add(new DTO_Project(
+                    row.ProjectID, row.GroupName, row.SubjectName, row.Class));
+            }
+
+            return result;
         }
     }
 }

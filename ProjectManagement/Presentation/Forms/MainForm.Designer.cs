@@ -41,19 +41,21 @@
             this.checklistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newChecklistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.compareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_statusBar = new System.Windows.Forms.StatusStrip();
             this.m_numOfProjects = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_numOfSelectedProprojects = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_splitContainerDirectoryTree = new System.Windows.Forms.SplitContainer();
             this.m_directoryTreeView = new Presentation.Controls.TreeviewExplorer();
             this.m_spliterContainerSeachBox = new System.Windows.Forms.SplitContainer();
-            this.m_grpFilters = new System.Windows.Forms.GroupBox();
-            this.m_filterContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.m_btnAddFilter = new System.Windows.Forms.Button();
+            this.m_grpSearch = new System.Windows.Forms.GroupBox();
             this.m_cboSeachType = new System.Windows.Forms.ComboBox();
             this.m_btnSearch = new System.Windows.Forms.Button();
             this.m_iconList = new System.Windows.Forms.ImageList(this.components);
             this.m_textboxSearchBox = new System.Windows.Forms.TextBox();
+            this.m_grpFilters = new System.Windows.Forms.GroupBox();
+            this.m_filterContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.m_btnAddFilter = new System.Windows.Forms.Button();
             this.m_spliterContainerPreviewPane = new System.Windows.Forms.SplitContainer();
             this.m_projectExplorer = new Presentation.Controls.ProjectExplorer();
             this.m_previewPane = new System.Windows.Forms.RichTextBox();
@@ -67,6 +69,7 @@
             this.m_spliterContainerSeachBox.Panel1.SuspendLayout();
             this.m_spliterContainerSeachBox.Panel2.SuspendLayout();
             this.m_spliterContainerSeachBox.SuspendLayout();
+            this.m_grpSearch.SuspendLayout();
             this.m_grpFilters.SuspendLayout();
             this.m_filterContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_spliterContainerPreviewPane)).BeginInit();
@@ -153,7 +156,8 @@
             // 
             this.checklistToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newChecklistToolStripMenuItem,
-            this.compareToolStripMenuItem});
+            this.compareToolStripMenuItem,
+            this.editToolStripMenuItem});
             this.checklistToolStripMenuItem.Name = "checklistToolStripMenuItem";
             this.checklistToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.checklistToolStripMenuItem.Text = "Checklist";
@@ -173,6 +177,13 @@
             this.compareToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.compareToolStripMenuItem.Text = "Compare";
             this.compareToolStripMenuItem.Click += new System.EventHandler(this.compareToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.editToolStripMenuItem.Text = "Open";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // m_statusBar
             // 
@@ -232,51 +243,28 @@
             // 
             // m_spliterContainerSeachBox.Panel1
             // 
+            this.m_spliterContainerSeachBox.Panel1.Controls.Add(this.m_grpSearch);
             this.m_spliterContainerSeachBox.Panel1.Controls.Add(this.m_grpFilters);
-            this.m_spliterContainerSeachBox.Panel1.Controls.Add(this.m_cboSeachType);
-            this.m_spliterContainerSeachBox.Panel1.Controls.Add(this.m_btnSearch);
-            this.m_spliterContainerSeachBox.Panel1.Controls.Add(this.m_textboxSearchBox);
             this.m_spliterContainerSeachBox.Panel1MinSize = 1;
             // 
             // m_spliterContainerSeachBox.Panel2
             // 
             this.m_spliterContainerSeachBox.Panel2.Controls.Add(this.m_spliterContainerPreviewPane);
             this.m_spliterContainerSeachBox.Size = new System.Drawing.Size(583, 438);
-            this.m_spliterContainerSeachBox.SplitterDistance = 75;
+            this.m_spliterContainerSeachBox.SplitterDistance = 90;
             this.m_spliterContainerSeachBox.TabIndex = 0;
             // 
-            // m_grpFilters
+            // m_grpSearch
             // 
-            this.m_grpFilters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_grpFilters.Controls.Add(this.m_filterContainer);
-            this.m_grpFilters.Location = new System.Drawing.Point(3, 30);
-            this.m_grpFilters.Name = "m_grpFilters";
-            this.m_grpFilters.Size = new System.Drawing.Size(575, 46);
-            this.m_grpFilters.TabIndex = 3;
-            this.m_grpFilters.TabStop = false;
-            this.m_grpFilters.Text = "Tag Filter";
-            // 
-            // m_filterContainer
-            // 
-            this.m_filterContainer.AutoScroll = true;
-            this.m_filterContainer.Controls.Add(this.m_btnAddFilter);
-            this.m_filterContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_filterContainer.Location = new System.Drawing.Point(3, 16);
-            this.m_filterContainer.Name = "m_filterContainer";
-            this.m_filterContainer.Size = new System.Drawing.Size(569, 27);
-            this.m_filterContainer.TabIndex = 0;
-            // 
-            // m_btnAddFilter
-            // 
-            this.m_btnAddFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_btnAddFilter.Location = new System.Drawing.Point(3, 3);
-            this.m_btnAddFilter.Name = "m_btnAddFilter";
-            this.m_btnAddFilter.Size = new System.Drawing.Size(30, 20);
-            this.m_btnAddFilter.TabIndex = 0;
-            this.m_btnAddFilter.Text = "+";
-            this.m_btnAddFilter.UseVisualStyleBackColor = true;
-            this.m_btnAddFilter.Click += new System.EventHandler(this.m_btnAddFilter_Click);
+            this.m_grpSearch.Controls.Add(this.m_cboSeachType);
+            this.m_grpSearch.Controls.Add(this.m_btnSearch);
+            this.m_grpSearch.Controls.Add(this.m_textboxSearchBox);
+            this.m_grpSearch.Location = new System.Drawing.Point(3, 3);
+            this.m_grpSearch.Name = "m_grpSearch";
+            this.m_grpSearch.Size = new System.Drawing.Size(575, 42);
+            this.m_grpSearch.TabIndex = 4;
+            this.m_grpSearch.TabStop = false;
+            this.m_grpSearch.Text = "Search";
             // 
             // m_cboSeachType
             // 
@@ -285,10 +273,10 @@
             "Project Name",
             "Group Name",
             "Last Update Time"});
-            this.m_cboSeachType.Location = new System.Drawing.Point(436, 3);
+            this.m_cboSeachType.Location = new System.Drawing.Point(335, 16);
             this.m_cboSeachType.Name = "m_cboSeachType";
             this.m_cboSeachType.Size = new System.Drawing.Size(116, 21);
-            this.m_cboSeachType.TabIndex = 2;
+            this.m_cboSeachType.TabIndex = 5;
             this.m_cboSeachType.Text = "Project Name";
             // 
             // m_btnSearch
@@ -296,10 +284,10 @@
             this.m_btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.m_btnSearch.ImageIndex = 215;
             this.m_btnSearch.ImageList = this.m_iconList;
-            this.m_btnSearch.Location = new System.Drawing.Point(558, 4);
+            this.m_btnSearch.Location = new System.Drawing.Point(457, 16);
             this.m_btnSearch.Name = "m_btnSearch";
-            this.m_btnSearch.Size = new System.Drawing.Size(20, 20);
-            this.m_btnSearch.TabIndex = 1;
+            this.m_btnSearch.Size = new System.Drawing.Size(112, 21);
+            this.m_btnSearch.TabIndex = 4;
             this.m_btnSearch.UseVisualStyleBackColor = true;
             this.m_btnSearch.Click += new System.EventHandler(this.seachForProjects);
             // 
@@ -537,10 +525,44 @@
             // 
             this.m_textboxSearchBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_textboxSearchBox.Location = new System.Drawing.Point(3, 4);
+            this.m_textboxSearchBox.Location = new System.Drawing.Point(6, 16);
             this.m_textboxSearchBox.Name = "m_textboxSearchBox";
-            this.m_textboxSearchBox.Size = new System.Drawing.Size(427, 20);
-            this.m_textboxSearchBox.TabIndex = 0;
+            this.m_textboxSearchBox.Size = new System.Drawing.Size(323, 20);
+            this.m_textboxSearchBox.TabIndex = 3;
+            this.m_textboxSearchBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxSearchShortcut);
+            // 
+            // m_grpFilters
+            // 
+            this.m_grpFilters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_grpFilters.Controls.Add(this.m_filterContainer);
+            this.m_grpFilters.Location = new System.Drawing.Point(3, 45);
+            this.m_grpFilters.Name = "m_grpFilters";
+            this.m_grpFilters.Size = new System.Drawing.Size(575, 46);
+            this.m_grpFilters.TabIndex = 3;
+            this.m_grpFilters.TabStop = false;
+            this.m_grpFilters.Text = "Tag Filter";
+            // 
+            // m_filterContainer
+            // 
+            this.m_filterContainer.AutoScroll = true;
+            this.m_filterContainer.Controls.Add(this.m_btnAddFilter);
+            this.m_filterContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_filterContainer.Location = new System.Drawing.Point(3, 16);
+            this.m_filterContainer.Name = "m_filterContainer";
+            this.m_filterContainer.Size = new System.Drawing.Size(569, 27);
+            this.m_filterContainer.TabIndex = 0;
+            // 
+            // m_btnAddFilter
+            // 
+            this.m_btnAddFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_btnAddFilter.Location = new System.Drawing.Point(3, 3);
+            this.m_btnAddFilter.Name = "m_btnAddFilter";
+            this.m_btnAddFilter.Size = new System.Drawing.Size(30, 20);
+            this.m_btnAddFilter.TabIndex = 0;
+            this.m_btnAddFilter.Text = "+";
+            this.m_btnAddFilter.UseVisualStyleBackColor = true;
+            this.m_btnAddFilter.Click += new System.EventHandler(this.m_btnAddFilter_Click);
             // 
             // m_spliterContainerPreviewPane
             // 
@@ -555,7 +577,7 @@
             // m_spliterContainerPreviewPane.Panel2
             // 
             this.m_spliterContainerPreviewPane.Panel2.Controls.Add(this.m_previewPane);
-            this.m_spliterContainerPreviewPane.Size = new System.Drawing.Size(583, 359);
+            this.m_spliterContainerPreviewPane.Size = new System.Drawing.Size(583, 344);
             this.m_spliterContainerPreviewPane.SplitterDistance = 374;
             this.m_spliterContainerPreviewPane.TabIndex = 1;
             // 
@@ -567,7 +589,7 @@
             this.m_projectExplorer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_projectExplorer.Location = new System.Drawing.Point(3, 3);
             this.m_projectExplorer.Name = "m_projectExplorer";
-            this.m_projectExplorer.Size = new System.Drawing.Size(369, 353);
+            this.m_projectExplorer.Size = new System.Drawing.Size(369, 338);
             this.m_projectExplorer.TabIndex = 0;
             // 
             // m_previewPane
@@ -579,7 +601,7 @@
             this.m_previewPane.Location = new System.Drawing.Point(0, 0);
             this.m_previewPane.Name = "m_previewPane";
             this.m_previewPane.ReadOnly = true;
-            this.m_previewPane.Size = new System.Drawing.Size(205, 359);
+            this.m_previewPane.Size = new System.Drawing.Size(205, 344);
             this.m_previewPane.TabIndex = 0;
             this.m_previewPane.TabStop = false;
             this.m_previewPane.Text = "Group 7:\n - Lê Minh Trung\n - Nguyễn Hoàng Thái\n - .............\n\nProject Overview" +
@@ -607,10 +629,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_splitContainerDirectoryTree)).EndInit();
             this.m_splitContainerDirectoryTree.ResumeLayout(false);
             this.m_spliterContainerSeachBox.Panel1.ResumeLayout(false);
-            this.m_spliterContainerSeachBox.Panel1.PerformLayout();
             this.m_spliterContainerSeachBox.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_spliterContainerSeachBox)).EndInit();
             this.m_spliterContainerSeachBox.ResumeLayout(false);
+            this.m_grpSearch.ResumeLayout(false);
+            this.m_grpSearch.PerformLayout();
             this.m_grpFilters.ResumeLayout(false);
             this.m_filterContainer.ResumeLayout(false);
             this.m_spliterContainerPreviewPane.Panel1.ResumeLayout(false);
@@ -636,21 +659,23 @@
         private System.Windows.Forms.ToolStripStatusLabel m_numOfSelectedProprojects;
         private System.Windows.Forms.ToolStripMenuItem previewPaneToolStripMenuItem;
         private System.Windows.Forms.SplitContainer m_spliterContainerSeachBox;
-        private System.Windows.Forms.TextBox m_textboxSearchBox;
         private System.Windows.Forms.SplitContainer m_spliterContainerPreviewPane;
         private System.Windows.Forms.RichTextBox m_previewPane;
-        private System.Windows.Forms.Button m_btnSearch;
         private System.Windows.Forms.ImageList m_iconList;
         private System.Windows.Forms.ToolStripMenuItem checklistToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newChecklistToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem compareToolStripMenuItem;
         private Controls.ProjectExplorer m_projectExplorer;
         private System.Windows.Forms.ToolStripMenuItem seachPaneToolStripMenuItem;
-        private System.Windows.Forms.ComboBox m_cboSeachType;
         private System.Windows.Forms.GroupBox m_grpFilters;
         private System.Windows.Forms.FlowLayoutPanel m_filterContainer;
         private System.Windows.Forms.Button m_btnAddFilter;
         private Controls.TreeviewExplorer m_directoryTreeView;
+        private System.Windows.Forms.GroupBox m_grpSearch;
+        private System.Windows.Forms.ComboBox m_cboSeachType;
+        private System.Windows.Forms.Button m_btnSearch;
+        private System.Windows.Forms.TextBox m_textboxSearchBox;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
 
     }
 }

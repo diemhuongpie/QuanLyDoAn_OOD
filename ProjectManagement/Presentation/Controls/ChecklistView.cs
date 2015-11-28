@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using BusinessLogic;
+using System.Xml.Linq;
+
 namespace Presentation.Controls
 {
     enum IconIndex
@@ -21,6 +24,8 @@ namespace Presentation.Controls
 
     public partial class ChecklistView : UserControl
     {
+        ChecklistViewBusiness m_business = new ChecklistViewBusiness();
+
         public ChecklistView()
         {
             InitializeComponent();
@@ -71,6 +76,26 @@ namespace Presentation.Controls
         {
             this.Enabled = false;
             this.m_menuBar.Visible = false;
+        }
+
+        public TreeView getChecklistTree()
+        {
+            return m_requestTree;
+        }
+
+        /// <summary>
+        /// Save the current checklist tree to the file.
+        /// </summary>
+        /// <param name="fullPath">An absolute path with extension to the file save this tree</param>
+        /// <param name="isOverride">Verify if user wanna override the exited file if there are</param>
+        /// <returns>Error code from BusinessLogic.Config</returns>
+        public int SaveTheTree (string fullPath, bool isOverride)
+        {
+            XDocument document = m_business.GenerateChecklistFile(m_requestTree);
+            return m_business.SaveChecklistFile(
+                document, 
+                fullPath, 
+                isOverride ? SaveType.OVERRIDE : SaveType.TRY);
         }
       }
 }

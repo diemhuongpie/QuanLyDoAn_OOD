@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 using System.Windows.Forms;
 using System.Xml.Linq;
-using System.IO;
 
 namespace BusinessLogic
 {
@@ -19,78 +18,50 @@ namespace BusinessLogic
     public class NewChecklistBusiness
     {
         private static int m_indexCounter = 0;
-
-        public NewChecklistBusiness () {}
+        private ChecklistViewBusiness m_checklistViewBusiness = new ChecklistViewBusiness();
 
         /// <summary>
-        /// Save the imported XDocument to the file specified by the strings.
+        /// Generate a string that specify the save file from the imported information.
         /// The file saved with the extension as ".req".
-        /// IMPORTANT: the file name will be process by the macros if possible.
+        /// IMPORTANT: the file name will be processed by the macros if possible.
         /// </summary>
-        /// <param name="checklistDocument">The XDocument parameter contain the checklist tree information</param>
-        /// <param name="dirPath">The absolute path represent to the directory used to save the file</param>
-        /// <param name="fileName">The non-extension string used  to save as the file name</param>
-        /// <param name="saveType">Save type, see BusinessLogic.SaveType</param>
-        /// <returns>
-        ///     ERROR_CODE_NONE if save successfull.
-        ///     ERROR_CODE_FILE_EXISTS if the file already exists and saveType is SaveType.TRY.
-        /// </returns>
-        public int SaveChecklistFile (XDocument checklistDocument, string dirPath, string fileName, SaveType saveType = SaveType.TRY)
+        /// <param name="dirPath">Absolute path to the directory where save the file</param>
+        /// <param name="fileName">File name without extension</param>
+        /// <returns>Absolute path to the file with extension</returns>
+        public string SaveLinkProcess(string dirPath, string fileName)
         {
-            string fullFilePath = dirPath + 
-                Config.GetInstance().MacroProcess(fileName, Config.GetInstance().GetContainerDir(dirPath), m_indexCounter) + 
+            string fullFilePath = dirPath +
+                Config.GetInstance().MacroProcess(fileName, Config.GetInstance().GetContainerDir(dirPath), m_indexCounter) +
                 Config.FILE_EXTENSION_CHECKLIST;
 
-            if (File.Exists(fullFilePath))
-            {
-                if (saveType == SaveType.TRY)
-                {
-                    return Config.ERROR_CODE_FILE_EXISTS;
-                }
-            }
-
-            checklistDocument.Save(fullFilePath);
-
-            return Config.ERROR_CODE_NONE;
+            return fullFilePath;
         }
 
         /// <summary>
-        /// Create an XML-formed data-type from the imported TreeView.
+        /// Display a messagebox to warning the imported error.
         /// </summary>
-        /// <param name="checklistTree">the checklist tree used to generate the file.</param>
-        /// <returns>an XDocument contain the checklist tree information.</returns>
-        public XDocument GenerateChecklistFile (TreeView checklistTree)
+        /// <param name="errorCode">One of the error code in BusinessLogic.Config</param>
+        /// <param name="extraInfomation">A string displayed after main warning on messagebox</param>
+        /// <returns>
+        ///     true: If user do a selection to ignore this warning and continue.
+        ///     false: otherwise.
+        /// </returns>
+        public bool WarningErrorIfContinue(int errorCode, string extraInfomation)
         {
-            XDocument result = new XDocument(new XElement(Config.XML_KEY_HEAD_REQUEST));
-
-            foreach (TreeNode node in checklistTree.Nodes)
+            switch (errorCode)
             {
-                result.Add(GenerateCheclistElementFromNode(node));
+                case Config.ERROR_CODE_FILE_EXISTS:
+                    DialogResult result = MessageBox.Show("This file exits already.\nDo you want to override it?\n" + extraInfomation, "Cannot save.", MessageBoxButtons.OKCancel);
+                    return result == DialogResult.OK;
+
+                case Config.ERROR_CODE_NONE:
+                    return false;
+
+                default:
+                    break;
             }
 
-            return result;
+            return false;
         }
-
-        /// <summary>
-        /// Create an XElement from a TreeNode.
-        /// IMPORTANT: in case the node is not the leaf,
-        /// this method will be recursive-called for the final result.
-        /// </summary>
-        /// <param name="checklistNode">the node used to generate the element.</param>
-        /// <returns>an XElement contain the node and all of it's childs information.</returns>
-        private XElement GenerateCheclistElementFromNode (TreeNode checklistNode)
-        {
-            XElement result = new XElement(Config.XML_KEY_SUB_REQUEST,
-                new XElement(Config.XML_KEY_REQUEST_NAME, checklistNode.Text));
-
-            foreach (TreeNode node in checklistNode.Nodes)
-            {
-                result.Add(GenerateCheclistElementFromNode(node));
-            }
-
-            return result;
-        }
-
-
     }
 }

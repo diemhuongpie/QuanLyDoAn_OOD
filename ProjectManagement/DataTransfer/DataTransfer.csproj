@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D28B291C-1ADD-4D94-B677-BEFB2D80B6BD}</ProjectGuid>
+    <ProjectGuid>{E6F7A61B-F9F2-4E58-9C37-D7FE3913C277}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BusinessLogic</RootNamespace>
-    <AssemblyName>BusinessLogic</AssemblyName>
+    <RootNamespace>DataTransfer</RootNamespace>
+    <AssemblyName>DataTransfer</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -38,30 +38,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChecklistViewBusiness.cs" />
-    <Compile Include="Config.cs" />
-    <Compile Include="MainFormBusiness.cs" />
-    <Compile Include="NewChecklistBusiness.cs" />
-    <Compile Include="ProjectExplorerBusiness.cs" />
-    <Compile Include="TreeviewExplorerBusiness.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.XML" />
-    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{4916b016-7982-4e85-83e4-2041f4cfa7b5}</Project>
-      <Name>DataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataTransfer\DataTransfer.csproj">
-      <Project>{e6f7a61b-f9f2-4e58-9c37-d7fe3913c277}</Project>
-      <Name>DataTransfer</Name>
-    </ProjectReference>
+    <Compile Include="DTO_Author.cs" />
+    <Compile Include="DTO_Merged.cs" />
+    <Compile Include="DTO_Project.cs" />
+    <Compile Include="DTO_ProjectDetail.cs" />
+    <Compile Include="DTO_Tag.cs" />
+    <Compile Include="DTO_TagDetail.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

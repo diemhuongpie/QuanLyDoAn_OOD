@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 using Presentation.Controls;
 using BusinessLogic;
-using DataAccess;
+using DataTransfer;
 
 namespace Presentation.Controls
 {
@@ -33,11 +33,12 @@ namespace Presentation.Controls
         {
             m_projectList.Controls.Clear();
 
-            DataAccess.DataSet.sp_SearchProjectByNameDataTable projectInfo = m_business.GetProjectByName(name);
-            foreach (DataAccess.DataSet.sp_SearchProjectByNameRow row in projectInfo.Rows)
+            List<DTO_Project> projectInfoList = m_business.GetProjectByName(name);
+            foreach (DTO_Project project in projectInfoList)
             {
                 ProjectDisplay prj = new ProjectDisplay();
-                prj.SetProjectName(row.ProjectName);
+                /// TODO: change ProjectID to ProjectName.
+                prj.SetProjectName(project.ProjectID);
                 // seach for other info and set it here.
 
                 m_projectList.Controls.Add(prj);

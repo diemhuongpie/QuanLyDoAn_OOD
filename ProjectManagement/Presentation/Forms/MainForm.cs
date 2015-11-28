@@ -17,35 +17,13 @@ namespace Presentation
     public partial class MainForm : Form
     {
         private MainFormBusiness m_business;
-        private NewChecklist generateChecklistWindow = new NewChecklist();
-                
+        private NewChecklist generateChecklistWindow;
+        private ChecklistWorkbench m_checlistWorkbench;
+
         public MainForm()
         {
             m_business = new MainFormBusiness();
             InitializeComponent();
-            m_projectExplorer.AddProject(new ProjectDisplay());
-            m_projectExplorer.AddProject(new ProjectDisplay());
-            m_projectExplorer.AddProject(new ProjectDisplay());
-            m_projectExplorer.AddProject(new ProjectDisplay());
-            m_projectExplorer.AddProject(new ProjectDisplay());
-            m_projectExplorer.AddProject(new ProjectDisplay());
-            m_projectExplorer.AddProject(new ProjectDisplay());
-            m_projectExplorer.AddProject(new ProjectDisplay());
-            m_projectExplorer.AddProject(new ProjectDisplay());
-            m_projectExplorer.AddProject(new ProjectDisplay());
-            m_projectExplorer.AddProject(new ProjectDisplay());
-            m_projectExplorer.AddProject(new ProjectDisplay());
-            m_projectExplorer.AddProject(new ProjectDisplay());
-            m_projectExplorer.AddProject(new ProjectDisplay());
-            m_projectExplorer.AddProject(new ProjectDisplay());
-            m_projectExplorer.AddProject(new ProjectDisplay());
-            m_projectExplorer.AddProject(new ProjectDisplay());
-            m_projectExplorer.AddProject(new ProjectDisplay());
-            m_projectExplorer.AddProject(new ProjectDisplay());
-            m_projectExplorer.AddProject(new ProjectDisplay());
-            m_projectExplorer.AddProject(new ProjectDisplay());
-            m_projectExplorer.AddProject(new ProjectDisplay());
-            m_projectExplorer.AddProject(new ProjectDisplay());
         }
 
         private void AddNewProject(object sender, EventArgs e)
@@ -67,8 +45,17 @@ namespace Presentation
 
         private void createChecklist(object sender, EventArgs e)
         {
-            generateChecklistWindow.Show();
-            generateChecklistWindow.Focus();
+            try
+            {
+                generateChecklistWindow.Show();
+                generateChecklistWindow.Focus();
+            }
+            catch (Exception)
+            {
+                generateChecklistWindow = new NewChecklist();
+                generateChecklistWindow.Show();
+                generateChecklistWindow.Focus();
+            }
         }
 
         private void changeCheckStatus(object sender, EventArgs e)
@@ -137,6 +124,29 @@ namespace Presentation
 
                 default:
                     break;
+            }
+        }
+
+        private void txtboxSearchShortcut(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Return)
+            {
+                seachForProjects(null, EventArgs.Empty);
+            }
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                m_checlistWorkbench.Show();
+                m_checlistWorkbench.Focus();
+            }
+            catch (Exception)
+            {
+                m_checlistWorkbench = new ChecklistWorkbench();
+                m_checlistWorkbench.Show();
+                m_checlistWorkbench.Focus();
             }
         }
     }

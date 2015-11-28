@@ -14,7 +14,7 @@ namespace Presentation.Forms
 {
     public partial class NewChecklist : Form
     {
-        private NewChecklistBusiness m_business;
+        private NewChecklistBusiness m_business = new NewChecklistBusiness();
         public NewChecklist()
         {
             InitializeComponent();
@@ -27,9 +27,6 @@ namespace Presentation.Forms
 
         private void m_btnCreate_Click(object sender, EventArgs e)
         {
-            // TODO: create a process for this event in the BusinessLogic class.
-            // Open a file explorer dialog and save the tree.
-
             if (m_txtboxExportLink.Text == "")
             {
                 searchForExportDirectory();
@@ -38,6 +35,15 @@ namespace Presentation.Forms
             if (m_txtboxFileName.Text == "")
             {
                 MessageBox.Show("Please import file name.\nTip: Use Macro(s) for auto-naming files.", "Missing file name", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            string processedPath = m_business.SaveLinkProcess(m_txtboxExportLink.Text, m_txtboxFileName.Text);
+
+            int errorCode = m_checkList.SaveTheTree(processedPath, false);
+            if (m_business.WarningErrorIfContinue(errorCode, processedPath))
+            {
+                m_checkList.SaveTheTree(processedPath, true);
             }
         }
 

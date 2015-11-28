@@ -34,10 +34,10 @@
             this.m_btnSearchExportDirectory = new System.Windows.Forms.Button();
             this.m_txtboxExportLink = new System.Windows.Forms.TextBox();
             this.m_grpboxFileName = new System.Windows.Forms.GroupBox();
+            this.m_btnMacro = new System.Windows.Forms.Button();
             this.m_txtboxFileName = new System.Windows.Forms.TextBox();
             this.m_btnCreate = new System.Windows.Forms.Button();
             this.m_btnCancel = new System.Windows.Forms.Button();
-            this.m_btnMacro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.m_spliter)).BeginInit();
             this.m_spliter.Panel1.SuspendLayout();
             this.m_spliter.Panel2.SuspendLayout();
@@ -125,6 +125,15 @@
             this.m_grpboxFileName.TabStop = false;
             this.m_grpboxFileName.Text = "File name (without ext)";
             // 
+            // m_btnMacro
+            // 
+            this.m_btnMacro.Location = new System.Drawing.Point(209, 18);
+            this.m_btnMacro.Name = "m_btnMacro";
+            this.m_btnMacro.Size = new System.Drawing.Size(82, 23);
+            this.m_btnMacro.TabIndex = 1;
+            this.m_btnMacro.Text = "Macro";
+            this.m_btnMacro.UseVisualStyleBackColor = true;
+            // 
             // m_txtboxFileName
             // 
             this.m_txtboxFileName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -156,15 +165,6 @@
             this.m_btnCancel.Text = "Cancel";
             this.m_btnCancel.UseVisualStyleBackColor = true;
             this.m_btnCancel.Click += new System.EventHandler(this.m_btnCancel_Click);
-            // 
-            // m_btnMacro
-            // 
-            this.m_btnMacro.Location = new System.Drawing.Point(209, 18);
-            this.m_btnMacro.Name = "m_btnMacro";
-            this.m_btnMacro.Size = new System.Drawing.Size(82, 23);
-            this.m_btnMacro.TabIndex = 1;
-            this.m_btnMacro.Text = "Macro";
-            this.m_btnMacro.UseVisualStyleBackColor = true;
             // 
             // NewChecklist
             // 
