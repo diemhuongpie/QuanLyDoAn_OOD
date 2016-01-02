@@ -256,6 +256,9 @@
             // 
             // m_grpSearch
             // 
+            this.m_grpSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.m_grpSearch.Controls.Add(this.m_cboSeachType);
             this.m_grpSearch.Controls.Add(this.m_btnSearch);
             this.m_grpSearch.Controls.Add(this.m_textboxSearchBox);

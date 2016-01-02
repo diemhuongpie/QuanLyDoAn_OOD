@@ -11,8 +11,6 @@ namespace BusinessLogic
 {
     public class ProjectExplorerBusiness
     {
-        private DataSet m_dataAccessObject = new DataSet();
-
         public ProjectExplorerBusiness() { }
 
         public List<DTO_Project> GetProjectByName(string projectName)
@@ -25,7 +23,7 @@ namespace BusinessLogic
             foreach (DataAccess.DataSet.sp_SearchProjectByNameRow row in table.Rows)
             {
                 result.Add(new DTO_Project(
-                    row.ProjectID, row.GroupName, row.SubjectName, row.Class));
+                    row.ProjectName, row.GroupName, row.SubjectName, row.Class));
             }
 
             return result;

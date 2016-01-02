@@ -15,9 +15,11 @@ namespace Presentation.Forms
     public partial class NewChecklist : Form
     {
         private NewChecklistBusiness m_business = new NewChecklistBusiness();
+        private MacroHelper m_macroHelper = null;
         public NewChecklist()
         {
             InitializeComponent();
+            m_macroHelper = new MacroHelper(ref m_txtboxFileName);
         }
 
         private void m_btnCancel_Click(object sender, EventArgs e)
@@ -59,6 +61,11 @@ namespace Presentation.Forms
             {
                 m_txtboxExportLink.Text = dialog.SelectedPath;
             }
+        }
+
+        private void openMacroHelper(object sender, EventArgs e)
+        {
+            m_macroHelper.ShowDialog();
         }
     }
 }

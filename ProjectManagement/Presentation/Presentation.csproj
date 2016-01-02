@@ -95,6 +95,12 @@
     <Compile Include="Forms\ChecklistWorkbench.Designer.cs">
       <DependentUpon>ChecklistWorkbench.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MacroHelper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MacroHelper.Designer.cs">
+      <DependentUpon>MacroHelper.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChecklistWorkbench.resx">
       <DependentUpon>ChecklistWorkbench.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MacroHelper.resx">
+      <DependentUpon>MacroHelper.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

@@ -133,6 +133,7 @@
             this.m_btnMacro.TabIndex = 1;
             this.m_btnMacro.Text = "Macro";
             this.m_btnMacro.UseVisualStyleBackColor = true;
+            this.m_btnMacro.Click += new System.EventHandler(this.openMacroHelper);
             // 
             // m_txtboxFileName
             // 

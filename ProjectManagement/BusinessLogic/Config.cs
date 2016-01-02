@@ -16,8 +16,8 @@ namespace BusinessLogic
         public const string FILE_NAME_DATE_FORMAT    = "dd-mm-yyyy";
 
         public const string XML_KEY_HEAD_REQUEST     = "Request";
-        public const string XML_KEY_SUB_REQUEST      = "Sub Request";
-        public const string XML_KEY_REQUEST_NAME     = "Request Name";
+        public const string XML_KEY_SUB_REQUEST      = "SubRequest";
+        public const string XML_KEY_REQUEST_NAME     = "RequestName";
 
         public const string FILE_NAME_MACRO_INDEX    = "$(Index)";
         public const string FILE_NAME_MACRO_TIME     = "$(Time)";
@@ -94,12 +94,12 @@ namespace BusinessLogic
         {
             m_macroMap = new Dictionary<string, string>();
 
-            m_macroMap.Add(FILE_NAME_MACRO_INDEX, "The index number for the generated file.");
-            m_macroMap.Add(FILE_NAME_MACRO_TIME, "The file save time.");
-            m_macroMap.Add(FILE_NAME_MACRO_DATE, "The short date when the file is saved.");
-            m_macroMap.Add(FILE_NAME_MACRO_DAY, "The day to save this file.");
-            m_macroMap.Add(FILE_NAME_MACRO_MONTH, "The month to save this file.");
-            m_macroMap.Add(FILE_NAME_MACRO_YEAR, "The year to save this file.");
+            m_macroMap.Add(FILE_NAME_MACRO_INDEX, "The count number of the generated files.");
+            m_macroMap.Add(FILE_NAME_MACRO_TIME, "The file create time.");
+            m_macroMap.Add(FILE_NAME_MACRO_DATE, "The short date when the file is created.");
+            m_macroMap.Add(FILE_NAME_MACRO_DAY, "The day when create this file.");
+            m_macroMap.Add(FILE_NAME_MACRO_MONTH, "The month when create this file.");
+            m_macroMap.Add(FILE_NAME_MACRO_YEAR, "The year when create this file.");
             m_macroMap.Add(FILE_NAME_MACRO_DIR, "The directory name store this file.");
         }
     }

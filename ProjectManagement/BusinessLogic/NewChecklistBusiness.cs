@@ -30,6 +30,11 @@ namespace BusinessLogic
         /// <returns>Absolute path to the file with extension</returns>
         public string SaveLinkProcess(string dirPath, string fileName)
         {
+            if (!dirPath.EndsWith("\\", StringComparison.OrdinalIgnoreCase))
+            {
+                dirPath += "\\";
+            }
+
             string fullFilePath = dirPath +
                 Config.GetInstance().MacroProcess(fileName, Config.GetInstance().GetContainerDir(dirPath), m_indexCounter) +
                 Config.FILE_EXTENSION_CHECKLIST;

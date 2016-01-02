@@ -46,11 +46,12 @@ namespace BusinessLogic
         /// <returns>an XDocument contain the checklist tree information.</returns>
         public XDocument GenerateChecklistFile(TreeView checklistTree)
         {
-            XDocument result = new XDocument(new XElement(Config.XML_KEY_HEAD_REQUEST));
+            XElement requestTree = new XElement(Config.XML_KEY_HEAD_REQUEST);
+            XDocument result = new XDocument(requestTree);
 
             foreach (TreeNode node in checklistTree.Nodes)
             {
-                result.Add(GenerateCheclistElementFromNode(node));
+                requestTree.Add(GenerateCheclistElementFromNode(node));
             }
 
             return result;
