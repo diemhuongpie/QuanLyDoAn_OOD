@@ -15,18 +15,26 @@ namespace BusinessLogic
 
         public List<DTO_Project> GetProjectByName(string projectName)
         {
-            DataAccess.DataSetTableAdapters.sp_SearchProjectByNameTableAdapter adapter = new DataAccess.DataSetTableAdapters.sp_SearchProjectByNameTableAdapter();
-            DataAccess.DataSet.sp_SearchProjectByNameDataTable table = adapter.GetData(projectName);
-
-            List<DTO_Project> result = new List<DTO_Project>();
-
-            foreach (DataAccess.DataSet.sp_SearchProjectByNameRow row in table.Rows)
+            try
             {
-                result.Add(new DTO_Project(
-                    row.ProjectName, row.GroupName, row.SubjectName, row.Class));
+                DataAccess.DataSetTableAdapters.sp_SearchProjectByNameTableAdapter adapter = new DataAccess.DataSetTableAdapters.sp_SearchProjectByNameTableAdapter();
+                DataAccess.DataSet.sp_SearchProjectByNameDataTable table = adapter.GetData(projectName);
+
+                List<DTO_Project> result = new List<DTO_Project>();
+
+                foreach (DataAccess.DataSet.sp_SearchProjectByNameRow row in table.Rows)
+                {
+                    result.Add(new DTO_Project(
+                        row.ProjectName, row.GroupName, row.SubjectName, row.Class));
+                }
+
+                return result;
+            }
+            catch (Exception)
+            {
+                return new List<DTO_Project>();
             }
 
-            return result;
         }
     }
 }
