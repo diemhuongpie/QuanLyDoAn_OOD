@@ -35,9 +35,6 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
@@ -47,6 +44,9 @@
     <Compile Include="DTO_ProjectDetail.cs" />
     <Compile Include="DTO_Tag.cs" />
     <Compile Include="DTO_TagDetail.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

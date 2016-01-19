@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLogic;
 
 namespace Presentation.Controls
 {
@@ -80,6 +81,13 @@ namespace Presentation.Controls
             {
                 select();
             }
+        }
+
+
+        private void m_btnSetting_Click(object sender, EventArgs e)
+        {
+            ExcelReport.createReport();
+            
         }
     }
 }
