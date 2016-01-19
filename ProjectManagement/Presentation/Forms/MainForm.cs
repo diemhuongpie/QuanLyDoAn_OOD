@@ -114,11 +114,13 @@ namespace Presentation
 
                 case "Group Name":
                     {
+                        m_projectExplorer.SeachForGroups(m_textboxSearchBox.Text);
                         break;
                     }
 
-                case "Last Update Time":
+                case "Subject Name":
                     {
+                        m_projectExplorer.SeachForSubject(m_textboxSearchBox.Text);
                         break;
                     }
 

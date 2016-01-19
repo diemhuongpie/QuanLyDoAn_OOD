@@ -4,12 +4,12 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ProjectManagerDatabaseConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ProjectManagerDatabaseConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DataAccess.Properties.Settings.GlobalReference.Default.ProjectManagerDatabaseConnectionString" Provider="System.Data.SqlClient" />
+          <Connection ConnectionStringObject="Data Source=DEVIL\DEVIL;Initial Catalog=ProjectManagerDatabase;Integrated Security=True" IsAppSettingsProperty="false" Modifier="Assembly" Name="devil\devil.ProjectManagerDatabase.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AUTHORTableAdapter" GeneratorDataComponentClassName="AUTHORTableAdapter" Name="AUTHOR" UserDataComponentName="AUTHORTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ProjectManagerDatabaseConnectionString (Settings)" DbObjectName="ProjectManagerDatabase.dbo.AUTHOR" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="devil\devil.ProjectManagerDatabase.dbo" DbObjectName="ProjectManagerDatabase.dbo.AUTHOR" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[AUTHOR] WHERE (([ID] = @Original_ID) AND ([Name] = @Original_Name) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)) AND ((@IsNull_PhoneNumber = 1 AND [PhoneNumber] IS NULL) OR ([PhoneNumber] = @Original_PhoneNumber)))</CommandText>
@@ -71,7 +71,7 @@ SELECT ID, Name, Email, PhoneNumber FROM AUTHOR WHERE (ID = @ID)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PROJECTTableAdapter" GeneratorDataComponentClassName="PROJECTTableAdapter" Name="PROJECT" UserDataComponentName="PROJECTTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ProjectManagerDatabaseConnectionString (Settings)" DbObjectName="ProjectManagerDatabase.dbo.PROJECT" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="devil\devil.ProjectManagerDatabase.dbo" DbObjectName="ProjectManagerDatabase.dbo.PROJECT" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[PROJECT] WHERE (([ProjectID] = @Original_ProjectID) AND ([GroupName] = @Original_GroupName) AND ([SubjectName] = @Original_SubjectName) AND ((@IsNull_Class = 1 AND [Class] IS NULL) OR ([Class] = @Original_Class)))</CommandText>
@@ -131,7 +131,7 @@ SELECT ProjectID, GroupName, SubjectName, Class FROM PROJECT WHERE (ProjectID = 
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PROJECT_DETAILTableAdapter" GeneratorDataComponentClassName="PROJECT_DETAILTableAdapter" Name="PROJECT_DETAIL" UserDataComponentName="PROJECT_DETAILTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ProjectManagerDatabaseConnectionString (Settings)" DbObjectName="ProjectManagerDatabase.dbo.PROJECT_DETAIL" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="devil\devil.ProjectManagerDatabase.dbo" DbObjectName="ProjectManagerDatabase.dbo.PROJECT_DETAIL" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[PROJECT_DETAIL] WHERE (([ProjectID] = @Original_ProjectID) AND ([AuthorID] = @Original_AuthorID) AND ((@IsNull_Score = 1 AND [Score] IS NULL) OR ([Score] = @Original_Score)) AND ((@IsNull_ProjectName = 1 AND [ProjectName] IS NULL) OR ([ProjectName] = @Original_ProjectName)) AND ([ProjectTimeStart] = @Original_ProjectTimeStart) AND ((@IsNull_ProjectTimeEnd = 1 AND [ProjectTimeEnd] IS NULL) OR ([ProjectTimeEnd] = @Original_ProjectTimeEnd)))</CommandText>
@@ -205,7 +205,7 @@ SELECT ProjectID, AuthorID, Score, ProjectName, ProjectTimeStart, ProjectTimeEnd
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TAGTableAdapter" GeneratorDataComponentClassName="TAGTableAdapter" Name="TAG" UserDataComponentName="TAGTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ProjectManagerDatabaseConnectionString (Settings)" DbObjectName="ProjectManagerDatabase.dbo.TAG" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="devil\devil.ProjectManagerDatabase.dbo" DbObjectName="ProjectManagerDatabase.dbo.TAG" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[TAG] WHERE (([TagName] = @Original_TagName))</CommandText>
@@ -248,7 +248,7 @@ SELECT TagName FROM TAG WHERE (TagName = @TagName)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TAG_DETAILTableAdapter" GeneratorDataComponentClassName="TAG_DETAILTableAdapter" Name="TAG_DETAIL" UserDataComponentName="TAG_DETAILTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ProjectManagerDatabaseConnectionString (Settings)" DbObjectName="ProjectManagerDatabase.dbo.TAG_DETAIL" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="devil\devil.ProjectManagerDatabase.dbo" DbObjectName="ProjectManagerDatabase.dbo.TAG_DETAIL" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[TAG_DETAIL] WHERE (([ProjectID] = @Original_ProjectID) AND ([TagName] = @Original_TagName))</CommandText>
@@ -296,7 +296,7 @@ SELECT ProjectID, TagName FROM TAG_DETAIL WHERE (ProjectID = @ProjectID) AND (Ta
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sp_SearchProjectByAuthorTableAdapter" GeneratorDataComponentClassName="sp_SearchProjectByAuthorTableAdapter" Name="sp_SearchProjectByAuthor" UserDataComponentName="sp_SearchProjectByAuthorTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ProjectManagerDatabaseConnectionString (Settings)" DbObjectName="ProjectManagerDatabase.dbo.sp_SearchProjectByAuthor" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="devil\devil.ProjectManagerDatabase.dbo" DbObjectName="ProjectManagerDatabase.dbo.sp_SearchProjectByAuthor" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.sp_SearchProjectByAuthor</CommandText>
@@ -326,9 +326,73 @@ SELECT ProjectID, TagName FROM TAG_DETAIL WHERE (ProjectID = @ProjectID) AND (Ta
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sp_SearchProjectByClassTableAdapter" GeneratorDataComponentClassName="sp_SearchProjectByClassTableAdapter" Name="sp_SearchProjectByClass" UserDataComponentName="sp_SearchProjectByClassTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="devil\devil.ProjectManagerDatabase.dbo" DbObjectName="ProjectManagerDatabase.dbo.sp_SearchProjectByClass" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.sp_SearchProjectByClass</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@className" Precision="0" ProviderType="NVarChar" Scale="0" Size="100" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ProjectID" DataSetColumn="ProjectID" />
+              <Mapping SourceColumn="GroupName" DataSetColumn="GroupName" />
+              <Mapping SourceColumn="SubjectName" DataSetColumn="SubjectName" />
+              <Mapping SourceColumn="Class" DataSetColumn="Class" />
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Email" DataSetColumn="Email" />
+              <Mapping SourceColumn="PhoneNumber" DataSetColumn="PhoneNumber" />
+              <Mapping SourceColumn="ProjectID1" DataSetColumn="ProjectID1" />
+              <Mapping SourceColumn="AuthorID" DataSetColumn="AuthorID" />
+              <Mapping SourceColumn="Score" DataSetColumn="Score" />
+              <Mapping SourceColumn="ProjectName" DataSetColumn="ProjectName" />
+              <Mapping SourceColumn="ProjectTimeStart" DataSetColumn="ProjectTimeStart" />
+              <Mapping SourceColumn="ProjectTimeEnd" DataSetColumn="ProjectTimeEnd" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sp_SearchProjectByGroupTableAdapter" GeneratorDataComponentClassName="sp_SearchProjectByGroupTableAdapter" Name="sp_SearchProjectByGroup" UserDataComponentName="sp_SearchProjectByGroupTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="devil\devil.ProjectManagerDatabase.dbo" DbObjectName="ProjectManagerDatabase.dbo.sp_SearchProjectByGroup" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.sp_SearchProjectByGroup</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@groupName" Precision="0" ProviderType="NVarChar" Scale="0" Size="100" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ProjectID" DataSetColumn="ProjectID" />
+              <Mapping SourceColumn="GroupName" DataSetColumn="GroupName" />
+              <Mapping SourceColumn="SubjectName" DataSetColumn="SubjectName" />
+              <Mapping SourceColumn="Class" DataSetColumn="Class" />
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Email" DataSetColumn="Email" />
+              <Mapping SourceColumn="PhoneNumber" DataSetColumn="PhoneNumber" />
+              <Mapping SourceColumn="ProjectID1" DataSetColumn="ProjectID1" />
+              <Mapping SourceColumn="AuthorID" DataSetColumn="AuthorID" />
+              <Mapping SourceColumn="Score" DataSetColumn="Score" />
+              <Mapping SourceColumn="ProjectName" DataSetColumn="ProjectName" />
+              <Mapping SourceColumn="ProjectTimeStart" DataSetColumn="ProjectTimeStart" />
+              <Mapping SourceColumn="ProjectTimeEnd" DataSetColumn="ProjectTimeEnd" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sp_SearchProjectByNameTableAdapter" GeneratorDataComponentClassName="sp_SearchProjectByNameTableAdapter" Name="sp_SearchProjectByName" UserDataComponentName="sp_SearchProjectByNameTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ProjectManagerDatabaseConnectionString (Settings)" DbObjectName="ProjectManagerDatabase.dbo.sp_SearchProjectByName" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="devil\devil.ProjectManagerDatabase.dbo" DbObjectName="ProjectManagerDatabase.dbo.sp_SearchProjectByName" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.sp_SearchProjectByName</CommandText>
@@ -356,7 +420,7 @@ SELECT ProjectID, TagName FROM TAG_DETAIL WHERE (ProjectID = @ProjectID) AND (Ta
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sp_SearchProjectByScoreTableAdapter" GeneratorDataComponentClassName="sp_SearchProjectByScoreTableAdapter" Name="sp_SearchProjectByScore" UserDataComponentName="sp_SearchProjectByScoreTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ProjectManagerDatabaseConnectionString (Settings)" DbObjectName="ProjectManagerDatabase.dbo.sp_SearchProjectByScore" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="devil\devil.ProjectManagerDatabase.dbo" DbObjectName="ProjectManagerDatabase.dbo.sp_SearchProjectByScore" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.sp_SearchProjectByScore</CommandText>
@@ -384,7 +448,7 @@ SELECT ProjectID, TagName FROM TAG_DETAIL WHERE (ProjectID = @ProjectID) AND (Ta
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sp_SearchProjectBySubjectTableAdapter" GeneratorDataComponentClassName="sp_SearchProjectBySubjectTableAdapter" Name="sp_SearchProjectBySubject" UserDataComponentName="sp_SearchProjectBySubjectTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ProjectManagerDatabaseConnectionString (Settings)" DbObjectName="ProjectManagerDatabase.dbo.sp_SearchProjectBySubject" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="devil\devil.ProjectManagerDatabase.dbo" DbObjectName="ProjectManagerDatabase.dbo.sp_SearchProjectBySubject" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.sp_SearchProjectBySubject</CommandText>
@@ -401,12 +465,22 @@ SELECT ProjectID, TagName FROM TAG_DETAIL WHERE (ProjectID = @ProjectID) AND (Ta
               <Mapping SourceColumn="GroupName" DataSetColumn="GroupName" />
               <Mapping SourceColumn="SubjectName" DataSetColumn="SubjectName" />
               <Mapping SourceColumn="Class" DataSetColumn="Class" />
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Email" DataSetColumn="Email" />
+              <Mapping SourceColumn="PhoneNumber" DataSetColumn="PhoneNumber" />
+              <Mapping SourceColumn="ProjectID1" DataSetColumn="ProjectID1" />
+              <Mapping SourceColumn="AuthorID" DataSetColumn="AuthorID" />
+              <Mapping SourceColumn="Score" DataSetColumn="Score" />
+              <Mapping SourceColumn="ProjectName" DataSetColumn="ProjectName" />
+              <Mapping SourceColumn="ProjectTimeStart" DataSetColumn="ProjectTimeStart" />
+              <Mapping SourceColumn="ProjectTimeEnd" DataSetColumn="ProjectTimeEnd" />
             </Mappings>
             <Sources />
           </TableAdapter>
         </Tables>
         <Sources>
-          <DbSource ConnectionRef="ProjectManagerDatabaseConnectionString (Settings)" DbObjectName="ProjectManagerDatabase.dbo.sp_AddProjectInfo" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_AddProjectInfo" MethodsParameterType="CLR" Modifier="Public" Name="sp_AddProjectInfo" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="sp_AddProjectInfo">
+          <DbSource ConnectionRef="devil\devil.ProjectManagerDatabase.dbo" DbObjectName="ProjectManagerDatabase.dbo.sp_AddProjectInfo" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_AddProjectInfo" MethodsParameterType="CLR" Modifier="Public" Name="sp_AddProjectInfo" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="sp_AddProjectInfo">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.sp_AddProjectInfo</CommandText>
@@ -419,7 +493,7 @@ SELECT ProjectID, TagName FROM TAG_DETAIL WHERE (ProjectID = @ProjectID) AND (Ta
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="ProjectManagerDatabaseConnectionString (Settings)" DbObjectName="ProjectManagerDatabase.dbo.sp_AddTagByName__UPDATING" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_AddTagByName__UPDATING" MethodsParameterType="CLR" Modifier="Public" Name="sp_AddTagByName__UPDATING" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="sp_AddTagByName__UPDATING">
+          <DbSource ConnectionRef="devil\devil.ProjectManagerDatabase.dbo" DbObjectName="ProjectManagerDatabase.dbo.sp_AddTagByName__UPDATING" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_AddTagByName__UPDATING" MethodsParameterType="CLR" Modifier="Public" Name="sp_AddTagByName__UPDATING" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="sp_AddTagByName__UPDATING">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.sp_AddTagByName__UPDATING</CommandText>
@@ -430,7 +504,7 @@ SELECT ProjectID, TagName FROM TAG_DETAIL WHERE (ProjectID = @ProjectID) AND (Ta
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="ProjectManagerDatabaseConnectionString (Settings)" DbObjectName="ProjectManagerDatabase.dbo.sp_DeleteProjectInfoByProjectID" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_DeleteProjectInfoByProjectID" MethodsParameterType="CLR" Modifier="Public" Name="sp_DeleteProjectInfoByProjectID" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="sp_DeleteProjectInfoByProjectID">
+          <DbSource ConnectionRef="devil\devil.ProjectManagerDatabase.dbo" DbObjectName="ProjectManagerDatabase.dbo.sp_DeleteProjectInfoByProjectID" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_DeleteProjectInfoByProjectID" MethodsParameterType="CLR" Modifier="Public" Name="sp_DeleteProjectInfoByProjectID" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="sp_DeleteProjectInfoByProjectID">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.sp_DeleteProjectInfoByProjectID</CommandText>
@@ -441,7 +515,7 @@ SELECT ProjectID, TagName FROM TAG_DETAIL WHERE (ProjectID = @ProjectID) AND (Ta
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="ProjectManagerDatabaseConnectionString (Settings)" DbObjectName="ProjectManagerDatabase.dbo.sp_UpdateProjectDetailByID" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_UpdateProjectDetailByID" MethodsParameterType="CLR" Modifier="Public" Name="sp_UpdateProjectDetailByID" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="sp_UpdateProjectDetailByID">
+          <DbSource ConnectionRef="devil\devil.ProjectManagerDatabase.dbo" DbObjectName="ProjectManagerDatabase.dbo.sp_UpdateProjectDetailByID" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_UpdateProjectDetailByID" MethodsParameterType="CLR" Modifier="Public" Name="sp_UpdateProjectDetailByID" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="sp_UpdateProjectDetailByID">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.sp_UpdateProjectDetailByID</CommandText>
@@ -457,7 +531,7 @@ SELECT ProjectID, TagName FROM TAG_DETAIL WHERE (ProjectID = @ProjectID) AND (Ta
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="ProjectManagerDatabaseConnectionString (Settings)" DbObjectName="ProjectManagerDatabase.dbo.sp_UpdateProjectInfoByID" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_UpdateProjectInfoByID" MethodsParameterType="CLR" Modifier="Public" Name="sp_UpdateProjectInfoByID" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="sp_UpdateProjectInfoByID">
+          <DbSource ConnectionRef="devil\devil.ProjectManagerDatabase.dbo" DbObjectName="ProjectManagerDatabase.dbo.sp_UpdateProjectInfoByID" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_UpdateProjectInfoByID" MethodsParameterType="CLR" Modifier="Public" Name="sp_UpdateProjectInfoByID" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="sp_UpdateProjectInfoByID">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.sp_UpdateProjectInfoByID</CommandText>
@@ -471,7 +545,7 @@ SELECT ProjectID, TagName FROM TAG_DETAIL WHERE (ProjectID = @ProjectID) AND (Ta
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="ProjectManagerDatabaseConnectionString (Settings)" DbObjectName="ProjectManagerDatabase.dbo.sp_UpdateProjectTag_UPDATING" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_UpdateProjectTag_UPDATING" MethodsParameterType="CLR" Modifier="Public" Name="sp_UpdateProjectTag_UPDATING" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="sp_UpdateProjectTag_UPDATING">
+          <DbSource ConnectionRef="devil\devil.ProjectManagerDatabase.dbo" DbObjectName="ProjectManagerDatabase.dbo.sp_UpdateProjectTag_UPDATING" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_UpdateProjectTag_UPDATING" MethodsParameterType="CLR" Modifier="Public" Name="sp_UpdateProjectTag_UPDATING" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="sp_UpdateProjectTag_UPDATING">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.sp_UpdateProjectTag_UPDATING</CommandText>
@@ -707,6 +781,178 @@ SELECT ProjectID, TagName FROM TAG_DETAIL WHERE (ProjectID = @ProjectID) AND (Ta
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="sp_SearchProjectByClass" msprop:Generator_TableClassName="sp_SearchProjectByClassDataTable" msprop:Generator_TableVarName="tablesp_SearchProjectByClass" msprop:Generator_TablePropName="sp_SearchProjectByClass" msprop:Generator_RowDeletingName="sp_SearchProjectByClassRowDeleting" msprop:Generator_RowChangingName="sp_SearchProjectByClassRowChanging" msprop:Generator_RowEvHandlerName="sp_SearchProjectByClassRowChangeEventHandler" msprop:Generator_RowDeletedName="sp_SearchProjectByClassRowDeleted" msprop:Generator_UserTableName="sp_SearchProjectByClass" msprop:Generator_RowChangedName="sp_SearchProjectByClassRowChanged" msprop:Generator_RowEvArgName="sp_SearchProjectByClassRowChangeEvent" msprop:Generator_RowClassName="sp_SearchProjectByClassRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ProjectID" msprop:Generator_ColumnVarNameInTable="columnProjectID" msprop:Generator_ColumnPropNameInRow="ProjectID" msprop:Generator_ColumnPropNameInTable="ProjectIDColumn" msprop:Generator_UserColumnName="ProjectID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GroupName" msprop:Generator_ColumnVarNameInTable="columnGroupName" msprop:Generator_ColumnPropNameInRow="GroupName" msprop:Generator_ColumnPropNameInTable="GroupNameColumn" msprop:Generator_UserColumnName="GroupName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubjectName" msprop:Generator_ColumnVarNameInTable="columnSubjectName" msprop:Generator_ColumnPropNameInRow="SubjectName" msprop:Generator_ColumnPropNameInTable="SubjectNameColumn" msprop:Generator_UserColumnName="SubjectName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Class" msprop:Generator_ColumnVarNameInTable="columnClass" msprop:Generator_ColumnPropNameInRow="Class" msprop:Generator_ColumnPropNameInTable="ClassColumn" msprop:Generator_UserColumnName="Class" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_UserColumnName="Email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PhoneNumber" msprop:Generator_ColumnVarNameInTable="columnPhoneNumber" msprop:Generator_ColumnPropNameInRow="PhoneNumber" msprop:Generator_ColumnPropNameInTable="PhoneNumberColumn" msprop:Generator_UserColumnName="PhoneNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProjectID1" msprop:Generator_ColumnVarNameInTable="columnProjectID1" msprop:Generator_ColumnPropNameInRow="ProjectID1" msprop:Generator_ColumnPropNameInTable="ProjectID1Column" msprop:Generator_UserColumnName="ProjectID1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AuthorID" msprop:Generator_ColumnVarNameInTable="columnAuthorID" msprop:Generator_ColumnPropNameInRow="AuthorID" msprop:Generator_ColumnPropNameInTable="AuthorIDColumn" msprop:Generator_UserColumnName="AuthorID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Score" msprop:Generator_ColumnVarNameInTable="columnScore" msprop:Generator_ColumnPropNameInRow="Score" msprop:Generator_ColumnPropNameInTable="ScoreColumn" msprop:Generator_UserColumnName="Score" type="xs:double" minOccurs="0" />
+              <xs:element name="ProjectName" msprop:Generator_ColumnVarNameInTable="columnProjectName" msprop:Generator_ColumnPropNameInRow="ProjectName" msprop:Generator_ColumnPropNameInTable="ProjectNameColumn" msprop:Generator_UserColumnName="ProjectName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProjectTimeStart" msprop:Generator_ColumnVarNameInTable="columnProjectTimeStart" msprop:Generator_ColumnPropNameInRow="ProjectTimeStart" msprop:Generator_ColumnPropNameInTable="ProjectTimeStartColumn" msprop:Generator_UserColumnName="ProjectTimeStart" type="xs:dateTime" />
+              <xs:element name="ProjectTimeEnd" msprop:Generator_ColumnVarNameInTable="columnProjectTimeEnd" msprop:Generator_ColumnPropNameInRow="ProjectTimeEnd" msprop:Generator_ColumnPropNameInTable="ProjectTimeEndColumn" msprop:Generator_UserColumnName="ProjectTimeEnd" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="sp_SearchProjectByGroup" msprop:Generator_TableClassName="sp_SearchProjectByGroupDataTable" msprop:Generator_TableVarName="tablesp_SearchProjectByGroup" msprop:Generator_TablePropName="sp_SearchProjectByGroup" msprop:Generator_RowDeletingName="sp_SearchProjectByGroupRowDeleting" msprop:Generator_RowChangingName="sp_SearchProjectByGroupRowChanging" msprop:Generator_RowEvHandlerName="sp_SearchProjectByGroupRowChangeEventHandler" msprop:Generator_RowDeletedName="sp_SearchProjectByGroupRowDeleted" msprop:Generator_UserTableName="sp_SearchProjectByGroup" msprop:Generator_RowChangedName="sp_SearchProjectByGroupRowChanged" msprop:Generator_RowEvArgName="sp_SearchProjectByGroupRowChangeEvent" msprop:Generator_RowClassName="sp_SearchProjectByGroupRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ProjectID" msprop:Generator_ColumnVarNameInTable="columnProjectID" msprop:Generator_ColumnPropNameInRow="ProjectID" msprop:Generator_ColumnPropNameInTable="ProjectIDColumn" msprop:Generator_UserColumnName="ProjectID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GroupName" msprop:Generator_ColumnVarNameInTable="columnGroupName" msprop:Generator_ColumnPropNameInRow="GroupName" msprop:Generator_ColumnPropNameInTable="GroupNameColumn" msprop:Generator_UserColumnName="GroupName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubjectName" msprop:Generator_ColumnVarNameInTable="columnSubjectName" msprop:Generator_ColumnPropNameInRow="SubjectName" msprop:Generator_ColumnPropNameInTable="SubjectNameColumn" msprop:Generator_UserColumnName="SubjectName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Class" msprop:Generator_ColumnVarNameInTable="columnClass" msprop:Generator_ColumnPropNameInRow="Class" msprop:Generator_ColumnPropNameInTable="ClassColumn" msprop:Generator_UserColumnName="Class" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_UserColumnName="Email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PhoneNumber" msprop:Generator_ColumnVarNameInTable="columnPhoneNumber" msprop:Generator_ColumnPropNameInRow="PhoneNumber" msprop:Generator_ColumnPropNameInTable="PhoneNumberColumn" msprop:Generator_UserColumnName="PhoneNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProjectID1" msprop:Generator_ColumnVarNameInTable="columnProjectID1" msprop:Generator_ColumnPropNameInRow="ProjectID1" msprop:Generator_ColumnPropNameInTable="ProjectID1Column" msprop:Generator_UserColumnName="ProjectID1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AuthorID" msprop:Generator_ColumnVarNameInTable="columnAuthorID" msprop:Generator_ColumnPropNameInRow="AuthorID" msprop:Generator_ColumnPropNameInTable="AuthorIDColumn" msprop:Generator_UserColumnName="AuthorID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Score" msprop:Generator_ColumnVarNameInTable="columnScore" msprop:Generator_ColumnPropNameInRow="Score" msprop:Generator_ColumnPropNameInTable="ScoreColumn" msprop:Generator_UserColumnName="Score" type="xs:double" minOccurs="0" />
+              <xs:element name="ProjectName" msprop:Generator_ColumnVarNameInTable="columnProjectName" msprop:Generator_ColumnPropNameInRow="ProjectName" msprop:Generator_ColumnPropNameInTable="ProjectNameColumn" msprop:Generator_UserColumnName="ProjectName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProjectTimeStart" msprop:Generator_ColumnVarNameInTable="columnProjectTimeStart" msprop:Generator_ColumnPropNameInRow="ProjectTimeStart" msprop:Generator_ColumnPropNameInTable="ProjectTimeStartColumn" msprop:Generator_UserColumnName="ProjectTimeStart" type="xs:dateTime" />
+              <xs:element name="ProjectTimeEnd" msprop:Generator_ColumnVarNameInTable="columnProjectTimeEnd" msprop:Generator_ColumnPropNameInRow="ProjectTimeEnd" msprop:Generator_ColumnPropNameInTable="ProjectTimeEndColumn" msprop:Generator_UserColumnName="ProjectTimeEnd" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
         <xs:element name="sp_SearchProjectByName" msprop:Generator_TableClassName="sp_SearchProjectByNameDataTable" msprop:Generator_TableVarName="tablesp_SearchProjectByName" msprop:Generator_TablePropName="sp_SearchProjectByName" msprop:Generator_RowDeletingName="sp_SearchProjectByNameRowDeleting" msprop:Generator_RowChangingName="sp_SearchProjectByNameRowChanging" msprop:Generator_RowEvHandlerName="sp_SearchProjectByNameRowChangeEventHandler" msprop:Generator_RowDeletedName="sp_SearchProjectByNameRowDeleted" msprop:Generator_UserTableName="sp_SearchProjectByName" msprop:Generator_RowChangedName="sp_SearchProjectByNameRowChanged" msprop:Generator_RowEvArgName="sp_SearchProjectByNameRowChangeEvent" msprop:Generator_RowClassName="sp_SearchProjectByNameRow">
           <xs:complexType>
             <xs:sequence>
@@ -854,6 +1100,58 @@ SELECT ProjectID, TagName FROM TAG_DETAIL WHERE (ProjectID = @ProjectID) AND (Ta
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_UserColumnName="Email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PhoneNumber" msprop:Generator_ColumnVarNameInTable="columnPhoneNumber" msprop:Generator_ColumnPropNameInRow="PhoneNumber" msprop:Generator_ColumnPropNameInTable="PhoneNumberColumn" msprop:Generator_UserColumnName="PhoneNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProjectID1" msprop:Generator_ColumnVarNameInTable="columnProjectID1" msprop:Generator_ColumnPropNameInRow="ProjectID1" msprop:Generator_ColumnPropNameInTable="ProjectID1Column" msprop:Generator_UserColumnName="ProjectID1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AuthorID" msprop:Generator_ColumnVarNameInTable="columnAuthorID" msprop:Generator_ColumnPropNameInRow="AuthorID" msprop:Generator_ColumnPropNameInTable="AuthorIDColumn" msprop:Generator_UserColumnName="AuthorID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Score" msprop:Generator_ColumnVarNameInTable="columnScore" msprop:Generator_ColumnPropNameInRow="Score" msprop:Generator_ColumnPropNameInTable="ScoreColumn" msprop:Generator_UserColumnName="Score" type="xs:double" minOccurs="0" />
+              <xs:element name="ProjectName" msprop:Generator_ColumnVarNameInTable="columnProjectName" msprop:Generator_ColumnPropNameInRow="ProjectName" msprop:Generator_ColumnPropNameInTable="ProjectNameColumn" msprop:Generator_UserColumnName="ProjectName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProjectTimeStart" msprop:Generator_ColumnVarNameInTable="columnProjectTimeStart" msprop:Generator_ColumnPropNameInRow="ProjectTimeStart" msprop:Generator_ColumnPropNameInTable="ProjectTimeStartColumn" msprop:Generator_UserColumnName="ProjectTimeStart" type="xs:dateTime" />
+              <xs:element name="ProjectTimeEnd" msprop:Generator_ColumnVarNameInTable="columnProjectTimeEnd" msprop:Generator_ColumnPropNameInRow="ProjectTimeEnd" msprop:Generator_ColumnPropNameInTable="ProjectTimeEndColumn" msprop:Generator_UserColumnName="ProjectTimeEnd" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -888,6 +1186,20 @@ SELECT ProjectID, TagName FROM TAG_DETAIL WHERE (ProjectID = @ProjectID) AND (Ta
       <xs:field xpath="mstns:ProjectID1" />
       <xs:field xpath="mstns:AuthorID" />
     </xs:unique>
+    <xs:unique name="sp_SearchProjectByClass_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:sp_SearchProjectByClass" />
+      <xs:field xpath="mstns:ProjectID" />
+      <xs:field xpath="mstns:ID" />
+      <xs:field xpath="mstns:ProjectID1" />
+      <xs:field xpath="mstns:AuthorID" />
+    </xs:unique>
+    <xs:unique name="sp_SearchProjectByGroup_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:sp_SearchProjectByGroup" />
+      <xs:field xpath="mstns:ProjectID" />
+      <xs:field xpath="mstns:ID" />
+      <xs:field xpath="mstns:ProjectID1" />
+      <xs:field xpath="mstns:AuthorID" />
+    </xs:unique>
     <xs:unique name="sp_SearchProjectByName_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:sp_SearchProjectByName" />
       <xs:field xpath="mstns:ProjectID" />
@@ -903,6 +1215,9 @@ SELECT ProjectID, TagName FROM TAG_DETAIL WHERE (ProjectID = @ProjectID) AND (Ta
     <xs:unique name="sp_SearchProjectBySubject_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:sp_SearchProjectBySubject" />
       <xs:field xpath="mstns:ProjectID" />
+      <xs:field xpath="mstns:ID" />
+      <xs:field xpath="mstns:ProjectID1" />
+      <xs:field xpath="mstns:AuthorID" />
     </xs:unique>
   </xs:element>
   <xs:annotation>

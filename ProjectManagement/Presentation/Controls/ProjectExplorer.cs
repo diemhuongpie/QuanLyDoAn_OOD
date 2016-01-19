@@ -33,8 +33,43 @@ namespace Presentation.Controls
         public void SeachForProjects (string name)
         {
             m_projectList.Controls.Clear();
-
+            if (name.Length == 0)
+                return;
             List<DTO_Project> projectInfoList = m_business.GetProjectByName(name);
+            foreach (DTO_Project project in projectInfoList)
+            {
+                ProjectDisplay prj = new ProjectDisplay();
+                /// TODO: change ProjectID to ProjectName.
+                prj.SetProjectName(project.ProjectID);
+                // seach for other info and set it here.
+
+                m_projectList.Controls.Add(prj);
+            }
+        }
+
+        public void SeachForGroups(string group)
+        {
+            m_projectList.Controls.Clear();
+            if (group.Length == 0)
+                return;
+            List<DTO_Project> projectInfoList = m_business.GetProjectByGroup(group);
+            foreach (DTO_Project project in projectInfoList)
+            {
+                ProjectDisplay prj = new ProjectDisplay();
+                /// TODO: change ProjectID to ProjectName.
+                prj.SetProjectName(project.ProjectID);
+                // seach for other info and set it here.
+
+                m_projectList.Controls.Add(prj);
+            }
+        }
+
+        public void SeachForSubject(string subject)
+        {
+            m_projectList.Controls.Clear();
+            if (subject.Length == 0)
+                return;
+            List<DTO_Project> projectInfoList = m_business.GetProjectBySubject(subject);
             foreach (DTO_Project project in projectInfoList)
             {
                 ProjectDisplay prj = new ProjectDisplay();

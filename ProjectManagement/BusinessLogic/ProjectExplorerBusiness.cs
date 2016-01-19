@@ -36,5 +36,53 @@ namespace BusinessLogic
             }
 
         }
+
+        public List<DTO_Project> GetProjectByGroup(string groupName)
+        {
+            try
+            {
+                DataAccess.DataSetTableAdapters.sp_SearchProjectByGroupTableAdapter adapter = new DataAccess.DataSetTableAdapters.sp_SearchProjectByGroupTableAdapter();
+                DataAccess.DataSet.sp_SearchProjectByGroupDataTable table = adapter.GetData(groupName);
+
+                List<DTO_Project> result = new List<DTO_Project>();
+
+                foreach (DataAccess.DataSet.sp_SearchProjectByGroupRow row in table.Rows)
+                {
+                    result.Add(new DTO_Project(
+                        row.ProjectName, row.GroupName, row.SubjectName, row.Class));
+                }
+
+                return result;
+            }
+            catch (Exception)
+            {
+                return new List<DTO_Project>();
+            }
+
+        }
+        public List<DTO_Project> GetProjectBySubject(string subjectName)
+        {
+            try
+            {
+                DataAccess.DataSetTableAdapters.sp_SearchProjectBySubjectTableAdapter adapter = new DataAccess.DataSetTableAdapters.sp_SearchProjectBySubjectTableAdapter();
+                DataAccess.DataSet.sp_SearchProjectBySubjectDataTable table = adapter.GetData(subjectName);
+
+                List<DTO_Project> result = new List<DTO_Project>();
+
+                foreach (DataAccess.DataSet.sp_SearchProjectBySubjectRow row in table.Rows)
+                {
+                    result.Add(new DTO_Project(
+                        row.ProjectName, row.GroupName, row.SubjectName, row.Class));
+                }
+
+                return result;
+            }
+            catch (Exception)
+            {
+                return new List<DTO_Project>();
+            }
+
+        }
+
     }
 }

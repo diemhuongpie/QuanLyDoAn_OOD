@@ -275,7 +275,7 @@
             this.m_cboSeachType.Items.AddRange(new object[] {
             "Project Name",
             "Group Name",
-            "Last Update Time"});
+            "Subject Name"});
             this.m_cboSeachType.Location = new System.Drawing.Point(335, 16);
             this.m_cboSeachType.Name = "m_cboSeachType";
             this.m_cboSeachType.Size = new System.Drawing.Size(116, 21);
