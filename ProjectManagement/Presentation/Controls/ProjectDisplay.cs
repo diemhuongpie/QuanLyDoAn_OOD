@@ -19,17 +19,22 @@ namespace Presentation.Controls
         {
             InitializeComponent();
             m_splitContainerProgressBar.SplitterDistance = 5;
+            m_overview = "TRUNG LE SIEU DEP TRAI";
             Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
         }
+
 
         public void SetProjectName (string projectName)
         {
             m_lblProjectName.Text = projectName;
+            m_overview += projectName;
         }
 
         public void SetGroupName (string groupName)
         {
             m_lblGroupName.Text = groupName;
+            m_overview          += "\n";
+            m_overview          += groupName;
         }
 
         public void UpdateLastCheckedTime ()

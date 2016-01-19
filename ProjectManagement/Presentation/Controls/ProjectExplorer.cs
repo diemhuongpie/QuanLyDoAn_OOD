@@ -42,7 +42,7 @@ namespace Presentation.Controls
                 /// TODO: change ProjectID to ProjectName.
                 prj.SetProjectName(project.ProjectID);
                 // seach for other info and set it here.
-
+                
                 m_projectList.Controls.Add(prj);
             }
         }
@@ -114,6 +114,12 @@ namespace Presentation.Controls
                 ProjectDisplay prj = ctrl as ProjectDisplay;
                 prj.select();
             }
+        }
+
+        // Trung Le
+        public  System.Windows.Forms.TableLayoutPanel getProjectList()
+        {
+            return m_projectList;
         }
     }
 }

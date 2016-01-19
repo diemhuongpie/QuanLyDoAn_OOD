@@ -19,10 +19,12 @@ namespace Presentation
         private MainFormBusiness m_business;
         private NewChecklist generateChecklistWindow;
         private ChecklistWorkbench m_checlistWorkbench;
+        private ProjectDisplay m_currentProject;
 
         public MainForm()
         {
-            m_business = new MainFormBusiness();
+            m_business              = new MainFormBusiness();
+            m_currentProject        = new ProjectDisplay();
             InitializeComponent();
         }
 
@@ -126,6 +128,11 @@ namespace Presentation
 
                 default:
                     break;
+
+            }
+            if(m_projectExplorer !=  null)
+            {
+                //m_previewPane = SeachForSubject(m_textboxSearchBox.Text)
             }
         }
 
@@ -150,6 +157,11 @@ namespace Presentation
                 m_checlistWorkbench.Show();
                 m_checlistWorkbench.Focus();
             }
+        }
+
+        private void m_projectExplorer_Load(object sender, EventArgs e)
+        {
+            m_previewPane.Text = m_currentProject.m_overview;
         }
     }
 }
