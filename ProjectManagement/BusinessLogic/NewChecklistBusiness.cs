@@ -56,7 +56,7 @@ namespace BusinessLogic
             switch (errorCode)
             {
                 case Config.ERROR_CODE_FILE_EXISTS:
-                    DialogResult result = MessageBox.Show("This file exits already.\nDo you want to override it?\n" + extraInfomation, "Cannot save.", MessageBoxButtons.OKCancel);
+                    DialogResult result = MessageBox.Show("This file already exits.\nDo you want to override it?\n\n" + extraInfomation, "Cannot save.", MessageBoxButtons.OKCancel);
                     return result == DialogResult.OK;
 
                 case Config.ERROR_CODE_NONE:

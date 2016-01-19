@@ -17,29 +17,19 @@ namespace Presentation.Forms
             InitializeComponent();
         }
 
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Not implement yet
-        }
-
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
             dialog.Filter = BusinessLogic.Config.FILE_DIALOG_FILTER_CHECKLIST;
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                // do open checklist.
+                m_checklistView.LoadChecklist(dialog.FileName);
             }
         }
 
-        private void saveToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void saveToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            // Not implement yet
-        }
 
-        private void saveAsNewToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Not implement yet
         }
     }
 }

@@ -45,7 +45,14 @@ namespace Presentation.Forms
             int errorCode = m_checkList.SaveTheTree(processedPath, false);
             if (m_business.WarningErrorIfContinue(errorCode, processedPath))
             {
-                m_checkList.SaveTheTree(processedPath, true);
+                if (m_checkList.SaveTheTree(processedPath, true) == BusinessLogic.Config.ERROR_CODE_NONE)
+                {
+                    MessageBox.Show("Check list is successful exported.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Check list is successful exported.");
             }
         }
 

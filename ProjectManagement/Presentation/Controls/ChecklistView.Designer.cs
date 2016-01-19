@@ -37,6 +37,7 @@
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deselect = new System.Windows.Forms.ToolStripMenuItem();
+            this.clear = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             this.m_requestTree.Location = new System.Drawing.Point(0, 24);
             this.m_requestTree.Name = "m_requestTree";
             this.m_requestTree.SelectedImageIndex = 0;
-            this.m_requestTree.Size = new System.Drawing.Size(481, 457);
+            this.m_requestTree.Size = new System.Drawing.Size(632, 457);
             this.m_requestTree.TabIndex = 0;
             this.m_requestTree.Click += new System.EventHandler(this.deselecting);
             // 
@@ -70,10 +71,11 @@
             this.newSubRequestToolStripMenuItem,
             this.deleteToolStripMenuItem,
             this.renameToolStripMenuItem,
-            this.deselect});
+            this.deselect,
+            this.clear});
             this.m_menuBar.Location = new System.Drawing.Point(0, 0);
             this.m_menuBar.Name = "m_menuBar";
-            this.m_menuBar.Size = new System.Drawing.Size(481, 24);
+            this.m_menuBar.Size = new System.Drawing.Size(632, 24);
             this.m_menuBar.TabIndex = 1;
             // 
             // newSubRequestToolStripMenuItem
@@ -115,6 +117,14 @@
             this.deselect.Visible = false;
             this.deselect.Click += new System.EventHandler(this.deselecting);
             // 
+            // clear
+            // 
+            this.clear.Name = "clear";
+            this.clear.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.Delete)));
+            this.clear.Size = new System.Drawing.Size(112, 20);
+            this.clear.Text = "Clear (Shift + Del)";
+            this.clear.Click += new System.EventHandler(this.clear_Click);
+            // 
             // ChecklistView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,7 +132,7 @@
             this.Controls.Add(this.m_requestTree);
             this.Controls.Add(this.m_menuBar);
             this.Name = "ChecklistView";
-            this.Size = new System.Drawing.Size(481, 481);
+            this.Size = new System.Drawing.Size(632, 481);
             this.m_menuBar.ResumeLayout(false);
             this.m_menuBar.PerformLayout();
             this.ResumeLayout(false);
@@ -139,5 +149,6 @@
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem renameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deselect;
+        private System.Windows.Forms.ToolStripMenuItem clear;
     }
 }

@@ -91,11 +91,32 @@ namespace Presentation.Controls
         /// <returns>Error code from BusinessLogic.Config</returns>
         public int SaveTheTree (string fullPath, bool isOverride)
         {
-            XDocument document = m_business.GenerateChecklistFile(m_requestTree);
+            XDocument document = m_business.GenerateChecklistDocument(m_requestTree);
             return m_business.SaveChecklistFile(
                 document, 
                 fullPath, 
                 isOverride ? SaveType.OVERRIDE : SaveType.TRY);
+        }
+
+        /// <summary>
+        /// To load the checklist tree from the file specified by the path.
+        /// </summary>
+        /// <param name="fullPath">Path to "req" file.</param>
+        /// <returns>Error code if the method is work probaly</returns>
+        public int LoadChecklist(string fullPath)
+        {
+            m_requestTree.Nodes.Clear();
+            foreach (TreeNode node in m_business.GenerateChecklistTree(fullPath).Nodes)
+            {
+                m_requestTree.Nodes.Add(node.Clone() as TreeNode);
+            }
+
+            return BusinessLogic.Config.ERROR_CODE_NONE;
+        }
+
+        private void clear_Click(object sender, EventArgs e)
+        {
+            m_requestTree.Nodes.Clear();
         }
       }
 }

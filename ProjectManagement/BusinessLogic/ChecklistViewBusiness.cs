@@ -6,12 +6,53 @@ using System.Threading.Tasks;
 
 using System.Windows.Forms;
 using System.Xml.Linq;
+using System.Xml;
 using System.IO;
+
+using FileBusiness;
 
 namespace BusinessLogic
 {
     public class ChecklistViewBusiness
     {
+        private class RequestDataObject
+        {
+            public RequestDataObject()
+            {
+                m_name = null;
+                m_priority = 0;
+            }
+
+            public void SetName(string name)
+            {
+                m_name = name;
+            }
+
+            public void SetPriority(int priority)
+            {
+                m_priority = priority;
+            }
+
+            public TreeNode GenerateNode()
+            {
+                TreeNode result = new TreeNode();
+                result.Text = m_name;
+                //TODO: business for priority.
+
+                return result;
+            }
+
+            private string m_name;
+            private int m_priority;
+        }
+
+        private enum XmlObjectProcessStatus
+        {
+            INVALID = -1,
+            PROCESSING,
+            DONE
+        }
+
         /// <summary>
         /// Save the imported XDocument to the file specified by the strings.
         /// The file saved with the extension as ".req".
@@ -26,15 +67,11 @@ namespace BusinessLogic
         /// </returns>
         public int SaveChecklistFile(XDocument checklistDocument, string fullPath, SaveType saveType = SaveType.TRY)
         {
-            if (File.Exists(fullPath))
+            bool isExportSuccessful = FileBusiness.XmlHandler.writeToFile(fullPath, checklistDocument, saveType == SaveType.OVERRIDE);
+            if (!isExportSuccessful)
             {
-                if (saveType == SaveType.TRY)
-                {
-                    return Config.ERROR_CODE_FILE_EXISTS;
-                }
+                return Config.ERROR_CODE_FILE_EXISTS;
             }
-
-            checklistDocument.Save(fullPath);
 
             return Config.ERROR_CODE_NONE;
         }
@@ -44,7 +81,7 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="checklistTree">the checklist tree used to generate the file.</param>
         /// <returns>an XDocument contain the checklist tree information.</returns>
-        public XDocument GenerateChecklistFile(TreeView checklistTree)
+        public XDocument GenerateChecklistDocument(TreeView checklistTree)
         {
             XElement requestTree = new XElement(Config.XML_KEY_HEAD_REQUEST);
             XDocument result = new XDocument(requestTree);
@@ -53,6 +90,60 @@ namespace BusinessLogic
             {
                 requestTree.Add(GenerateCheclistElementFromNode(node));
             }
+
+            return result;
+        }
+
+        /// <summary>
+        /// The method to generate a TreeView as checklist tree from the file specified by the path.
+        /// </summary>
+        /// <param name="fullPath">Path to ".req" file to read.</param>
+        /// <returns>A TreeView as checklist tree</returns>
+        public TreeView GenerateChecklistTree(string fullPath)
+        {
+            TreeView result = new TreeView();
+            XDocument data = FileBusiness.XmlHandler.readFromFile(fullPath, BusinessLogic.Config.XML_KEY_HEAD_REQUEST);
+
+            foreach (XElement elem in data.Root.Elements(BusinessLogic.Config.XML_KEY_SUB_REQUEST))
+            {
+                result.Nodes.Add(ReadXmlChildNode(elem));
+            }
+            
+            return result;
+        }
+
+        /// <summary>
+        /// Read the node and it child into a TreeNode.
+        /// </summary>
+        /// <param name="node">XElement contain node data</param>
+        /// <returns>Generated TreeNode</returns>
+        private TreeNode ReadXmlChildNode(XElement node)
+        {
+            TreeNode result = CreteTreeNodeFromElement(node);
+
+            foreach (XElement child in node.Elements())
+            {
+                result.Nodes.Add(ReadXmlChildNode(child));
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Create an requirement TreeNode from XElement.
+        /// </summary>
+        /// <param name="elem">XElement contain requirement data</param>
+        /// <returns>Generated TreeNode</returns>
+        private TreeNode CreteTreeNodeFromElement(XElement elem)
+        {
+            TreeNode result = new TreeNode();
+            XName attributeName = XName.Get(BusinessLogic.Config.XML_KEY_REQUEST_NAME);
+
+            result.Text = elem.Attribute(attributeName).Value;
+            //TODO: more attribute here
+            //  + priority
+            //  + desc
+            //  + isDone
 
             return result;
         }
@@ -67,7 +158,7 @@ namespace BusinessLogic
         private XElement GenerateCheclistElementFromNode(TreeNode checklistNode)
         {
             XElement result = new XElement(Config.XML_KEY_SUB_REQUEST,
-                new XElement(Config.XML_KEY_REQUEST_NAME, checklistNode.Text));
+                new XAttribute(Config.XML_KEY_REQUEST_NAME, checklistNode.Text));
 
             foreach (TreeNode node in checklistNode.Nodes)
             {
