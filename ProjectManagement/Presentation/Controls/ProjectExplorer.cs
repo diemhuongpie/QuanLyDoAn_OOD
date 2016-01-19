@@ -21,6 +21,7 @@ namespace Presentation.Controls
         public ProjectExplorer()
         {
             InitializeComponent();
+            m_projectList.Controls.Add(new ProjectDisplay());
         }
 
         public void AddProject(ProjectDisplay prjdp)
