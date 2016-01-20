@@ -21,7 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\dell\AppData\Local\Temp\vs958C.tmp\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\FREDER~1\AppData\Local\Temp\vsEF15.tmp\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,7 +31,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\dell\AppData\Local\Temp\vs958C.tmp\Release\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\FREDER~1\AppData\Local\Temp\vsEF15.tmp\Release\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
@@ -119,6 +119,18 @@
     <Compile Include="Forms\NewProject.Designer.cs">
       <DependentUpon>NewProject.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TypingDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TypingDialog.Designer.cs">
+      <DependentUpon>TypingDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\ChecklistView.resx">
       <DependentUpon>ChecklistView.cs</DependentUpon>
@@ -152,6 +164,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewProject.resx">
       <DependentUpon>NewProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TypingDialog.resx">
+      <DependentUpon>TypingDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

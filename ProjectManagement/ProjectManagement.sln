@@ -26,7 +26,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTransfer", "DataTransfer\DataTransfer.csproj", "{E6F7A61B-F9F2-4E58-9C37-D7FE3913C277}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileBusinesss", "FileBusinesss\FileBusinesss.csproj", "{B56854AE-E03E-4735-A798-4C4DB171E52D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemBusiness", "SystemBusiness\SystemBusiness.csproj", "{B56854AE-E03E-4735-A798-4C4DB171E52D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

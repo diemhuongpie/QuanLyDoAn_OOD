@@ -13,6 +13,18 @@ using FileBusiness;
 
 namespace BusinessLogic
 {
+    public enum PriorityIconIndex
+    {
+        PRIORITY_NONE = 0,
+        PRIORITY_MOST,
+        PRIORITY_1 = PRIORITY_MOST,
+        PRIORITY_2,
+        PRIORITY_3,
+        PRIORITY_4,
+        PRIORITY_5,
+        PRIORITY_LEAST = PRIORITY_5
+    }
+
     public class ChecklistViewBusiness
     {
         private class RequestDataObject
@@ -53,6 +65,22 @@ namespace BusinessLogic
             DONE
         }
 
+        public TreeNode CreateRequest(string text, 
+            PriorityIconIndex priority = PriorityIconIndex.PRIORITY_NONE, 
+            bool status = false,
+            string desc = "")
+        {
+            TreeNode result = new TreeNode();
+            result.Text = text;
+            result.ImageIndex
+                = result.SelectedImageIndex
+                = (int)priority;
+            result.Checked = status;
+            result.ToolTipText = desc;
+
+            return result;
+        }
+
         /// <summary>
         /// Save the imported XDocument to the file specified by the strings.
         /// The file saved with the extension as ".req".
@@ -70,7 +98,7 @@ namespace BusinessLogic
             bool isExportSuccessful = FileBusiness.XmlHandler.writeToFile(fullPath, checklistDocument, saveType == SaveType.OVERRIDE);
             if (!isExportSuccessful)
             {
-                return Config.ERROR_CODE_FILE_EXISTS;
+                return Config.ERROR_CODE_FILE_NOT_EXISTS;
             }
 
             return Config.ERROR_CODE_NONE;
@@ -136,16 +164,23 @@ namespace BusinessLogic
         /// <returns>Generated TreeNode</returns>
         private TreeNode CreteTreeNodeFromElement(XElement elem)
         {
-            TreeNode result = new TreeNode();
+            string name;
+            PriorityIconIndex priority;
+            bool isDone;
+            string desc;
+
             XName attributeName = XName.Get(BusinessLogic.Config.XML_KEY_REQUEST_NAME);
+            name = elem.Attribute(attributeName).Value;
 
-            result.Text = elem.Attribute(attributeName).Value;
-            //TODO: more attribute here
-            //  + priority
-            //  + desc
-            //  + isDone
+            attributeName = XName.Get(BusinessLogic.Config.XML_KEY_REQUEST_PRIORITY);
+            priority = (PriorityIconIndex)int.Parse(elem.Attribute(attributeName).Value);
 
-            return result;
+            attributeName = XName.Get(BusinessLogic.Config.XML_KEY_REQUEST_ISDONE);
+            isDone = bool.Parse(elem.Attribute(attributeName).Value);
+
+            desc = elem.Value;
+
+            return CreateRequest(name, priority, isDone, desc);
         }
 
         /// <summary>
@@ -157,8 +192,14 @@ namespace BusinessLogic
         /// <returns>an XElement contain the node and all of it's childs information.</returns>
         private XElement GenerateCheclistElementFromNode(TreeNode checklistNode)
         {
-            XElement result = new XElement(Config.XML_KEY_SUB_REQUEST,
-                new XAttribute(Config.XML_KEY_REQUEST_NAME, checklistNode.Text));
+            object[] attribute = {
+                new XAttribute(Config.XML_KEY_REQUEST_NAME, checklistNode.Text),
+                new XAttribute(Config.XML_KEY_REQUEST_PRIORITY, checklistNode.SelectedImageIndex.ToString()),
+                new XAttribute(Config.XML_KEY_REQUEST_ISDONE, checklistNode.Checked.ToString())
+            };
+
+            XElement result = new XElement(Config.XML_KEY_SUB_REQUEST, attribute);
+            result.Value = checklistNode.ToolTipText;
 
             foreach (TreeNode node in checklistNode.Nodes)
             {

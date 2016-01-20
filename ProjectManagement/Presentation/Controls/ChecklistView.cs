@@ -10,21 +10,14 @@ using System.Windows.Forms;
 
 using BusinessLogic;
 using System.Xml.Linq;
+using Presentation.Forms;
 
 namespace Presentation.Controls
 {
-    enum IconIndex
-    {
-        EMPTY = 0,
-        ADD,
-        REMOVE,
-        CHECKED,
-        UNCHECKED
-    }
-
     public partial class ChecklistView : UserControl
     {
         ChecklistViewBusiness m_business = new ChecklistViewBusiness();
+        private List<TreeNode> m_selectedNodes = new List<TreeNode>();
 
         public ChecklistView()
         {
@@ -37,14 +30,15 @@ namespace Presentation.Controls
 
             if (m_requestTree.SelectedNode != null)
             {
-                m_requestTree.SelectedNode.Remove();                
+                m_requestTree.SelectedNode.Remove();
+                m_requestTree.SelectedNode = null;
             }
         }
 
         private void m_newSubRequest_Click(object sender, EventArgs e)
         {
-            TreeNode node = new TreeNode();
-            node.Text = "New request";
+            TreeNode node = m_business.CreateRequest(BusinessLogic.Config.DEFAULT_STRING_NEW_REQUEST);
+            node.ContextMenuStrip = m_requestContexMenu;
 
             if (m_requestTree.SelectedNode != null)
             {
@@ -69,7 +63,8 @@ namespace Presentation.Controls
 
         private void deselecting(object sender, EventArgs e)
         {
-            m_requestTree.SelectedNode = null;
+            // Deprecated
+            //m_requestTree.SelectedNode = null;
         }
 
         public void deactivate()
@@ -111,12 +106,141 @@ namespace Presentation.Controls
                 m_requestTree.Nodes.Add(node.Clone() as TreeNode);
             }
 
+            foreach (TreeNode node in m_requestTree.Nodes)
+            {
+                postInit(node);
+            }
+
             return BusinessLogic.Config.ERROR_CODE_NONE;
         }
 
         private void clear_Click(object sender, EventArgs e)
         {
             m_requestTree.Nodes.Clear();
+        }
+
+        private void changePriority(object sender, EventArgs e)
+        {
+            switch (sender.ToString())
+            {
+                case "Unset":
+                    m_requestTree.SelectedNode.ImageIndex
+                        = m_requestTree.SelectedNode.SelectedImageIndex
+                        = (int)PriorityIconIndex.PRIORITY_NONE;
+                    break;
+
+                case "1 (Highest)":
+                    m_requestTree.SelectedNode.ImageIndex
+                        = m_requestTree.SelectedNode.SelectedImageIndex
+                        = (int)PriorityIconIndex.PRIORITY_1;
+                    break;
+
+                case "2":
+                    m_requestTree.SelectedNode.ImageIndex
+                        = m_requestTree.SelectedNode.SelectedImageIndex 
+                        = (int)PriorityIconIndex.PRIORITY_2;
+                    break;
+
+                case "3":
+                    m_requestTree.SelectedNode.ImageIndex
+                        = m_requestTree.SelectedNode.SelectedImageIndex 
+                        = (int)PriorityIconIndex.PRIORITY_3;
+                    break;
+                    
+                case "4":
+                    m_requestTree.SelectedNode.ImageIndex
+                        = m_requestTree.SelectedNode.SelectedImageIndex 
+                        = (int)PriorityIconIndex.PRIORITY_4;
+                    break;
+
+                case "5 (Lowest)":
+                    m_requestTree.SelectedNode.ImageIndex
+                        = m_requestTree.SelectedNode.SelectedImageIndex 
+                        = (int)PriorityIconIndex.PRIORITY_5;
+                    break;
+
+                default:
+                    break;
+            }
+
+            m_requestTree.Invalidate();
+        }
+
+        private void readAsParent(TreeNode node)
+        {
+            string status = "Opening";
+            if (node.Checked)
+            {
+                status = "Solved";
+            }
+
+            m_reqDecs.Text =
+                "Request name: " + node.Text + "\n" +
+                "Priority: " + node.SelectedImageIndex.ToString() + "\n" +
+                "Status: " + status + "\n\n" +
+                "Num of sub request: " + node.Nodes.Count.ToString();
+
+            m_reqDecs.Invalidate();
+        }
+
+        private void readAsLeaf(TreeNode node)
+        {
+            string status = "Opening";
+            if (node.Checked)
+            {
+                status = "Solved";
+            }
+
+            m_reqDecs.Text =
+                "Request name: " + node.Text + "\n" +
+                "Priority: " + node.SelectedImageIndex.ToString() + "\n" +
+                "Status: " + status + "\n\n" +
+                "Describtion:\n" + node.ToolTipText;
+
+            m_reqDecs.Invalidate();
+        }
+
+        private void selectRequest(TreeNode node)
+        {
+            if (node.Nodes.Count > 0)
+            {
+                readAsParent(node);
+            }
+            else
+            {
+                readAsLeaf(node);
+            }
+        }
+
+        private void nodeClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            m_requestTree.SelectedNode = e.Node;
+            selectRequest(e.Node);
+        }
+
+        private void postInit(TreeNode node)
+        {
+            node.ContextMenuStrip = m_requestContexMenu;
+            foreach (TreeNode child in node.Nodes)
+            {
+                postInit(child);
+            }
+        }
+
+        private void m_editDesc_Click(object sender, EventArgs e)
+        {
+            if (m_requestTree.SelectedNode.Nodes.Count > 0)
+            {
+                MessageBox.Show("Only available for leaf request.");
+                return;
+            }
+
+            TypingDialog diag = new TypingDialog();
+            diag.SetDialogName("New Describtion");
+            diag.ShowDialog();
+
+            m_requestTree.SelectedNode.ToolTipText = diag.GetContent();
+            selectRequest(m_requestTree.SelectedNode);
         }
       }
 }
