@@ -118,5 +118,11 @@ namespace Presentation.Controls
                 prj.select();
             }
         }
+
+        // Trung Le
+        public  System.Windows.Forms.TableLayoutPanel getProjectList()
+        {
+            return m_projectList;
+        }
     }
 }

@@ -121,7 +121,7 @@
             this.directoryTreeToolStripMenuItem.Checked = true;
             this.directoryTreeToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.directoryTreeToolStripMenuItem.Name = "directoryTreeToolStripMenuItem";
-            this.directoryTreeToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.directoryTreeToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.directoryTreeToolStripMenuItem.Text = "Directory Tree";
             this.directoryTreeToolStripMenuItem.Click += new System.EventHandler(this.showHideDirectoryTree);
             // 
@@ -130,7 +130,7 @@
             this.statusBarToolStripMenuItem.Checked = true;
             this.statusBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.statusBarToolStripMenuItem.Name = "statusBarToolStripMenuItem";
-            this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.statusBarToolStripMenuItem.Text = "Status Bar";
             this.statusBarToolStripMenuItem.Click += new System.EventHandler(this.showHideStatusBar);
             // 
@@ -139,7 +139,7 @@
             this.previewPaneToolStripMenuItem.Checked = true;
             this.previewPaneToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.previewPaneToolStripMenuItem.Name = "previewPaneToolStripMenuItem";
-            this.previewPaneToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.previewPaneToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.previewPaneToolStripMenuItem.Text = "Preview Pane";
             this.previewPaneToolStripMenuItem.Click += new System.EventHandler(this.showHidePreviewPane);
             // 
@@ -148,7 +148,7 @@
             this.seachPaneToolStripMenuItem.Checked = true;
             this.seachPaneToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.seachPaneToolStripMenuItem.Name = "seachPaneToolStripMenuItem";
-            this.seachPaneToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.seachPaneToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.seachPaneToolStripMenuItem.Text = "Seach Pane";
             this.seachPaneToolStripMenuItem.Click += new System.EventHandler(this.showHideSeachPane);
             // 
@@ -594,6 +594,7 @@
             this.m_projectExplorer.Name = "m_projectExplorer";
             this.m_projectExplorer.Size = new System.Drawing.Size(369, 338);
             this.m_projectExplorer.TabIndex = 0;
+            this.m_projectExplorer.Load += new System.EventHandler(this.m_projectExplorer_Load);
             // 
             // m_previewPane
             // 
