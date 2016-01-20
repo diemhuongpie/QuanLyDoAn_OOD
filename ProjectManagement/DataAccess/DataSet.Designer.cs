@@ -36,8 +36,6 @@ namespace DataAccess {
         
         private sp_SearchProjectByAuthorDataTable tablesp_SearchProjectByAuthor;
         
-        private sp_SearchProjectByClassDataTable tablesp_SearchProjectByClass;
-        
         private sp_SearchProjectByGroupDataTable tablesp_SearchProjectByGroup;
         
         private sp_SearchProjectByNameDataTable tablesp_SearchProjectByName;
@@ -99,9 +97,6 @@ namespace DataAccess {
                 }
                 if ((ds.Tables["sp_SearchProjectByAuthor"] != null)) {
                     base.Tables.Add(new sp_SearchProjectByAuthorDataTable(ds.Tables["sp_SearchProjectByAuthor"]));
-                }
-                if ((ds.Tables["sp_SearchProjectByClass"] != null)) {
-                    base.Tables.Add(new sp_SearchProjectByClassDataTable(ds.Tables["sp_SearchProjectByClass"]));
                 }
                 if ((ds.Tables["sp_SearchProjectByGroup"] != null)) {
                     base.Tables.Add(new sp_SearchProjectByGroupDataTable(ds.Tables["sp_SearchProjectByGroup"]));
@@ -190,16 +185,6 @@ namespace DataAccess {
         public sp_SearchProjectByAuthorDataTable sp_SearchProjectByAuthor {
             get {
                 return this.tablesp_SearchProjectByAuthor;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public sp_SearchProjectByClassDataTable sp_SearchProjectByClass {
-            get {
-                return this.tablesp_SearchProjectByClass;
             }
         }
         
@@ -328,9 +313,6 @@ namespace DataAccess {
                 if ((ds.Tables["sp_SearchProjectByAuthor"] != null)) {
                     base.Tables.Add(new sp_SearchProjectByAuthorDataTable(ds.Tables["sp_SearchProjectByAuthor"]));
                 }
-                if ((ds.Tables["sp_SearchProjectByClass"] != null)) {
-                    base.Tables.Add(new sp_SearchProjectByClassDataTable(ds.Tables["sp_SearchProjectByClass"]));
-                }
                 if ((ds.Tables["sp_SearchProjectByGroup"] != null)) {
                     base.Tables.Add(new sp_SearchProjectByGroupDataTable(ds.Tables["sp_SearchProjectByGroup"]));
                 }
@@ -412,12 +394,6 @@ namespace DataAccess {
                     this.tablesp_SearchProjectByAuthor.InitVars();
                 }
             }
-            this.tablesp_SearchProjectByClass = ((sp_SearchProjectByClassDataTable)(base.Tables["sp_SearchProjectByClass"]));
-            if ((initTable == true)) {
-                if ((this.tablesp_SearchProjectByClass != null)) {
-                    this.tablesp_SearchProjectByClass.InitVars();
-                }
-            }
             this.tablesp_SearchProjectByGroup = ((sp_SearchProjectByGroupDataTable)(base.Tables["sp_SearchProjectByGroup"]));
             if ((initTable == true)) {
                 if ((this.tablesp_SearchProjectByGroup != null)) {
@@ -468,8 +444,6 @@ namespace DataAccess {
             base.Tables.Add(this.tableTAG_DETAIL);
             this.tablesp_SearchProjectByAuthor = new sp_SearchProjectByAuthorDataTable();
             base.Tables.Add(this.tablesp_SearchProjectByAuthor);
-            this.tablesp_SearchProjectByClass = new sp_SearchProjectByClassDataTable();
-            base.Tables.Add(this.tablesp_SearchProjectByClass);
             this.tablesp_SearchProjectByGroup = new sp_SearchProjectByGroupDataTable();
             base.Tables.Add(this.tablesp_SearchProjectByGroup);
             this.tablesp_SearchProjectByName = new sp_SearchProjectByNameDataTable();
@@ -529,12 +503,6 @@ namespace DataAccess {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializesp_SearchProjectByAuthor() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializesp_SearchProjectByClass() {
             return false;
         }
         
@@ -634,9 +602,6 @@ namespace DataAccess {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void sp_SearchProjectByAuthorRowChangeEventHandler(object sender, sp_SearchProjectByAuthorRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void sp_SearchProjectByClassRowChangeEventHandler(object sender, sp_SearchProjectByClassRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void sp_SearchProjectByGroupRowChangeEventHandler(object sender, sp_SearchProjectByGroupRowChangeEvent e);
@@ -2610,469 +2575,6 @@ namespace DataAccess {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class sp_SearchProjectByClassDataTable : global::System.Data.TypedTableBase<sp_SearchProjectByClassRow> {
-            
-            private global::System.Data.DataColumn columnProjectID;
-            
-            private global::System.Data.DataColumn columnGroupName;
-            
-            private global::System.Data.DataColumn columnSubjectName;
-            
-            private global::System.Data.DataColumn columnClass;
-            
-            private global::System.Data.DataColumn columnID;
-            
-            private global::System.Data.DataColumn columnName;
-            
-            private global::System.Data.DataColumn columnEmail;
-            
-            private global::System.Data.DataColumn columnPhoneNumber;
-            
-            private global::System.Data.DataColumn columnProjectID1;
-            
-            private global::System.Data.DataColumn columnAuthorID;
-            
-            private global::System.Data.DataColumn columnScore;
-            
-            private global::System.Data.DataColumn columnProjectName;
-            
-            private global::System.Data.DataColumn columnProjectTimeStart;
-            
-            private global::System.Data.DataColumn columnProjectTimeEnd;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public sp_SearchProjectByClassDataTable() {
-                this.TableName = "sp_SearchProjectByClass";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal sp_SearchProjectByClassDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected sp_SearchProjectByClassDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ProjectIDColumn {
-                get {
-                    return this.columnProjectID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn GroupNameColumn {
-                get {
-                    return this.columnGroupName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SubjectNameColumn {
-                get {
-                    return this.columnSubjectName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ClassColumn {
-                get {
-                    return this.columnClass;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NameColumn {
-                get {
-                    return this.columnName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EmailColumn {
-                get {
-                    return this.columnEmail;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PhoneNumberColumn {
-                get {
-                    return this.columnPhoneNumber;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ProjectID1Column {
-                get {
-                    return this.columnProjectID1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AuthorIDColumn {
-                get {
-                    return this.columnAuthorID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ScoreColumn {
-                get {
-                    return this.columnScore;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ProjectNameColumn {
-                get {
-                    return this.columnProjectName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ProjectTimeStartColumn {
-                get {
-                    return this.columnProjectTimeStart;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ProjectTimeEndColumn {
-                get {
-                    return this.columnProjectTimeEnd;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public sp_SearchProjectByClassRow this[int index] {
-                get {
-                    return ((sp_SearchProjectByClassRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event sp_SearchProjectByClassRowChangeEventHandler sp_SearchProjectByClassRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event sp_SearchProjectByClassRowChangeEventHandler sp_SearchProjectByClassRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event sp_SearchProjectByClassRowChangeEventHandler sp_SearchProjectByClassRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event sp_SearchProjectByClassRowChangeEventHandler sp_SearchProjectByClassRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Addsp_SearchProjectByClassRow(sp_SearchProjectByClassRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public sp_SearchProjectByClassRow Addsp_SearchProjectByClassRow(string ProjectID, string GroupName, string SubjectName, string Class, string ID, string Name, string Email, string PhoneNumber, string ProjectID1, string AuthorID, double Score, string ProjectName, System.DateTime ProjectTimeStart, System.DateTime ProjectTimeEnd) {
-                sp_SearchProjectByClassRow rowsp_SearchProjectByClassRow = ((sp_SearchProjectByClassRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        ProjectID,
-                        GroupName,
-                        SubjectName,
-                        Class,
-                        ID,
-                        Name,
-                        Email,
-                        PhoneNumber,
-                        ProjectID1,
-                        AuthorID,
-                        Score,
-                        ProjectName,
-                        ProjectTimeStart,
-                        ProjectTimeEnd};
-                rowsp_SearchProjectByClassRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowsp_SearchProjectByClassRow);
-                return rowsp_SearchProjectByClassRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public sp_SearchProjectByClassRow FindByProjectIDIDProjectID1AuthorID(string ProjectID, string ID, string ProjectID1, string AuthorID) {
-                return ((sp_SearchProjectByClassRow)(this.Rows.Find(new object[] {
-                            ProjectID,
-                            ID,
-                            ProjectID1,
-                            AuthorID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                sp_SearchProjectByClassDataTable cln = ((sp_SearchProjectByClassDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new sp_SearchProjectByClassDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnProjectID = base.Columns["ProjectID"];
-                this.columnGroupName = base.Columns["GroupName"];
-                this.columnSubjectName = base.Columns["SubjectName"];
-                this.columnClass = base.Columns["Class"];
-                this.columnID = base.Columns["ID"];
-                this.columnName = base.Columns["Name"];
-                this.columnEmail = base.Columns["Email"];
-                this.columnPhoneNumber = base.Columns["PhoneNumber"];
-                this.columnProjectID1 = base.Columns["ProjectID1"];
-                this.columnAuthorID = base.Columns["AuthorID"];
-                this.columnScore = base.Columns["Score"];
-                this.columnProjectName = base.Columns["ProjectName"];
-                this.columnProjectTimeStart = base.Columns["ProjectTimeStart"];
-                this.columnProjectTimeEnd = base.Columns["ProjectTimeEnd"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnProjectID = new global::System.Data.DataColumn("ProjectID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProjectID);
-                this.columnGroupName = new global::System.Data.DataColumn("GroupName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGroupName);
-                this.columnSubjectName = new global::System.Data.DataColumn("SubjectName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSubjectName);
-                this.columnClass = new global::System.Data.DataColumn("Class", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnClass);
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
-                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnName);
-                this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEmail);
-                this.columnPhoneNumber = new global::System.Data.DataColumn("PhoneNumber", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPhoneNumber);
-                this.columnProjectID1 = new global::System.Data.DataColumn("ProjectID1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProjectID1);
-                this.columnAuthorID = new global::System.Data.DataColumn("AuthorID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAuthorID);
-                this.columnScore = new global::System.Data.DataColumn("Score", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnScore);
-                this.columnProjectName = new global::System.Data.DataColumn("ProjectName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProjectName);
-                this.columnProjectTimeStart = new global::System.Data.DataColumn("ProjectTimeStart", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProjectTimeStart);
-                this.columnProjectTimeEnd = new global::System.Data.DataColumn("ProjectTimeEnd", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProjectTimeEnd);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnProjectID,
-                                this.columnID,
-                                this.columnProjectID1,
-                                this.columnAuthorID}, true));
-                this.columnProjectID.AllowDBNull = false;
-                this.columnProjectID.MaxLength = 10;
-                this.columnGroupName.AllowDBNull = false;
-                this.columnGroupName.MaxLength = 10;
-                this.columnSubjectName.AllowDBNull = false;
-                this.columnSubjectName.MaxLength = 100;
-                this.columnClass.MaxLength = 50;
-                this.columnID.AllowDBNull = false;
-                this.columnID.MaxLength = 10;
-                this.columnName.AllowDBNull = false;
-                this.columnName.MaxLength = 100;
-                this.columnEmail.MaxLength = 100;
-                this.columnPhoneNumber.MaxLength = 20;
-                this.columnProjectID1.AllowDBNull = false;
-                this.columnProjectID1.MaxLength = 10;
-                this.columnAuthorID.AllowDBNull = false;
-                this.columnAuthorID.MaxLength = 10;
-                this.columnProjectName.MaxLength = 100;
-                this.columnProjectTimeStart.AllowDBNull = false;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public sp_SearchProjectByClassRow Newsp_SearchProjectByClassRow() {
-                return ((sp_SearchProjectByClassRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new sp_SearchProjectByClassRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(sp_SearchProjectByClassRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.sp_SearchProjectByClassRowChanged != null)) {
-                    this.sp_SearchProjectByClassRowChanged(this, new sp_SearchProjectByClassRowChangeEvent(((sp_SearchProjectByClassRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.sp_SearchProjectByClassRowChanging != null)) {
-                    this.sp_SearchProjectByClassRowChanging(this, new sp_SearchProjectByClassRowChangeEvent(((sp_SearchProjectByClassRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.sp_SearchProjectByClassRowDeleted != null)) {
-                    this.sp_SearchProjectByClassRowDeleted(this, new sp_SearchProjectByClassRowChangeEvent(((sp_SearchProjectByClassRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.sp_SearchProjectByClassRowDeleting != null)) {
-                    this.sp_SearchProjectByClassRowDeleting(this, new sp_SearchProjectByClassRowChangeEvent(((sp_SearchProjectByClassRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Removesp_SearchProjectByClassRow(sp_SearchProjectByClassRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet ds = new DataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "sp_SearchProjectByClassDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class sp_SearchProjectByGroupDataTable : global::System.Data.TypedTableBase<sp_SearchProjectByGroupRow> {
             
             private global::System.Data.DataColumn columnProjectID;
@@ -3082,14 +2584,6 @@ namespace DataAccess {
             private global::System.Data.DataColumn columnSubjectName;
             
             private global::System.Data.DataColumn columnClass;
-            
-            private global::System.Data.DataColumn columnID;
-            
-            private global::System.Data.DataColumn columnName;
-            
-            private global::System.Data.DataColumn columnEmail;
-            
-            private global::System.Data.DataColumn columnPhoneNumber;
             
             private global::System.Data.DataColumn columnProjectID1;
             
@@ -3165,38 +2659,6 @@ namespace DataAccess {
             public global::System.Data.DataColumn ClassColumn {
                 get {
                     return this.columnClass;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NameColumn {
-                get {
-                    return this.columnName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EmailColumn {
-                get {
-                    return this.columnEmail;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PhoneNumberColumn {
-                get {
-                    return this.columnPhoneNumber;
                 }
             }
             
@@ -3285,17 +2747,13 @@ namespace DataAccess {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public sp_SearchProjectByGroupRow Addsp_SearchProjectByGroupRow(string ProjectID, string GroupName, string SubjectName, string Class, string ID, string Name, string Email, string PhoneNumber, string ProjectID1, string AuthorID, double Score, string ProjectName, System.DateTime ProjectTimeStart, System.DateTime ProjectTimeEnd) {
+            public sp_SearchProjectByGroupRow Addsp_SearchProjectByGroupRow(string ProjectID, string GroupName, string SubjectName, string Class, string ProjectID1, string AuthorID, double Score, string ProjectName, System.DateTime ProjectTimeStart, System.DateTime ProjectTimeEnd) {
                 sp_SearchProjectByGroupRow rowsp_SearchProjectByGroupRow = ((sp_SearchProjectByGroupRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ProjectID,
                         GroupName,
                         SubjectName,
                         Class,
-                        ID,
-                        Name,
-                        Email,
-                        PhoneNumber,
                         ProjectID1,
                         AuthorID,
                         Score,
@@ -3309,10 +2767,9 @@ namespace DataAccess {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public sp_SearchProjectByGroupRow FindByProjectIDIDProjectID1AuthorID(string ProjectID, string ID, string ProjectID1, string AuthorID) {
+            public sp_SearchProjectByGroupRow FindByProjectIDProjectID1AuthorID(string ProjectID, string ProjectID1, string AuthorID) {
                 return ((sp_SearchProjectByGroupRow)(this.Rows.Find(new object[] {
                             ProjectID,
-                            ID,
                             ProjectID1,
                             AuthorID})));
             }
@@ -3338,10 +2795,6 @@ namespace DataAccess {
                 this.columnGroupName = base.Columns["GroupName"];
                 this.columnSubjectName = base.Columns["SubjectName"];
                 this.columnClass = base.Columns["Class"];
-                this.columnID = base.Columns["ID"];
-                this.columnName = base.Columns["Name"];
-                this.columnEmail = base.Columns["Email"];
-                this.columnPhoneNumber = base.Columns["PhoneNumber"];
                 this.columnProjectID1 = base.Columns["ProjectID1"];
                 this.columnAuthorID = base.Columns["AuthorID"];
                 this.columnScore = base.Columns["Score"];
@@ -3361,14 +2814,6 @@ namespace DataAccess {
                 base.Columns.Add(this.columnSubjectName);
                 this.columnClass = new global::System.Data.DataColumn("Class", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnClass);
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
-                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnName);
-                this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEmail);
-                this.columnPhoneNumber = new global::System.Data.DataColumn("PhoneNumber", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPhoneNumber);
                 this.columnProjectID1 = new global::System.Data.DataColumn("ProjectID1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProjectID1);
                 this.columnAuthorID = new global::System.Data.DataColumn("AuthorID", typeof(string), null, global::System.Data.MappingType.Element);
@@ -3383,7 +2828,6 @@ namespace DataAccess {
                 base.Columns.Add(this.columnProjectTimeEnd);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnProjectID,
-                                this.columnID,
                                 this.columnProjectID1,
                                 this.columnAuthorID}, true));
                 this.columnProjectID.AllowDBNull = false;
@@ -3393,12 +2837,6 @@ namespace DataAccess {
                 this.columnSubjectName.AllowDBNull = false;
                 this.columnSubjectName.MaxLength = 100;
                 this.columnClass.MaxLength = 50;
-                this.columnID.AllowDBNull = false;
-                this.columnID.MaxLength = 10;
-                this.columnName.AllowDBNull = false;
-                this.columnName.MaxLength = 100;
-                this.columnEmail.MaxLength = 100;
-                this.columnPhoneNumber.MaxLength = 20;
                 this.columnProjectID1.AllowDBNull = false;
                 this.columnProjectID1.MaxLength = 10;
                 this.columnAuthorID.AllowDBNull = false;
@@ -4344,14 +3782,6 @@ namespace DataAccess {
             
             private global::System.Data.DataColumn columnClass;
             
-            private global::System.Data.DataColumn columnID;
-            
-            private global::System.Data.DataColumn columnName;
-            
-            private global::System.Data.DataColumn columnEmail;
-            
-            private global::System.Data.DataColumn columnPhoneNumber;
-            
             private global::System.Data.DataColumn columnProjectID1;
             
             private global::System.Data.DataColumn columnAuthorID;
@@ -4426,38 +3856,6 @@ namespace DataAccess {
             public global::System.Data.DataColumn ClassColumn {
                 get {
                     return this.columnClass;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NameColumn {
-                get {
-                    return this.columnName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EmailColumn {
-                get {
-                    return this.columnEmail;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PhoneNumberColumn {
-                get {
-                    return this.columnPhoneNumber;
                 }
             }
             
@@ -4546,17 +3944,13 @@ namespace DataAccess {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public sp_SearchProjectBySubjectRow Addsp_SearchProjectBySubjectRow(string ProjectID, string GroupName, string SubjectName, string Class, string ID, string Name, string Email, string PhoneNumber, string ProjectID1, string AuthorID, double Score, string ProjectName, System.DateTime ProjectTimeStart, System.DateTime ProjectTimeEnd) {
+            public sp_SearchProjectBySubjectRow Addsp_SearchProjectBySubjectRow(string ProjectID, string GroupName, string SubjectName, string Class, string ProjectID1, string AuthorID, double Score, string ProjectName, System.DateTime ProjectTimeStart, System.DateTime ProjectTimeEnd) {
                 sp_SearchProjectBySubjectRow rowsp_SearchProjectBySubjectRow = ((sp_SearchProjectBySubjectRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ProjectID,
                         GroupName,
                         SubjectName,
                         Class,
-                        ID,
-                        Name,
-                        Email,
-                        PhoneNumber,
                         ProjectID1,
                         AuthorID,
                         Score,
@@ -4570,10 +3964,9 @@ namespace DataAccess {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public sp_SearchProjectBySubjectRow FindByProjectIDIDProjectID1AuthorID(string ProjectID, string ID, string ProjectID1, string AuthorID) {
+            public sp_SearchProjectBySubjectRow FindByProjectIDProjectID1AuthorID(string ProjectID, string ProjectID1, string AuthorID) {
                 return ((sp_SearchProjectBySubjectRow)(this.Rows.Find(new object[] {
                             ProjectID,
-                            ID,
                             ProjectID1,
                             AuthorID})));
             }
@@ -4599,10 +3992,6 @@ namespace DataAccess {
                 this.columnGroupName = base.Columns["GroupName"];
                 this.columnSubjectName = base.Columns["SubjectName"];
                 this.columnClass = base.Columns["Class"];
-                this.columnID = base.Columns["ID"];
-                this.columnName = base.Columns["Name"];
-                this.columnEmail = base.Columns["Email"];
-                this.columnPhoneNumber = base.Columns["PhoneNumber"];
                 this.columnProjectID1 = base.Columns["ProjectID1"];
                 this.columnAuthorID = base.Columns["AuthorID"];
                 this.columnScore = base.Columns["Score"];
@@ -4622,14 +4011,6 @@ namespace DataAccess {
                 base.Columns.Add(this.columnSubjectName);
                 this.columnClass = new global::System.Data.DataColumn("Class", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnClass);
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
-                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnName);
-                this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEmail);
-                this.columnPhoneNumber = new global::System.Data.DataColumn("PhoneNumber", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPhoneNumber);
                 this.columnProjectID1 = new global::System.Data.DataColumn("ProjectID1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProjectID1);
                 this.columnAuthorID = new global::System.Data.DataColumn("AuthorID", typeof(string), null, global::System.Data.MappingType.Element);
@@ -4644,7 +4025,6 @@ namespace DataAccess {
                 base.Columns.Add(this.columnProjectTimeEnd);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnProjectID,
-                                this.columnID,
                                 this.columnProjectID1,
                                 this.columnAuthorID}, true));
                 this.columnProjectID.AllowDBNull = false;
@@ -4654,12 +4034,6 @@ namespace DataAccess {
                 this.columnSubjectName.AllowDBNull = false;
                 this.columnSubjectName.MaxLength = 100;
                 this.columnClass.MaxLength = 50;
-                this.columnID.AllowDBNull = false;
-                this.columnID.MaxLength = 10;
-                this.columnName.AllowDBNull = false;
-                this.columnName.MaxLength = 100;
-                this.columnEmail.MaxLength = 100;
-                this.columnPhoneNumber.MaxLength = 20;
                 this.columnProjectID1.AllowDBNull = false;
                 this.columnProjectID1.MaxLength = 10;
                 this.columnAuthorID.AllowDBNull = false;
@@ -5521,278 +4895,6 @@ namespace DataAccess {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class sp_SearchProjectByClassRow : global::System.Data.DataRow {
-            
-            private sp_SearchProjectByClassDataTable tablesp_SearchProjectByClass;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal sp_SearchProjectByClassRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tablesp_SearchProjectByClass = ((sp_SearchProjectByClassDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ProjectID {
-                get {
-                    return ((string)(this[this.tablesp_SearchProjectByClass.ProjectIDColumn]));
-                }
-                set {
-                    this[this.tablesp_SearchProjectByClass.ProjectIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string GroupName {
-                get {
-                    return ((string)(this[this.tablesp_SearchProjectByClass.GroupNameColumn]));
-                }
-                set {
-                    this[this.tablesp_SearchProjectByClass.GroupNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string SubjectName {
-                get {
-                    return ((string)(this[this.tablesp_SearchProjectByClass.SubjectNameColumn]));
-                }
-                set {
-                    this[this.tablesp_SearchProjectByClass.SubjectNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Class {
-                get {
-                    try {
-                        return ((string)(this[this.tablesp_SearchProjectByClass.ClassColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Class\' in table \'sp_SearchProjectByClass\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_SearchProjectByClass.ClassColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ID {
-                get {
-                    return ((string)(this[this.tablesp_SearchProjectByClass.IDColumn]));
-                }
-                set {
-                    this[this.tablesp_SearchProjectByClass.IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Name {
-                get {
-                    return ((string)(this[this.tablesp_SearchProjectByClass.NameColumn]));
-                }
-                set {
-                    this[this.tablesp_SearchProjectByClass.NameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Email {
-                get {
-                    try {
-                        return ((string)(this[this.tablesp_SearchProjectByClass.EmailColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Email\' in table \'sp_SearchProjectByClass\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_SearchProjectByClass.EmailColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string PhoneNumber {
-                get {
-                    try {
-                        return ((string)(this[this.tablesp_SearchProjectByClass.PhoneNumberColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PhoneNumber\' in table \'sp_SearchProjectByClass\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_SearchProjectByClass.PhoneNumberColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ProjectID1 {
-                get {
-                    return ((string)(this[this.tablesp_SearchProjectByClass.ProjectID1Column]));
-                }
-                set {
-                    this[this.tablesp_SearchProjectByClass.ProjectID1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string AuthorID {
-                get {
-                    return ((string)(this[this.tablesp_SearchProjectByClass.AuthorIDColumn]));
-                }
-                set {
-                    this[this.tablesp_SearchProjectByClass.AuthorIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Score {
-                get {
-                    try {
-                        return ((double)(this[this.tablesp_SearchProjectByClass.ScoreColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Score\' in table \'sp_SearchProjectByClass\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_SearchProjectByClass.ScoreColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ProjectName {
-                get {
-                    try {
-                        return ((string)(this[this.tablesp_SearchProjectByClass.ProjectNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ProjectName\' in table \'sp_SearchProjectByClass\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_SearchProjectByClass.ProjectNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime ProjectTimeStart {
-                get {
-                    return ((global::System.DateTime)(this[this.tablesp_SearchProjectByClass.ProjectTimeStartColumn]));
-                }
-                set {
-                    this[this.tablesp_SearchProjectByClass.ProjectTimeStartColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime ProjectTimeEnd {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablesp_SearchProjectByClass.ProjectTimeEndColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ProjectTimeEnd\' in table \'sp_SearchProjectByClass\' is DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_SearchProjectByClass.ProjectTimeEndColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsClassNull() {
-                return this.IsNull(this.tablesp_SearchProjectByClass.ClassColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetClassNull() {
-                this[this.tablesp_SearchProjectByClass.ClassColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsEmailNull() {
-                return this.IsNull(this.tablesp_SearchProjectByClass.EmailColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetEmailNull() {
-                this[this.tablesp_SearchProjectByClass.EmailColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPhoneNumberNull() {
-                return this.IsNull(this.tablesp_SearchProjectByClass.PhoneNumberColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPhoneNumberNull() {
-                this[this.tablesp_SearchProjectByClass.PhoneNumberColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsScoreNull() {
-                return this.IsNull(this.tablesp_SearchProjectByClass.ScoreColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetScoreNull() {
-                this[this.tablesp_SearchProjectByClass.ScoreColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsProjectNameNull() {
-                return this.IsNull(this.tablesp_SearchProjectByClass.ProjectNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetProjectNameNull() {
-                this[this.tablesp_SearchProjectByClass.ProjectNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsProjectTimeEndNull() {
-                return this.IsNull(this.tablesp_SearchProjectByClass.ProjectTimeEndColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetProjectTimeEndNull() {
-                this[this.tablesp_SearchProjectByClass.ProjectTimeEndColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
         public partial class sp_SearchProjectByGroupRow : global::System.Data.DataRow {
             
             private sp_SearchProjectByGroupDataTable tablesp_SearchProjectByGroup;
@@ -5850,60 +4952,6 @@ namespace DataAccess {
                 }
                 set {
                     this[this.tablesp_SearchProjectByGroup.ClassColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ID {
-                get {
-                    return ((string)(this[this.tablesp_SearchProjectByGroup.IDColumn]));
-                }
-                set {
-                    this[this.tablesp_SearchProjectByGroup.IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Name {
-                get {
-                    return ((string)(this[this.tablesp_SearchProjectByGroup.NameColumn]));
-                }
-                set {
-                    this[this.tablesp_SearchProjectByGroup.NameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Email {
-                get {
-                    try {
-                        return ((string)(this[this.tablesp_SearchProjectByGroup.EmailColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Email\' in table \'sp_SearchProjectByGroup\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_SearchProjectByGroup.EmailColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string PhoneNumber {
-                get {
-                    try {
-                        return ((string)(this[this.tablesp_SearchProjectByGroup.PhoneNumberColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PhoneNumber\' in table \'sp_SearchProjectByGroup\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_SearchProjectByGroup.PhoneNumberColumn] = value;
                 }
             }
             
@@ -5999,30 +5047,6 @@ namespace DataAccess {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetClassNull() {
                 this[this.tablesp_SearchProjectByGroup.ClassColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsEmailNull() {
-                return this.IsNull(this.tablesp_SearchProjectByGroup.EmailColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetEmailNull() {
-                this[this.tablesp_SearchProjectByGroup.EmailColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPhoneNumberNull() {
-                return this.IsNull(this.tablesp_SearchProjectByGroup.PhoneNumberColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPhoneNumberNull() {
-                this[this.tablesp_SearchProjectByGroup.PhoneNumberColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6515,61 +5539,6 @@ namespace DataAccess {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ID {
-                get {
-                    return ((string)(this[this.tablesp_SearchProjectBySubject.IDColumn]));
-                }
-                set {
-                    this[this.tablesp_SearchProjectBySubject.IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Name {
-                get {
-                    return ((string)(this[this.tablesp_SearchProjectBySubject.NameColumn]));
-                }
-                set {
-                    this[this.tablesp_SearchProjectBySubject.NameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Email {
-                get {
-                    try {
-                        return ((string)(this[this.tablesp_SearchProjectBySubject.EmailColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Email\' in table \'sp_SearchProjectBySubject\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_SearchProjectBySubject.EmailColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string PhoneNumber {
-                get {
-                    try {
-                        return ((string)(this[this.tablesp_SearchProjectBySubject.PhoneNumberColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PhoneNumber\' in table \'sp_SearchProjectBySubject\' is DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_SearchProjectBySubject.PhoneNumberColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ProjectID1 {
                 get {
                     return ((string)(this[this.tablesp_SearchProjectBySubject.ProjectID1Column]));
@@ -6661,30 +5630,6 @@ namespace DataAccess {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetClassNull() {
                 this[this.tablesp_SearchProjectBySubject.ClassColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsEmailNull() {
-                return this.IsNull(this.tablesp_SearchProjectBySubject.EmailColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetEmailNull() {
-                this[this.tablesp_SearchProjectBySubject.EmailColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPhoneNumberNull() {
-                return this.IsNull(this.tablesp_SearchProjectBySubject.PhoneNumberColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPhoneNumberNull() {
-                this[this.tablesp_SearchProjectBySubject.PhoneNumberColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6914,40 +5859,6 @@ namespace DataAccess {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public sp_SearchProjectByAuthorRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class sp_SearchProjectByClassRowChangeEvent : global::System.EventArgs {
-            
-            private sp_SearchProjectByClassRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public sp_SearchProjectByClassRowChangeEvent(sp_SearchProjectByClassRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public sp_SearchProjectByClassRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -9227,201 +8138,6 @@ SELECT ProjectID, TagName FROM TAG_DETAIL WHERE (ProjectID = @ProjectID) AND (Ta
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class sp_SearchProjectByClassTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public sp_SearchProjectByClassTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "sp_SearchProjectByClass";
-            tableMapping.ColumnMappings.Add("ProjectID", "ProjectID");
-            tableMapping.ColumnMappings.Add("GroupName", "GroupName");
-            tableMapping.ColumnMappings.Add("SubjectName", "SubjectName");
-            tableMapping.ColumnMappings.Add("Class", "Class");
-            tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("Name", "Name");
-            tableMapping.ColumnMappings.Add("Email", "Email");
-            tableMapping.ColumnMappings.Add("PhoneNumber", "PhoneNumber");
-            tableMapping.ColumnMappings.Add("ProjectID1", "ProjectID1");
-            tableMapping.ColumnMappings.Add("AuthorID", "AuthorID");
-            tableMapping.ColumnMappings.Add("Score", "Score");
-            tableMapping.ColumnMappings.Add("ProjectName", "ProjectName");
-            tableMapping.ColumnMappings.Add("ProjectTimeStart", "ProjectTimeStart");
-            tableMapping.ColumnMappings.Add("ProjectTimeEnd", "ProjectTimeEnd");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=DEVIL\\DEVIL;Initial Catalog=ProjectManagerDatabase;Integrated Securit" +
-                "y=True";
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.sp_SearchProjectByClass";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@className", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet.sp_SearchProjectByClassDataTable dataTable, string className) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((className == null)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(className));
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet.sp_SearchProjectByClassDataTable GetData(string className) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((className == null)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(className));
-            }
-            DataSet.sp_SearchProjectByClassDataTable dataTable = new DataSet.sp_SearchProjectByClassDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class sp_SearchProjectByGroupTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
@@ -9538,10 +8254,6 @@ SELECT ProjectID, TagName FROM TAG_DETAIL WHERE (ProjectID = @ProjectID) AND (Ta
             tableMapping.ColumnMappings.Add("GroupName", "GroupName");
             tableMapping.ColumnMappings.Add("SubjectName", "SubjectName");
             tableMapping.ColumnMappings.Add("Class", "Class");
-            tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("Name", "Name");
-            tableMapping.ColumnMappings.Add("Email", "Email");
-            tableMapping.ColumnMappings.Add("PhoneNumber", "PhoneNumber");
             tableMapping.ColumnMappings.Add("ProjectID1", "ProjectID1");
             tableMapping.ColumnMappings.Add("AuthorID", "AuthorID");
             tableMapping.ColumnMappings.Add("Score", "Score");
@@ -9568,7 +8280,7 @@ SELECT ProjectID, TagName FROM TAG_DETAIL WHERE (ProjectID = @ProjectID) AND (Ta
             this._commandCollection[0].CommandText = "dbo.sp_SearchProjectByGroup";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@groupName", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@groupName", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10115,10 +8827,6 @@ SELECT ProjectID, TagName FROM TAG_DETAIL WHERE (ProjectID = @ProjectID) AND (Ta
             tableMapping.ColumnMappings.Add("GroupName", "GroupName");
             tableMapping.ColumnMappings.Add("SubjectName", "SubjectName");
             tableMapping.ColumnMappings.Add("Class", "Class");
-            tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("Name", "Name");
-            tableMapping.ColumnMappings.Add("Email", "Email");
-            tableMapping.ColumnMappings.Add("PhoneNumber", "PhoneNumber");
             tableMapping.ColumnMappings.Add("ProjectID1", "ProjectID1");
             tableMapping.ColumnMappings.Add("AuthorID", "AuthorID");
             tableMapping.ColumnMappings.Add("Score", "Score");
