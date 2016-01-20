@@ -73,7 +73,7 @@ namespace Presentation.Controls
             }
             else
             {
-                childs = m_business.GetChildDirectories(m_business.GetRootFolderFullPath());
+                childs = m_business.GetChildDirectories(BusinessLogic.Config.GetInstance().GetRootDirPath());
             }
 
             AddChildDirectories(childs, node);
@@ -121,7 +121,7 @@ namespace Presentation.Controls
         private void loadFolders(object sender, EventArgs e)
         {
             m_directoryTreeView.Nodes.Clear();
-            DirectoryInfo[] dirs = m_business.GetChildDirectories(m_business.GetRootFolderFullPath());
+            DirectoryInfo[] dirs = m_business.GetChildDirectories(BusinessLogic.Config.GetInstance().GetRootDirPath());
             AddChildDirectories(dirs, null);
         }
 

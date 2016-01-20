@@ -40,7 +40,7 @@ namespace Presentation.Controls
             {
                 ProjectDisplay prj = new ProjectDisplay();
                 /// TODO: change ProjectID to ProjectName.
-                prj.SetProjectName(project.ProjectID);
+                prj.SetProjectName(project.ProjectName);
                 // seach for other info and set it here.
                 
                 m_projectList.Controls.Add(prj);
@@ -57,7 +57,7 @@ namespace Presentation.Controls
             {
                 ProjectDisplay prj = new ProjectDisplay();
                 /// TODO: change ProjectID to ProjectName.
-                prj.SetProjectName(project.ProjectID);
+                prj.SetProjectName(project.ProjectName);
                 // seach for other info and set it here.
 
                 m_projectList.Controls.Add(prj);
@@ -74,11 +74,17 @@ namespace Presentation.Controls
             {
                 ProjectDisplay prj = new ProjectDisplay();
                 /// TODO: change ProjectID to ProjectName.
-                prj.SetProjectName(project.ProjectID);
+                prj.SetProjectName(project.ProjectName);
                 // seach for other info and set it here.
 
                 m_projectList.Controls.Add(prj);
             }
+        }
+
+        public void ExportSelectedProject(string exportDir)
+        {
+            // TODO: export
+            //m_business.ExportProjectToCofFile()
         }
 
         private void deselectProjects(object sender, EventArgs e)

@@ -127,6 +127,7 @@
             // 
             // m_btnMacro
             // 
+            this.m_btnMacro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.m_btnMacro.Location = new System.Drawing.Point(209, 18);
             this.m_btnMacro.Name = "m_btnMacro";
             this.m_btnMacro.Size = new System.Drawing.Size(82, 23);

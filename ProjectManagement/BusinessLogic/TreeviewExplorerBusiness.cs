@@ -9,7 +9,6 @@ namespace BusinessLogic
 {
     public class TreeviewExplorerBusiness
     {
-        private const string ROOT_FOLDER_FULL_PATH = "Root";
         public TreeviewExplorerBusiness() { }
 
         // Get all directly-child directories represented by the path.
@@ -63,13 +62,6 @@ namespace BusinessLogic
             {
                 File.Delete(fullPath);
             }
-        }
-
-        // Return the string contain absolute path to the root folder, contain projects.
-        // @return: absolute-path to the Root folder.
-        public string GetRootFolderFullPath()
-        {
-            return ROOT_FOLDER_FULL_PATH;
         }
     }
 }

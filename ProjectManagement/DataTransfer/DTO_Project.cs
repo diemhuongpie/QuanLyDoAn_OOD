@@ -12,17 +12,24 @@ namespace DataTransfer
             string projectID = null,
             string groupName = null,
             string subjectName = null,
-            string className = null)
+            string className = null,
+            string desc = null)
         {
-            ProjectID = projectID;
+            ProjectName = projectID;
             GroupName = groupName;
             SubjectName = subjectName;
             ClassName = className;
+            Desc = desc;
+            Notes = new List<string>();
+            Authors = new List<DTO_Author>();
         }
 
-        public string ProjectID;
+        public string ProjectName;
         public string GroupName;
         public string SubjectName;
         public string ClassName;
+        public string Desc;
+        public List<string> Notes;
+        public List<DTO_Author> Authors;
     }
 }

@@ -40,8 +40,8 @@
             this.seachPaneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checklistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newChecklistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.compareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_statusBar = new System.Windows.Forms.StatusStrip();
             this.m_numOfProjects = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_numOfSelectedProprojects = new System.Windows.Forms.ToolStripStatusLabel();
@@ -59,6 +59,7 @@
             this.m_spliterContainerPreviewPane = new System.Windows.Forms.SplitContainer();
             this.m_projectExplorer = new Presentation.Controls.ProjectExplorer();
             this.m_previewPane = new System.Windows.Forms.RichTextBox();
+            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuBar.SuspendLayout();
             this.m_statusBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_splitContainerDirectoryTree)).BeginInit();
@@ -83,7 +84,8 @@
             this.m_menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.projectsToolStripMenuItem,
             this.viewToolStripMenuItem,
-            this.checklistToolStripMenuItem});
+            this.checklistToolStripMenuItem,
+            this.settingToolStripMenuItem});
             this.m_menuBar.Location = new System.Drawing.Point(3, 3);
             this.m_menuBar.Name = "m_menuBar";
             this.m_menuBar.Size = new System.Drawing.Size(768, 24);
@@ -92,7 +94,8 @@
             // projectsToolStripMenuItem
             // 
             this.projectsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addToolStripMenuItem});
+            this.addToolStripMenuItem,
+            this.exportToolStripMenuItem});
             this.projectsToolStripMenuItem.Name = "projectsToolStripMenuItem";
             this.projectsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.projectsToolStripMenuItem.Text = "Projects";
@@ -101,7 +104,7 @@
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.AddNewProject);
             // 
@@ -156,7 +159,6 @@
             // 
             this.checklistToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newChecklistToolStripMenuItem,
-            this.compareToolStripMenuItem,
             this.editToolStripMenuItem});
             this.checklistToolStripMenuItem.Name = "checklistToolStripMenuItem";
             this.checklistToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
@@ -171,19 +173,19 @@
             this.newChecklistToolStripMenuItem.Text = "New";
             this.newChecklistToolStripMenuItem.Click += new System.EventHandler(this.createChecklist);
             // 
-            // compareToolStripMenuItem
-            // 
-            this.compareToolStripMenuItem.Name = "compareToolStripMenuItem";
-            this.compareToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.compareToolStripMenuItem.Text = "Compare";
-            this.compareToolStripMenuItem.Click += new System.EventHandler(this.compareToolStripMenuItem_Click);
-            // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.editToolStripMenuItem.Text = "Open";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // settingToolStripMenuItem
+            // 
+            this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
+            this.settingToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.settingToolStripMenuItem.Text = "Setting";
+            this.settingToolStripMenuItem.Click += new System.EventHandler(this.openSettingWindow);
             // 
             // m_statusBar
             // 
@@ -612,6 +614,13 @@
     "\n - Hotel Managerment Software for 3-star-awarded-hotel Tan Son Nhat.\n\nNote(s):\n" +
     " - Note 1\n - Note 2\n - Note 3";
             // 
+            // exportToolStripMenuItem
+            // 
+            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportToolStripMenuItem.Text = "Export";
+            this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -668,7 +677,6 @@
         private System.Windows.Forms.ImageList m_iconList;
         private System.Windows.Forms.ToolStripMenuItem checklistToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newChecklistToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem compareToolStripMenuItem;
         private Controls.ProjectExplorer m_projectExplorer;
         private System.Windows.Forms.ToolStripMenuItem seachPaneToolStripMenuItem;
         private System.Windows.Forms.GroupBox m_grpFilters;
@@ -680,6 +688,8 @@
         private System.Windows.Forms.Button m_btnSearch;
         private System.Windows.Forms.TextBox m_textboxSearchBox;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
 
     }
 }

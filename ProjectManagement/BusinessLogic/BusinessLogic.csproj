@@ -64,6 +64,10 @@
       <Project>{e6f7a61b-f9f2-4e58-9c37-d7fe3913c277}</Project>
       <Name>DataTransfer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SystemBusiness\SystemBusiness.csproj">
+      <Project>{b56854ae-e03e-4735-a798-4c4db171e52d}</Project>
+      <Name>SystemBusiness</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">
