@@ -42,7 +42,7 @@ namespace Presentation.Controls
                 /// TODO: change ProjectID to ProjectName.
                 prj.SetProjectName(project.ProjectID);
                 // seach for other info and set it here.
-
+                prj.SetGroupName(project.GroupName);                
                 m_projectList.Controls.Add(prj);
             }
         }
@@ -59,6 +59,8 @@ namespace Presentation.Controls
                 /// TODO: change ProjectID to ProjectName.
                 prj.SetProjectName(project.ProjectID);
                 // seach for other info and set it here.
+                prj.SetGroupName(project.GroupName);                
+
 
                 m_projectList.Controls.Add(prj);
             }
@@ -76,6 +78,7 @@ namespace Presentation.Controls
                 /// TODO: change ProjectID to ProjectName.
                 prj.SetProjectName(project.ProjectID);
                 // seach for other info and set it here.
+                prj.SetGroupName(project.GroupName);                
 
                 m_projectList.Controls.Add(prj);
             }

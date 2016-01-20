@@ -295,24 +295,24 @@
             this.deleteToolStripMenuItem,
             this.addNoteToolStripMenuItem});
             this.m_contexMenu.Name = "m_contexMenu";
-            this.m_contexMenu.Size = new System.Drawing.Size(124, 70);
+            this.m_contexMenu.Size = new System.Drawing.Size(142, 76);
             // 
             // seeMoreToolStripMenuItem
             // 
             this.seeMoreToolStripMenuItem.Name = "seeMoreToolStripMenuItem";
-            this.seeMoreToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.seeMoreToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
             this.seeMoreToolStripMenuItem.Text = "See more";
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
             this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // addNoteToolStripMenuItem
             // 
             this.addNoteToolStripMenuItem.Name = "addNoteToolStripMenuItem";
-            this.addNoteToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.addNoteToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
             this.addNoteToolStripMenuItem.Text = "Add note";
             // 
             // m_backgroundPanel
@@ -323,8 +323,9 @@
             this.m_backgroundPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_backgroundPanel.ForeColor = System.Drawing.Color.Black;
             this.m_backgroundPanel.Location = new System.Drawing.Point(0, 0);
+            this.m_backgroundPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.m_backgroundPanel.Name = "m_backgroundPanel";
-            this.m_backgroundPanel.Size = new System.Drawing.Size(304, 64);
+            this.m_backgroundPanel.Size = new System.Drawing.Size(410, 135);
             this.m_backgroundPanel.TabIndex = 3;
             this.m_backgroundPanel.Click += new System.EventHandler(this.changeSelectStatus);
             // 
@@ -335,9 +336,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.m_container.BackColor = System.Drawing.Color.White;
             this.m_container.Controls.Add(this.m_displayer);
-            this.m_container.Location = new System.Drawing.Point(2, 2);
+            this.m_container.Location = new System.Drawing.Point(3, 2);
+            this.m_container.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.m_container.Name = "m_container";
-            this.m_container.Size = new System.Drawing.Size(298, 58);
+            this.m_container.Size = new System.Drawing.Size(402, 128);
             this.m_container.TabIndex = 0;
             this.m_container.Click += new System.EventHandler(this.changeSelectStatus);
             // 
@@ -348,10 +350,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.m_displayer.BackColor = System.Drawing.Color.White;
             this.m_displayer.Controls.Add(this.m_splitContainerProgressBar);
-            this.m_displayer.Location = new System.Drawing.Point(2, 2);
+            this.m_displayer.Location = new System.Drawing.Point(3, 2);
             this.m_displayer.Margin = new System.Windows.Forms.Padding(0);
             this.m_displayer.Name = "m_displayer";
-            this.m_displayer.Size = new System.Drawing.Size(294, 54);
+            this.m_displayer.Size = new System.Drawing.Size(397, 123);
             this.m_displayer.TabIndex = 2;
             this.m_displayer.Click += new System.EventHandler(this.changeSelectStatus);
             // 
@@ -361,6 +363,7 @@
             this.m_splitContainerProgressBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_splitContainerProgressBar.IsSplitterFixed = true;
             this.m_splitContainerProgressBar.Location = new System.Drawing.Point(0, 0);
+            this.m_splitContainerProgressBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.m_splitContainerProgressBar.Name = "m_splitContainerProgressBar";
             this.m_splitContainerProgressBar.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -375,8 +378,8 @@
             this.m_splitContainerProgressBar.Panel2.Controls.Add(this.m_projectInfoContainer);
             this.m_splitContainerProgressBar.Panel2.Click += new System.EventHandler(this.changeSelectStatus);
             this.m_splitContainerProgressBar.Panel2MinSize = 5;
-            this.m_splitContainerProgressBar.Size = new System.Drawing.Size(294, 54);
-            this.m_splitContainerProgressBar.SplitterDistance = 25;
+            this.m_splitContainerProgressBar.Size = new System.Drawing.Size(397, 123);
+            this.m_splitContainerProgressBar.SplitterDistance = 56;
             this.m_splitContainerProgressBar.SplitterWidth = 1;
             this.m_splitContainerProgressBar.TabIndex = 2;
             this.m_splitContainerProgressBar.Click += new System.EventHandler(this.changeSelectStatus);
@@ -386,8 +389,9 @@
             this.m_progressBar.BackColor = System.Drawing.Color.White;
             this.m_progressBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_progressBar.Location = new System.Drawing.Point(0, 0);
+            this.m_progressBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.m_progressBar.Name = "m_progressBar";
-            this.m_progressBar.Size = new System.Drawing.Size(292, 23);
+            this.m_progressBar.Size = new System.Drawing.Size(395, 54);
             this.m_progressBar.Step = 1;
             this.m_progressBar.TabIndex = 1;
             this.m_progressBar.Value = 72;
@@ -405,8 +409,9 @@
             this.m_projectInfoContainer.Controls.Add(this.m_btnSetting);
             this.m_projectInfoContainer.Controls.Add(this.m_btnNote);
             this.m_projectInfoContainer.Location = new System.Drawing.Point(1, 1);
+            this.m_projectInfoContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.m_projectInfoContainer.Name = "m_projectInfoContainer";
-            this.m_projectInfoContainer.Size = new System.Drawing.Size(287, 29);
+            this.m_projectInfoContainer.Size = new System.Drawing.Size(389, 71);
             this.m_projectInfoContainer.TabIndex = 7;
             this.m_projectInfoContainer.Click += new System.EventHandler(this.changeSelectStatus);
             this.m_projectInfoContainer.Leave += new System.EventHandler(this.deselect);
@@ -416,9 +421,10 @@
             this.m_lblProjectName.AutoSize = true;
             this.m_lblProjectName.BackColor = System.Drawing.Color.Transparent;
             this.m_lblProjectName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.m_lblProjectName.Location = new System.Drawing.Point(4, 4);
+            this.m_lblProjectName.Location = new System.Drawing.Point(5, 5);
+            this.m_lblProjectName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.m_lblProjectName.Name = "m_lblProjectName";
-            this.m_lblProjectName.Size = new System.Drawing.Size(116, 20);
+            this.m_lblProjectName.Size = new System.Drawing.Size(141, 25);
             this.m_lblProjectName.TabIndex = 0;
             this.m_lblProjectName.Text = "Project Name";
             // 
@@ -427,9 +433,10 @@
             this.m_lblGroupName.AutoSize = true;
             this.m_lblGroupName.BackColor = System.Drawing.Color.Transparent;
             this.m_lblGroupName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lblGroupName.Location = new System.Drawing.Point(4, 24);
+            this.m_lblGroupName.Location = new System.Drawing.Point(5, 30);
+            this.m_lblGroupName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.m_lblGroupName.Name = "m_lblGroupName";
-            this.m_lblGroupName.Size = new System.Drawing.Size(89, 17);
+            this.m_lblGroupName.Size = new System.Drawing.Size(104, 20);
             this.m_lblGroupName.TabIndex = 1;
             this.m_lblGroupName.Text = "Group Name";
             // 
@@ -438,9 +445,10 @@
             this.m_lblLastUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.m_lblLastUpdate.AutoSize = true;
             this.m_lblLastUpdate.BackColor = System.Drawing.Color.Transparent;
-            this.m_lblLastUpdate.Location = new System.Drawing.Point(166, 2);
+            this.m_lblLastUpdate.Location = new System.Drawing.Point(227, 2);
+            this.m_lblLastUpdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.m_lblLastUpdate.Name = "m_lblLastUpdate";
-            this.m_lblLastUpdate.Size = new System.Drawing.Size(121, 13);
+            this.m_lblLastUpdate.Size = new System.Drawing.Size(155, 17);
             this.m_lblLastUpdate.TabIndex = 2;
             this.m_lblLastUpdate.Text = "Last update: 5/10/2015";
             // 
@@ -453,9 +461,10 @@
             this.m_btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.m_btnDelete.ImageIndex = 50;
             this.m_btnDelete.ImageList = this.m_smallIcons;
-            this.m_btnDelete.Location = new System.Drawing.Point(257, 18);
+            this.m_btnDelete.Location = new System.Drawing.Point(349, 22);
+            this.m_btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.m_btnDelete.Name = "m_btnDelete";
-            this.m_btnDelete.Size = new System.Drawing.Size(26, 23);
+            this.m_btnDelete.Size = new System.Drawing.Size(35, 28);
             this.m_btnDelete.TabIndex = 3;
             this.m_btnDelete.UseVisualStyleBackColor = false;
             this.m_btnDelete.Click += new System.EventHandler(this.m_btnDelete_Click);
@@ -469,9 +478,10 @@
             this.m_btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.m_btnSetting.ImageIndex = 219;
             this.m_btnSetting.ImageList = this.m_smallIcons;
-            this.m_btnSetting.Location = new System.Drawing.Point(225, 18);
+            this.m_btnSetting.Location = new System.Drawing.Point(306, 22);
+            this.m_btnSetting.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.m_btnSetting.Name = "m_btnSetting";
-            this.m_btnSetting.Size = new System.Drawing.Size(26, 23);
+            this.m_btnSetting.Size = new System.Drawing.Size(35, 28);
             this.m_btnSetting.TabIndex = 5;
             this.m_btnSetting.UseVisualStyleBackColor = false;
             // 
@@ -484,23 +494,24 @@
             this.m_btnNote.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.m_btnNote.ImageIndex = 142;
             this.m_btnNote.ImageList = this.m_smallIcons;
-            this.m_btnNote.Location = new System.Drawing.Point(193, 18);
+            this.m_btnNote.Location = new System.Drawing.Point(263, 22);
+            this.m_btnNote.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.m_btnNote.Name = "m_btnNote";
-            this.m_btnNote.Size = new System.Drawing.Size(26, 23);
+            this.m_btnNote.Size = new System.Drawing.Size(35, 28);
             this.m_btnNote.TabIndex = 6;
             this.m_btnNote.UseVisualStyleBackColor = false;
             // 
             // ProjectDisplay
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.m_backgroundPanel);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.Name = "ProjectDisplay";
-            this.Size = new System.Drawing.Size(304, 64);
+            this.Size = new System.Drawing.Size(410, 135);
             this.Click += new System.EventHandler(this.changeSelectStatus);
             this.m_contexMenu.ResumeLayout(false);
             this.m_backgroundPanel.ResumeLayout(false);
